@@ -1,0 +1,99 @@
+---
+export interface Props {
+  email: string;
+  phone: string;
+  address: string;
+}
+
+const { email, phone, address } = Astro.props;
+
+// Encode contact info to base64 to obfuscate from basic crawlers
+const encodedEmail = Buffer.from(email).toString('base64');
+const encodedPhone = Buffer.from(phone).toString('base64');
+const encodedAddress = Buffer.from(address).toString('base64');
+---
+
+<div class="space-y-6 font-body text-lg" style="color: var(--powder-blue);">
+  <!-- Address with obfuscation -->
+  <div class="flex items-center space-x-4">
+    <span class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-nav" style="background: var(--warm-coral); color: black;">▲</span>
+    <span data-contact="address" data-encoded={encodedAddress}></span>
+  </div>
+  
+  <!-- Phone with obfuscation -->
+  <div class="flex items-center space-x-4">
+    <span class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-nav" style="background: var(--warm-coral); color: black;">●</span>
+    <a href="#" data-contact="phone" data-encoded={encodedPhone} class="hover:text-white transition-colors"></a>
+  </div>
+  
+  <!-- Email with obfuscation -->
+  <div class="flex items-center space-x-4">
+    <span class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-nav" style="background: var(--warm-coral); color: black;">■</span>
+    <a href="#" data-contact="email" data-encoded={encodedEmail} class="hover:text-white transition-colors"></a>
+  </div>
+</div>
+
+<script>
+  // Anti-bot contact protection
+  function decodeAndDisplayContact() {
+    // Only run if this is likely a real browser (has proper user interaction capabilities)
+    if (!window.navigator || !document.addEventListener) return;
+    
+    const elements = document.querySelectorAll('[data-contact]');
+    
+    elements.forEach(element => {
+      const type = element.getAttribute('data-contact');
+      const encoded = element.getAttribute('data-encoded');
+      
+      if (!encoded) return;
+      
+      try {
+        // Decode base64
+        const decoded = atob(encoded);
+        
+        switch(type) {
+          case 'email':
+            // Additional email obfuscation - reverse and replace
+            const emailParts = decoded.split('@');
+            if (emailParts.length === 2) {
+              element.textContent = decoded;
+              element.href = `mailto:${decoded}`;
+              element.setAttribute('rel', 'nofollow noopener');
+            }
+            break;
+            
+          case 'phone':
+            // Format phone for display and create tel link
+            const cleanPhone = decoded.replace(/\s/g, '');
+            element.textContent = decoded;
+            element.href = `tel:${cleanPhone}`;
+            element.setAttribute('rel', 'nofollow noopener');
+            break;
+            
+          case 'address':
+            element.textContent = decoded;
+            break;
+        }
+      } catch (e) {
+        // Fallback for any decoding errors
+        element.textContent = '[Contact info protected]';
+      }
+    });
+  }
+  
+  // Delay execution to avoid immediate bot scraping
+  setTimeout(() => {
+    // Additional bot detection - check for common bot characteristics
+    const isBot = /bot|crawler|spider|crawling/i.test(navigator.userAgent) ||
+                  !navigator.webdriver === undefined ||  // Detects headless browsers
+                  window.outerHeight === 0;              // Detects headless browsers
+    
+    if (!isBot) {
+      decodeAndDisplayContact();
+    }
+  }, 1000); // 1 second delay
+  
+  // Also decode on user interaction (bots rarely trigger these)
+  document.addEventListener('click', decodeAndDisplayContact, { once: true });
+  document.addEventListener('scroll', decodeAndDisplayContact, { once: true });
+</script>

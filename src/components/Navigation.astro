@@ -42,16 +42,16 @@ const t = getTranslations(currentLang);
         <!-- Language Switcher -->
         <div class="language-switcher flex items-center space-x-2">
           <button 
-            class={`lang-btn px-3 py-1 text-xs font-nav transition-all rounded cursor-pointer ${currentLang === 'de' ? 'text-white' : 'hover:text-navy-blue'}`}
-            style={currentLang === 'de' ? 'background: var(--navy-blue);' : 'color: var(--text-muted); background: transparent;'}
+            class={`lang-btn px-3 py-1 text-xs font-nav transition-all rounded cursor-pointer ${currentLang === 'de' ? '' : 'hover:text-navy-blue'}`}
+            style={currentLang === 'de' ? 'background: var(--navy-blue); color: var(--cream-white);' : 'color: var(--text-muted); background: transparent;'}
             data-lang="de"
           >
             DE
           </button>
           <span style="color: var(--powder-blue);">|</span>
           <button 
-            class={`lang-btn px-3 py-1 text-xs font-nav transition-all rounded cursor-pointer ${currentLang === 'en' ? 'text-white' : 'hover:text-navy-blue'}`}
-            style={currentLang === 'en' ? 'background: var(--navy-blue);' : 'color: var(--text-muted); background: transparent;'}
+            class={`lang-btn px-3 py-1 text-xs font-nav transition-all rounded cursor-pointer ${currentLang === 'en' ? '' : 'hover:text-navy-blue'}`}
+            style={currentLang === 'en' ? 'background: var(--navy-blue); color: var(--cream-white);' : 'color: var(--text-muted); background: transparent;'}
             data-lang="en"
           >
             EN
