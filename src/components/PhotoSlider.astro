@@ -1,0 +1,163 @@
+---
+export interface Props {
+  images: Array<{
+    src: string;
+    alt: string;
+    caption?: string;
+  }>;
+}
+
+const { images } = Astro.props;
+---
+
+<div class="photo-slider-container">
+  <div class="swiper photo-slider" id="photo-slider">
+    <div class="swiper-wrapper">
+      {images.map((image, index) => (
+        <div class="swiper-slide">
+          <div class="relative w-full h-96 md:h-[500px] lg:h-[600px]">
+            <img 
+              src={image.src} 
+              alt={image.alt}
+              class="w-full h-full object-cover rounded-lg"
+              loading={index === 0 ? "eager" : "lazy"}
+            />
+            {image.caption && (
+              <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 rounded-b-lg">
+                <p class="text-white text-sm md:text-base">{image.caption}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <!-- Navigation buttons -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    
+    <!-- Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<!-- Load Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<script type="module">
+  // Load Swiper from CDN for better reliability
+  import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
+
+  function initializeSwiper() {
+    const swiperEl = document.getElementById('photo-slider');
+    
+    if (!swiperEl) {
+      console.error('Swiper element not found');
+      return;
+    }
+
+    console.log('Initializing Swiper...');
+    
+    const swiper = new Swiper('#photo-slider', {
+      // Basic settings
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      grabCursor: true,
+      
+      // Autoplay
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      
+      // Pagination bullets
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        dynamicBullets: true,
+      },
+      
+      // Responsive breakpoints
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+        },
+        768: {
+          slidesPerView: 1,
+        },
+        1024: {
+          slidesPerView: 1,
+        },
+      },
+    });
+
+    console.log('Swiper initialized successfully');
+  }
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeSwiper);
+  } else {
+    initializeSwiper();
+  }
+</script>
+
+<style>
+  .photo-slider-container {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .swiper {
+    width: 100%;
+    height: auto;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: white !important;
+    background: rgba(0, 0, 0, 0.3) !important;
+    border-radius: 50% !important;
+    width: 40px !important;
+    height: 40px !important;
+    margin-top: -20px !important;
+    z-index: 10;
+  }
+
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 16px !important;
+  }
+
+  .swiper-button-next:hover,
+  .swiper-button-prev:hover {
+    background: rgba(0, 0, 0, 0.6) !important;
+  }
+
+  .swiper-pagination-bullet {
+    background: rgba(255, 255, 255, 0.5) !important;
+    opacity: 1 !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: white !important;
+  }
+</style>

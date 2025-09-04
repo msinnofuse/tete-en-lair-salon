@@ -1,0 +1,144 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PhotoSlider from '../components/PhotoSlider.astro';
+
+const sampleImages = [
+  {
+    src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Beautiful mountain landscape',
+    caption: 'Stunning mountain views at sunset'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1519904981063-b0cf448d479e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Ocean waves on beach',
+    caption: 'Peaceful ocean waves meeting the shore'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80',
+    alt: 'Forest path in autumn',
+    caption: 'A serene path through autumn forest'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Misty valley sunrise',
+    caption: 'Golden sunrise over misty valleys'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1511884642898-4c92249e20b6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Desert landscape',
+    caption: 'Vast desert dunes under clear sky'
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Northern lights',
+    caption: 'Spectacular aurora borealis display'
+  }
+];
+---
+
+<Layout title="Beautiful Photo Gallery" description="Discover stunning photography with our responsive photo slider">
+  <main class="min-h-screen">
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="text-center">
+          <h1 class="text-4xl font-bold text-gray-900 mb-2">
+            Beautiful Photo Gallery
+          </h1>
+          <p class="text-xl text-gray-600">
+            Discover stunning photography from around the world
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Photo Slider Section -->
+    <section class="py-12 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-8 text-center">
+          <h2 class="text-3xl font-semibold text-gray-900 mb-4">
+            Featured Gallery
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Explore our curated collection of breathtaking landscapes and scenic views. 
+            Each image tells a unique story and captures the beauty of nature.
+          </p>
+        </div>
+        
+        <PhotoSlider images={sampleImages} />
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-semibold text-gray-900 mb-6">
+          About This Gallery
+        </h2>
+        <div class="text-gray-600 space-y-4 text-lg leading-relaxed">
+          <p>
+            Welcome to our photo gallery showcasing the natural beauty of our world. 
+            This responsive website features a modern photo slider built with cutting-edge web technologies.
+          </p>
+          <p>
+            The gallery automatically cycles through images while allowing manual navigation. 
+            Experience smooth transitions and mobile-optimized viewing on any device.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-semibold text-gray-900 text-center mb-12">
+          Gallery Features
+        </h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center p-6 bg-white rounded-lg shadow-sm">
+            <div class="w-12 h-12 bg-blue-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
+              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Responsive Design</h3>
+            <p class="text-gray-600">Optimized for all screen sizes from mobile to desktop</p>
+          </div>
+          
+          <div class="text-center p-6 bg-white rounded-lg shadow-sm">
+            <div class="w-12 h-12 bg-green-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
+              <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Fast Loading</h3>
+            <p class="text-gray-600">Optimized images and modern web technologies for speed</p>
+          </div>
+          
+          <div class="text-center p-6 bg-white rounded-lg shadow-sm">
+            <div class="w-12 h-12 bg-purple-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
+              <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 3v10a2 2 0 002 2h8a2 2 0 002-2V7m-12 0h16m-8 4v6m4-6v6"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Touch Friendly</h3>
+            <p class="text-gray-600">Swipe gestures and touch navigation for mobile devices</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-gray-400">
+          Built with Astro, Tailwind CSS, and Swiper.js
+        </p>
+        <p class="text-gray-500 text-sm mt-2">
+          © 2024 Photo Gallery. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </main>
+</Layout>
