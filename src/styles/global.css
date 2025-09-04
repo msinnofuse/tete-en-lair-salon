@@ -1,1 +1,288 @@
 @import "tailwindcss";
+
+/* Urban Minimal Theme - Modern Monochromatic Design */
+
+/* Custom CSS Variables for Color Palette - Inspired by Bus Salon */
+:root {
+  /* Primary Colors from Bus Image */
+  --powder-blue: #7BA7BC;
+  --warm-coral: #E85A4F;
+  --sage-green: #8CAE68;
+  --warm-brass: #C8A882;
+  --navy-blue: #2C5AA0;
+  --cream-white: #F5F1E8;
+  --rich-brown: #8B4513;
+  --deep-charcoal: #3A3A3A;
+  
+  /* Extended Palette */
+  --light-powder: #B8CDD9;
+  --soft-coral: #F2A99B;
+  --light-sage: #B5D49C;
+  --pale-brass: #E0CBA8;
+  --soft-navy: #5C7CB8;
+  --warm-white: #FDFCF7;
+  
+  /* Functional Colors */
+  --border-light: rgba(123, 167, 188, 0.15);
+  --shadow-subtle: rgba(58, 58, 58, 0.08);
+  --shadow-medium: rgba(58, 58, 58, 0.15);
+  --shadow-strong: rgba(58, 58, 58, 0.25);
+  
+  /* Text Colors */
+  --text-primary: #3A3A3A;
+  --text-secondary: #2C5AA0;
+  --text-muted: #7BA7BC;
+}
+
+/* Typography Styles - Bus Salon Inspired */
+.font-brand {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  letter-spacing: -0.02em;
+  color: var(--navy-blue);
+}
+
+.font-heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.font-nav {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.font-body {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+.font-accent {
+  font-family: 'Playfair Display', serif;
+  font-weight: 300;
+  font-style: normal;
+  color: var(--warm-coral);
+}
+
+.font-price {
+  font-family: 'Inter', sans-serif;
+  font-weight: 200;
+  font-size: 2.5rem;
+  color: var(--navy-blue);
+}
+
+/* Bus Salon Inspired Buttons */
+.btn-primary {
+  background: var(--navy-blue);
+  color: var(--cream-white);
+  padding: 16px 40px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: var(--warm-coral);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-primary:hover {
+  color: var(--cream-white);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px var(--shadow-strong);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--navy-blue);
+  padding: 16px 40px;
+  border: 1px solid var(--navy-blue);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--navy-blue);
+  color: var(--cream-white);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px var(--shadow-medium);
+}
+
+/* Bus-Inspired Cards */
+.glass-card {
+  background: rgba(245, 241, 232, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-light);
+  border-radius: 0;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(245, 241, 232, 0.95);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px var(--shadow-medium);
+}
+
+/* Vintage-Style Cards */
+.minimal-card {
+  background: var(--cream-white);
+  border: 1px solid var(--powder-blue);
+  padding: 3rem;
+  position: relative;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.minimal-card:hover {
+  border-color: var(--warm-coral);
+  box-shadow: 0 15px 35px var(--shadow-subtle);
+  background: var(--warm-white);
+}
+
+/* Vintage Bus Background */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-bg {
+  background: linear-gradient(-45deg, var(--cream-white), var(--light-powder), var(--warm-white), var(--pale-brass));
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+/* Scroll Animations */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 0.6s ease-out;
+}
+
+/* Parallax Elements */
+.parallax {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Magnetic Button Effect */
+.magnetic {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+/* Line Accent */
+.line-accent {
+  position: relative;
+  display: inline-block;
+}
+
+.line-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent-gold);
+  transition: width 0.3s ease;
+}
+
+.line-accent:hover::after {
+  width: 100%;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Text Reveal Animation */
+@keyframes reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.text-reveal {
+  animation: reveal 1s ease-out;
+}
+
+/* Bus Salon Navigation */
+.nav-modern {
+  background: rgba(245, 241, 232, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* Vintage Divider */
+.divider-thin {
+  height: 1px;
+  background: var(--powder-blue);
+  margin: 4rem 0;
+  opacity: 0.5;
+}
+
+/* Coral Accent Line */
+.accent-line {
+  height: 2px;
+  width: 60px;
+  background: var(--warm-coral);
+  margin: 2rem auto;
+}
+
+/* Powder Blue Number Decoration */
+.number-large {
+  font-family: 'Inter', sans-serif;
+  font-weight: 100;
+  font-size: 8rem;
+  line-height: 1;
+  color: var(--light-powder);
+  opacity: 0.4;
+  position: absolute;
+  top: -2rem;
+  left: 0;
+  z-index: -1;
+}

@@ -1,25 +1,33 @@
 ---
 import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
 
 export interface Props {
   title: string;
   description?: string;
+  lang?: 'de' | 'en';
 }
 
-const { title, description = "A beautiful single-page website with photo slider" } = Astro.props;
+const { title, description = "A beautiful single-page website with photo slider", lang = 'de' } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@200..900;1,200..900&display=swap" rel="stylesheet">
     <title>{title}</title>
   </head>
-  <body class="font-sans text-gray-900 bg-gray-50">
-    <slot />
+  <body class="font-body gradient-bg">
+    <Navigation currentLang={lang} />
+    <div class="pt-16">
+      <slot />
+    </div>
   </body>
 </html>
