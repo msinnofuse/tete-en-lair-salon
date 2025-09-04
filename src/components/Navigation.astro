@@ -1,28 +1,12 @@
 ---
+import { getTranslations, type Language } from '../i18n/utils';
+
 export interface Props {
-  currentLang?: 'de' | 'en';
+  currentLang?: Language;
 }
 
 const { currentLang = 'de' } = Astro.props;
-
-const translations = {
-  de: {
-    home: 'HOME',
-    salon: 'SALON', 
-    pricing: 'PREISE',
-    contact: 'KONTAKT',
-    salonName: 'Tête en l\'Air'
-  },
-  en: {
-    home: 'HOME',
-    salon: 'SALON',
-    pricing: 'PRICING', 
-    contact: 'CONTACT',
-    salonName: 'Tête en l\'Air'
-  }
-};
-
-const t = translations[currentLang];
+const t = getTranslations(currentLang);
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 nav-modern">
@@ -31,7 +15,7 @@ const t = translations[currentLang];
       <!-- Logo/Brand -->
       <div class="flex-shrink-0">
         <h1 class="text-2xl font-brand line-accent">
-          {t.salonName}
+          tête en l'air
         </h1>
       </div>
 
@@ -39,16 +23,16 @@ const t = translations[currentLang];
       <div class="hidden md:block">
         <div class="ml-10 flex items-baseline space-x-8">
           <a href="#home" class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="home">
-            {t.home}
+            {t.nav.home}
           </a>
           <a href="#salon" class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="salon">
-            {t.salon}
+            {t.nav.salon}
           </a>
           <a href="#pricing" class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="pricing">
-            {t.pricing}
+            {t.nav.pricing}
           </a>
           <a href="#contact" class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="contact">
-            {t.contact}
+            {t.nav.contact}
           </a>
         </div>
       </div>
@@ -58,18 +42,16 @@ const t = translations[currentLang];
         <!-- Language Switcher -->
         <div class="language-switcher flex items-center space-x-2">
           <button 
-            class="lang-btn px-3 py-1 text-xs font-nav transition-all rounded"
-            class:list={[currentLang === 'de' ? 'text-white' : 'hover:text-navy-blue']}
-            style={currentLang === 'de' ? 'background: var(--navy-blue);' : 'color: var(--text-muted);'}
+            class={`lang-btn px-3 py-1 text-xs font-nav transition-all rounded cursor-pointer ${currentLang === 'de' ? 'text-white' : 'hover:text-navy-blue'}`}
+            style={currentLang === 'de' ? 'background: var(--navy-blue);' : 'color: var(--text-muted); background: transparent;'}
             data-lang="de"
           >
             DE
           </button>
           <span style="color: var(--powder-blue);">|</span>
           <button 
-            class="lang-btn px-3 py-1 text-xs font-nav transition-all rounded"
-            class:list={[currentLang === 'en' ? 'text-white' : 'hover:text-navy-blue']}
-            style={currentLang === 'en' ? 'background: var(--navy-blue);' : 'color: var(--text-muted);'}
+            class={`lang-btn px-3 py-1 text-xs font-nav transition-all rounded cursor-pointer ${currentLang === 'en' ? 'text-white' : 'hover:text-navy-blue'}`}
+            style={currentLang === 'en' ? 'background: var(--navy-blue);' : 'color: var(--text-muted); background: transparent;'}
             data-lang="en"
           >
             EN
@@ -105,16 +87,16 @@ const t = translations[currentLang];
   <div id="mobile-menu" class="md:hidden hidden">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t" style="background: var(--cream-white); border-color: var(--powder-blue);">
       <a href="#home" class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="home">
-        {t.home}
+        {t.nav.home}
       </a>
       <a href="#salon" class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="salon">
-        {t.salon}
+        {t.nav.salon}
       </a>
       <a href="#pricing" class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="pricing">
-        {t.pricing}
+        {t.nav.pricing}
       </a>
       <a href="#contact" class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="contact">
-        {t.contact}
+        {t.nav.contact}
       </a>
     </div>
   </div>
@@ -152,49 +134,18 @@ const t = translations[currentLang];
   });
 
   // Language switching functionality
-  const translations = {
-    de: {
-      home: 'HOME',
-      salon: 'SALON', 
-      pricing: 'PREISE',
-      contact: 'KONTAKT'
-    },
-    en: {
-      home: 'HOME',
-      salon: 'SALON',
-      pricing: 'PRICING', 
-      contact: 'CONTACT'
-    }
-  };
-
   const langButtons = document.querySelectorAll('.lang-btn');
-  const navLinks = document.querySelectorAll('.nav-link');
   
   langButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const selectedLang = btn.getAttribute('data-lang');
       
-      // Update language button visual state
-      langButtons.forEach(b => {
-        if (b.getAttribute('data-lang') === selectedLang) {
-          b.className = 'lang-btn px-3 py-1 text-xs font-nav transition-all rounded text-white';
-          b.style.background = 'var(--navy-blue)';
-        } else {
-          b.className = 'lang-btn px-3 py-1 text-xs font-nav transition-all rounded hover:text-navy-blue';
-          b.style.background = 'transparent';
-          b.style.color = 'var(--text-muted)';
-        }
-      });
-      
-      // Update navigation menu text
-      navLinks.forEach(link => {
-        const key = link.getAttribute('data-key');
-        if (key && translations[selectedLang] && translations[selectedLang][key]) {
-          link.textContent = translations[selectedLang][key];
-        }
-      });
-      
-      console.log('Language changed to:', selectedLang);
+      // Navigate to the appropriate page
+      if (selectedLang === 'en') {
+        window.location.href = '/tete-en-lair-salon/en';
+      } else {
+        window.location.href = '/tete-en-lair-salon/';
+      }
     });
   });
 </script>

@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "home": "HOME",
+    "salon": "SALON",
+    "pricing": "PREISE",
+    "contact": "KONTAKT"
+  },
+  "hero": {
+    "subtitle": "Friseursalon für aussergewöhnliche Haarkunst",
+    "cta_primary": "KONTAKT",
+    "cta_secondary": "MEHR"
+  },
+  "salon": {
+    "title": "Mein",
+    "title_accent": "Konzept",
+    "subtitle": "Minimalistisch. Modern. Einzigartig.",
+    "description": "Mein umgebauter Bus verbindet urbane Ästhetik mit persönlicher Atmosphäre. Hier entstehen nicht nur Frisuren, sondern Erlebnisse."
+  },
+  "about": {
+    "title": "Philosophie",
+    "card1": {
+      "title": "Einzigartig",
+      "description": "Ein stationärer Bus-Salon. Urbanes Ambiente mit besonderer Atmosphäre."
+    },
+    "card2": {
+      "title": "Persönlich",
+      "description": "Jeder Kunde ist einzigartig. Individuelle Beratung in entspannter Atmosphäre."
+    }
+  },
+  "services": {
+    "title": "Services",
+    "cut": {
+      "title": "Schnitt",
+      "description": "Präzise Schnitte mit modernem Ansatz",
+      "price": "XY.- CHF"
+    },
+    "color": {
+      "title": "Color",
+      "description": "Natürliche Töne und mutige Akzente",
+      "price": "XY.- CHF"
+    },
+    "style": {
+      "title": "Style",
+      "description": "Perfekte Vollendung für jeden Anlass",
+      "price": "XY.- CHF"
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "reach_us": "Erreichen Sie uns",
+    "hours_title": "Öffnungszeiten",
+    "hours": {
+      "weekdays": "Do – Sa",
+      "weekdays_time": "09:00 – 19:00",
+      "saturday": "So – Mi",
+      "saturday_time": "Geschlossen"
+    },
+    "cta": "TERMIN VEREINBAREN",
+    "address": "Uferstrasse 40, Basel, Schweiz",
+    "phone": "+41 76 474 79 39",
+    "email": "celinewintenberger@hotmail.de"
+  },
+  "footer": {
+    "copyright": "© 2025 — tête en l'air"
+  },
+  "common": {
+    "accent_words": {
+      "exceptional": "aussergewöhnliche",
+      "modern": "modernem",
+      "bold": "mutige",
+      "perfect": "Perfekte",
+      "essential": "Wesentliche",
+      "unique": "einzigartig",
+      "concepts": "Konzept",
+      "hairstyles": "Frisuren"
+    }
+  }
+}

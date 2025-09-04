@@ -1,0 +1,78 @@
+{
+  "nav": {
+    "home": "HOME",
+    "salon": "SALON",
+    "pricing": "PRICING",
+    "contact": "CONTACT"
+  },
+  "hero": {
+    "subtitle": "Hair salon for extraordinary hair artistry",
+    "cta_primary": "CONTACT",
+    "cta_secondary": "LEARN MORE"
+  },
+  "salon": {
+    "title": "My",
+    "title_accent": "Concept",
+    "subtitle": "Minimalist. Modern. Extraordinary.",
+    "description": "My converted bus combines urban aesthetics with personal atmosphere. Here we create not just hairstyles, but experiences."
+  },
+  "about": {
+    "title": "Philosophy",
+    "card1": {
+      "title": "Unique",
+      "description": "A stationary bus salon. Urban ambiance with a special atmosphere."
+    },
+    "card2": {
+      "title": "Personal",
+      "description": "Every client is unique. Individual consultation in a relaxed atmosphere."
+    }
+  },
+  "services": {
+    "title": "Services",
+    "cut": {
+      "title": "Cut",
+      "description": "Precise cuts with a modern approach",
+      "price": "XY.- CHF"
+    },
+    "color": {
+      "title": "Color",
+      "description": "Natural tones and bold accents",
+      "price": "XY.- CHF"
+    },
+    "style": {
+      "title": "Style",
+      "description": "Perfect finishing for every occasion",
+      "price": "XY.- CHF"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "reach_us": "Reach us",
+    "hours_title": "Opening Hours",
+    "hours": {
+      "weekdays": "Thu – Sat",
+      "weekdays_time": "09:00 – 19:00",
+      "saturday": "Sun – Wed",
+      "saturday_time": "Closed"
+    },
+    "cta": "BOOK APPOINTMENT",
+    "address": "Uferstrasse 40, Basel, Switzerland",
+    "phone": "+41 76 474 79 39",
+    "email": "celinewintenberger@hotmail.de"
+  },
+  "footer": {
+    "copyright": "© 2025 — tête en l'air"
+  },
+  "common": {
+    "accent_words": {
+      "exceptional": "extraordinary",
+      "modern": "modern",
+      "bold": "bold",
+      "perfect": "Perfect",
+      "essential": "essentials",
+      "unique": "unique",
+      "concepts": "Concept",
+      "hairstyles": "hairstyles"
+    }
+  }
+}

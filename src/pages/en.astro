@@ -3,12 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import PhotoSlider from '../components/PhotoSlider.astro';
 import { getTranslations, type Language } from '../i18n/utils';
 
-export interface Props {
-  currentLang?: Language;
-}
-
-// Default to German
-const currentLang: Language = 'de';
+// English page
+const currentLang: Language = 'en';
 const t = getTranslations(currentLang);
 
 const salonImages = [
@@ -194,7 +190,7 @@ const salonImages = [
               </div>
               <div class="flex justify-between pb-2" style="border-bottom: 1px solid var(--powder-blue);">
                 <span style="color: var(--powder-blue);">{t.contact.hours.saturday}</span>
-                <span style="color: var(--cream-white);">{t.contact.hours.saturday_time}</span>
+                <span style="color: var(--powder-blue);">{t.contact.hours.saturday_time}</span>
               </div>
             </div>
             
