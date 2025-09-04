@@ -2,6 +2,29 @@
 import Layout from '../layouts/Layout.astro';
 import PhotoSlider from '../components/PhotoSlider.astro';
 import { getTranslations, type Language } from '../i18n/utils';
+import heroImage from '../assets/images/hero-image.jpg';
+import img1 from '../assets/images/gallery/1000002336.jpg';
+import img2 from '../assets/images/gallery/1000002403.jpg';
+import img3 from '../assets/images/gallery/1000002449.jpg';
+import img4 from '../assets/images/gallery/1000002460.jpg';
+import img5 from '../assets/images/gallery/1000002484.jpg';
+import img6 from '../assets/images/gallery/1000002490.jpg';
+import img7 from '../assets/images/gallery/1000002492.jpg';
+import img8 from '../assets/images/gallery/1000002494.jpg';
+import img9 from '../assets/images/gallery/1000002496.jpg';
+import img10 from '../assets/images/gallery/1000002497.jpg';
+import img11 from '../assets/images/gallery/1000002508.jpg';
+import img12 from '../assets/images/gallery/1000002509.jpg';
+import img13 from '../assets/images/gallery/1000002510.jpg';
+import img14 from '../assets/images/gallery/1000002528.jpg';
+import img15 from '../assets/images/gallery/1000002529.jpg';
+import img16 from '../assets/images/gallery/1000002533.jpg';
+import img17 from '../assets/images/gallery/1000002542.jpg';
+import img18 from '../assets/images/gallery/1000002548.jpg';
+import img19 from '../assets/images/gallery/1000002560.jpg';
+import img20 from '../assets/images/gallery/1000002563.jpg';
+import img21 from '../assets/images/gallery/1000002566.jpg';
+import img22 from '../assets/images/gallery/1000002571.jpg';
 
 export interface Props {
   currentLang?: Language;
@@ -13,112 +36,112 @@ const t = getTranslations(currentLang);
 
 const salonImages = [
   {
-    src: 'src/assets/images/gallery/1000002336.jpg',
+    src: img1,
     alt: 'tête en l\'air salon work',
     caption: 'Professional hair styling'
   },
   {
-    src: 'src/assets/images/gallery/1000002403.jpg',
+    src: img2,
     alt: 'tête en l\'air salon work',
     caption: 'Expert hair artistry'
   },
   {
-    src: 'src/assets/images/gallery/1000002449.jpg',
+    src: img3,
     alt: 'tête en l\'air salon work',
     caption: 'Creative hair designs'
   },
   {
-    src: 'src/assets/images/gallery/1000002460.jpg',
+    src: img4,
     alt: 'tête en l\'air salon work',
     caption: 'Modern styling techniques'
   },
   {
-    src: 'src/assets/images/gallery/1000002484.jpg',
+    src: img5,
     alt: 'tête en l\'air salon work',
     caption: 'Precision cuts and color'
   },
   {
-    src: 'src/assets/images/gallery/1000002490.jpg',
+    src: img6,
     alt: 'tête en l\'air salon work',
     caption: 'Hair transformations'
   },
   {
-    src: 'src/assets/images/gallery/1000002492.jpg',
+    src: img7,
     alt: 'tête en l\'air salon work',
     caption: 'Custom hair designs'
   },
   {
-    src: 'src/assets/images/gallery/1000002494.jpg',
+    src: img8,
     alt: 'tête en l\'air salon work',
     caption: 'Color expertise'
   },
   {
-    src: 'src/assets/images/gallery/1000002496.jpg',
+    src: img9,
     alt: 'tête en l\'air salon work',
     caption: 'Professional cuts'
   },
   {
-    src: 'src/assets/images/gallery/1000002497.jpg',
+    src: img10,
     alt: 'tête en l\'air salon work',
     caption: 'Styling mastery'
   },
   {
-    src: 'src/assets/images/gallery/1000002508.jpg',
+    src: img11,
     alt: 'tête en l\'air salon work',
     caption: 'Hair artistry'
   },
   {
-    src: 'src/assets/images/gallery/1000002509.jpg',
+    src: img12,
     alt: 'tête en l\'air salon work',
     caption: 'Creative styling'
   },
   {
-    src: 'src/assets/images/gallery/1000002510.jpg',
+    src: img13,
     alt: 'tête en l\'air salon work',
     caption: 'Modern techniques'
   },
   {
-    src: 'src/assets/images/gallery/1000002528.jpg',
+    src: img14,
     alt: 'tête en l\'air salon work',
     caption: 'Professional service'
   },
   {
-    src: 'src/assets/images/gallery/1000002529.jpg',
+    src: img15,
     alt: 'tête en l\'air salon work',
     caption: 'Hair transformation'
   },
   {
-    src: 'src/assets/images/gallery/1000002533.jpg',
+    src: img16,
     alt: 'tête en l\'air salon work',
     caption: 'Expert coloring'
   },
   {
-    src: 'src/assets/images/gallery/1000002542.jpg',
+    src: img17,
     alt: 'tête en l\'air salon work',
     caption: 'Precision work'
   },
   {
-    src: 'src/assets/images/gallery/1000002548.jpg',
+    src: img18,
     alt: 'tête en l\'air salon work',
     caption: 'Styling excellence'
   },
   {
-    src: 'src/assets/images/gallery/1000002560.jpg',
+    src: img19,
     alt: 'tête en l\'air salon work',
     caption: 'Hair design'
   },
   {
-    src: 'src/assets/images/gallery/1000002563.jpg',
+    src: img20,
     alt: 'tête en l\'air salon work',
     caption: 'Creative cuts'
   },
   {
-    src: 'src/assets/images/gallery/1000002566.jpg',
+    src: img21,
     alt: 'tête en l\'air salon work',
     caption: 'Professional styling'
   },
   {
-    src: 'src/assets/images/gallery/1000002571.jpg',
+    src: img22,
     alt: 'tête en l\'air salon work',
     caption: 'Hair artistry mastery'
   }
@@ -132,7 +155,7 @@ const salonImages = [
       <!-- Background Image -->
       <div class="absolute inset-0 z-0">
         <img 
-          src="src/assets/images/hero-image.jpg"
+          src={heroImage}
           alt="tête en l'air Bus Salon"
           class="w-full h-full object-cover"
         />
