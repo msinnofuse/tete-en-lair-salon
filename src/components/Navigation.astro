@@ -1,0 +1,200 @@
+---
+export interface Props {
+  currentLang?: 'de' | 'en';
+}
+
+const { currentLang = 'de' } = Astro.props;
+
+const translations = {
+  de: {
+    home: 'HOME',
+    salon: 'SALON', 
+    pricing: 'PREISE',
+    contact: 'KONTAKT',
+    salonName: 'Tête en l\'Air'
+  },
+  en: {
+    home: 'HOME',
+    salon: 'SALON',
+    pricing: 'PRICING', 
+    contact: 'CONTACT',
+    salonName: 'Tête en l\'Air'
+  }
+};
+
+const t = translations[currentLang];
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 nav-modern">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo/Brand -->
+      <div class="flex-shrink-0">
+        <h1 class="text-2xl font-brand line-accent">
+          {t.salonName}
+        </h1>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-8">
+          <a href="#home" class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="home">
+            {t.home}
+          </a>
+          <a href="#salon" class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="salon">
+            {t.salon}
+          </a>
+          <a href="#pricing" class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="pricing">
+            {t.pricing}
+          </a>
+          <a href="#contact" class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="contact">
+            {t.contact}
+          </a>
+        </div>
+      </div>
+
+      <!-- Language Switcher & Mobile Menu Button -->
+      <div class="flex items-center space-x-4">
+        <!-- Language Switcher -->
+        <div class="language-switcher flex items-center space-x-2">
+          <button 
+            class="lang-btn px-3 py-1 text-xs font-nav transition-all rounded"
+            class:list={[currentLang === 'de' ? 'text-white' : 'hover:text-navy-blue']}
+            style={currentLang === 'de' ? 'background: var(--navy-blue);' : 'color: var(--text-muted);'}
+            data-lang="de"
+          >
+            DE
+          </button>
+          <span style="color: var(--powder-blue);">|</span>
+          <button 
+            class="lang-btn px-3 py-1 text-xs font-nav transition-all rounded"
+            class:list={[currentLang === 'en' ? 'text-white' : 'hover:text-navy-blue']}
+            style={currentLang === 'en' ? 'background: var(--navy-blue);' : 'color: var(--text-muted);'}
+            data-lang="en"
+          >
+            EN
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button 
+            id="mobile-menu-btn" 
+            type="button" 
+            class="inline-flex items-center justify-center p-2 transition-all focus:outline-none"
+            style="color: var(--text-primary); hover:color: var(--navy-blue);"
+            aria-controls="mobile-menu" 
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <!-- Hamburger Icon -->
+            <svg class="hamburger-icon block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+            <!-- Close Icon -->
+            <svg class="close-icon hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t" style="background: var(--cream-white); border-color: var(--powder-blue);">
+      <a href="#home" class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="home">
+        {t.home}
+      </a>
+      <a href="#salon" class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="salon">
+        {t.salon}
+      </a>
+      <a href="#pricing" class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="pricing">
+        {t.pricing}
+      </a>
+      <a href="#contact" class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="contact">
+        {t.contact}
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerIcon = mobileMenuBtn?.querySelector('.hamburger-icon');
+  const closeIcon = mobileMenuBtn?.querySelector('.close-icon');
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+    
+    mobileMenuBtn.setAttribute('aria-expanded', (!isExpanded).toString());
+    mobileMenu?.classList.toggle('hidden');
+    hamburgerIcon?.classList.toggle('hidden');
+    hamburgerIcon?.classList.toggle('block');
+    closeIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('block');
+  });
+
+  // Close mobile menu when clicking on nav links
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+      hamburgerIcon?.classList.add('block');
+      hamburgerIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+      closeIcon?.classList.remove('block');
+    });
+  });
+
+  // Language switching functionality
+  const translations = {
+    de: {
+      home: 'HOME',
+      salon: 'SALON', 
+      pricing: 'PREISE',
+      contact: 'KONTAKT'
+    },
+    en: {
+      home: 'HOME',
+      salon: 'SALON',
+      pricing: 'PRICING', 
+      contact: 'CONTACT'
+    }
+  };
+
+  const langButtons = document.querySelectorAll('.lang-btn');
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const selectedLang = btn.getAttribute('data-lang');
+      
+      // Update language button visual state
+      langButtons.forEach(b => {
+        if (b.getAttribute('data-lang') === selectedLang) {
+          b.className = 'lang-btn px-3 py-1 text-xs font-nav transition-all rounded text-white';
+          b.style.background = 'var(--navy-blue)';
+        } else {
+          b.className = 'lang-btn px-3 py-1 text-xs font-nav transition-all rounded hover:text-navy-blue';
+          b.style.background = 'transparent';
+          b.style.color = 'var(--text-muted)';
+        }
+      });
+      
+      // Update navigation menu text
+      navLinks.forEach(link => {
+        const key = link.getAttribute('data-key');
+        if (key && translations[selectedLang] && translations[selectedLang][key]) {
+          link.textContent = translations[selectedLang][key];
+        }
+      });
+      
+      console.log('Language changed to:', selectedLang);
+    });
+  });
+</script>
