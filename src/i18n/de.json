@@ -6,25 +6,39 @@
     "contact": "KONTAKT"
   },
   "hero": {
-    "subtitle": "Friseursalon für aussergewöhnliche Haarkunst",
+    "subtitle": "Haarkunst zwischen Himmel und Rhein",
     "cta_primary": "KONTAKT",
     "cta_secondary": "MEHR"
   },
   "salon": {
     "title": "Mein",
     "title_accent": "Konzept",
-    "subtitle": "Minimalistisch. Modern. Einzigartig.",
-    "description": "Mein umgebauter Bus verbindet urbane Ästhetik mit persönlicher Atmosphäre. Hier entstehen nicht nur Frisuren, sondern Erlebnisse."
+    "subtitle": "Extravagant, gewagt, unkonventionell oder klassisch - ich mag es so, wie du es magst!",
+    "description": "Expertin für Balayage, Progressive und Ready-to-wear-Frisuren. Spezialistin für Highlights, Grautöne kaschieren und Kreativ-Kolorationen. In meinem 'Tête-en-L'air' sind deine Haircare-Rituale safe und du entsprechend entspannt. Komm an Board und lass dich in entfernt gelegene Galaxien entführen!"
   },
   "about": {
-    "title": "Philosophie",
+    "title": "CELINE Winterberger - das bin ich:",
+    "intro": "Ich trage meinen Beruf seit beinahe 20 Jahren im Herzen. Die Ausbildung zur Haarstylistin und Maskenbildnerin habe ich in meinem Heimatland Frankreich, konkret an der Oper von Toulouse absolviert.",
+    "experience": "Ich bringe eine sehr differenzierte und diverse Berufserfahrung mit. Neben den Lehrjahren an der Oper habe ich in klassischen Salons, progressiven Hairstyling-Kollektiven aber auch als Stör-Friseurin für besondere Events war ich viele Male im Einsatz.",
+    "languages": "Ich spreche gerne und gut französisch, deutsch, englisch und spanisch.",
+    "expertise": "Ausserdem heisse ich alle Haartypen willkommen und bin Expertin für Balayage,Progressive aber auch für praktische, pflegeleichte, also schlicht und einfach Ready-to-wear-Frisuren. Einige nennen mich auch die Spezialistin für Highlights, das Grautöne Kaschieren oder Kreativ-Kolorationen.",
+    "basel_story": "Seit gut 13 Jahren nun schon arbeite ich in Basel, 5 Jahre davon in meinem eigenen, wunderschönen und aussergewöhnlichen Salon. Er heisst «Tête-en-L'air», Kopf in der Luft oder auf gut deutsch: Luftibus, so wie ich es auch manchmal selbst sein kann.",
+    "salon_description": "Aussergewöhnlich deshalb, weil ich einen ehemaligen Flughafenbus des Euro Airports in eine hübsche Wohlfühloase umgebaut habe. Der Bus steht, umwachsen von mir liebevoll gepflegten Pflanzen, in der Nähe des Basler Hafens, direkt am Rhein. In einem Art Kunstviertel, einer kreativen Zwischennutzung mit vielen inspirierenden Projekten. Das Areal heisst Holzpark Klybeck. Eine kreative Brutstätte für Feines und wirklich Aussergewöhnliches.",
+    "website": "www.holzpark-klybeck.ch",
+    "services_title": "CELINE im «Tête-enl'Air» - Was ich dir in meinem Lieblingssalon biete:",
+    "services_style": "Extravagant, gewagt, unkonventionell oder klassich? Ich mag es so, wie du es magst!",
+    "services_details": "Kurze Fransen, lebendige Farben, fliessende aber auch überraschende Abstufungen oder doch lieber unerwartet gewagte Mêches-Akzente?",
+    "care_rituals": "Bei mir sind Deine Haircare-Rituale safe und Du dem entsprechend entspannt!",
+    "invitation": "Komm an Board und lass dich in entfernt gelegene Galaxien entführen -",
+    "booking": "Reserviere Dir Deinen Termin und werde Teil meines geliebten Abenteuers als Stylistin!",
+    "experience_description": "Dich erwartet ein Kreatives Haareschneide-Erlebnis im idyllischen wilden Holzpark Klybeck. In Basel, direkt am Rhein und dies alles in einem ehemaligen Shuttlebus des Euro Airports.",
     "card1": {
       "title": "Einzigartig",
-      "description": "Ein stationärer Bus-Salon. Urbanes Ambiente mit besonderer Atmosphäre."
+      "description": "Ein umgebauter Flughafenbus des Euro Airports als Wohlfühloase. Umwachsen von liebevoll gepflegten Pflanzen, direkt am Rhein im kreativen Holzpark Klybeck - eine wahrhaft aussergewöhnliche Brutstätte für Feines."
     },
     "card2": {
       "title": "Persönlich",
-      "description": "Jeder Kunde ist einzigartig. Individuelle Beratung in entspannter Atmosphäre."
+      "description": "Beinahe 20 Jahre Erfahrung aus der Oper von Toulouse, klassischen Salons und progressiven Hairstyling-Kollektiven. Ich spreche französisch, deutsch, englisch und spanisch - für eine wirklich individuelle und entspannte Beratung."
     }
   },
   "services": {

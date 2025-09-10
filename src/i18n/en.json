@@ -6,25 +6,39 @@
     "contact": "CONTACT"
   },
   "hero": {
-    "subtitle": "Hair salon for extraordinary hair artistry",
+    "subtitle": "Hair artistry between sky and Rhine",
     "cta_primary": "CONTACT",
     "cta_secondary": "LEARN MORE"
   },
   "salon": {
     "title": "My",
     "title_accent": "Concept",
-    "subtitle": "Minimalist. Modern. Extraordinary.",
-    "description": "My converted bus combines urban aesthetics with personal atmosphere. Here we create not just hairstyles, but experiences."
+    "subtitle": "Extravagant, bold, unconventional, or classic - I like it the way you like it!",
+    "description": "Expert in Balayage, Progressive techniques, and Ready-to-wear hairstyles. Specialist in Highlights, gray coverage, and creative colorations. In my 'Tête-en-L'air', your haircare rituals are safe and you are accordingly relaxed. Come aboard and let yourself be transported to distant galaxies!"
   },
   "about": {
-    "title": "Philosophy",
+    "title": "CELINE Winterberger - that's who I am:",
+    "intro": "I have carried my profession in my heart for almost 20 years. I completed my training as a hairstylist and makeup artist in my homeland France, specifically at the Opera of Toulouse.",
+    "experience": "I bring very differentiated and diverse professional experience. In addition to my apprenticeship years at the opera, I have worked in classic salons, progressive hairstyling collectives, and also as a mobile hairdresser for special events many times.",
+    "languages": "I gladly and fluently speak French, German, English, and Spanish.",
+    "expertise": "Furthermore, I welcome all hair types and am an expert in Balayage, Progressive techniques, but also practical, easy-care, simply put Ready-to-wear hairstyles. Some also call me the specialist for Highlights, gray coverage, or creative colorations.",
+    "basel_story": "I have been working in Basel for about 13 years now, 5 years of which in my own beautiful and extraordinary salon. It's called «Tête-en-L'air», head in the clouds or in good German: Luftibus, just as I can sometimes be myself.",
+    "salon_description": "Extraordinary because I have converted a former airport shuttle bus of Euro Airport into a lovely wellness oasis. The bus stands, overgrown with plants I lovingly care for, near the Basel harbor, directly on the Rhine. In an art district, a creative interim use with many inspiring projects. The area is called Holzpark Klybeck. A creative breeding ground for fine and truly extraordinary things.",
+    "website": "www.holzpark-klybeck.ch",
+    "services_title": "CELINE in «Tête-enl'Air» - What I offer you in my favorite salon:",
+    "services_style": "Extravagant, bold, unconventional, or classic? I like it the way you like it!",
+    "services_details": "Short bangs, vibrant colors, flowing but also surprising gradations, or would you rather unexpectedly bold highlight accents?",
+    "care_rituals": "With me, your haircare rituals are safe and you are accordingly relaxed!",
+    "invitation": "Come aboard and let yourself be transported to distant galaxies -",
+    "booking": "Reserve your appointment and become part of my beloved adventure as a stylist!",
+    "experience_description": "You can expect a creative hair-cutting experience in the idyllic wild Holzpark Klybeck. In Basel, directly on the Rhine, and all this in a former shuttle bus of Euro Airport.",
     "card1": {
       "title": "Unique",
-      "description": "A stationary bus salon. Urban ambiance with a special atmosphere."
+      "description": "A converted Euro Airport shuttle bus transformed into a wellness oasis. Surrounded by lovingly tended plants, directly on the Rhine in the creative Holzpark Klybeck - a truly extraordinary breeding ground for fine artistry."
     },
     "card2": {
       "title": "Personal",
-      "description": "Every client is unique. Individual consultation in a relaxed atmosphere."
+      "description": "Almost 20 years of experience from Toulouse Opera House, classic salons, and progressive hairstyling collectives. I speak French, German, English, and Spanish - for truly individual and relaxed consultation."
     }
   },
   "services": {

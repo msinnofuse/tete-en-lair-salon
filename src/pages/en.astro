@@ -213,6 +213,38 @@ const salonImages = [
           </h2>
           <div class="accent-line"></div>
         </div>
+        
+        <!-- Celine's Biography -->
+        <div class="max-w-4xl mx-auto mb-20">
+          <div class="space-y-6 font-body text-lg leading-relaxed">
+            <p>{t.about.intro}</p>
+            <p>{t.about.experience}</p>
+            <p>{t.about.languages}</p>
+            <p>{t.about.expertise}</p>
+            <p>{t.about.basel_story}</p>
+            <p>{t.about.salon_description}</p>
+            <p class="text-center">
+              <a href={`https://${t.about.website}`} target="_blank" rel="noopener noreferrer" class="font-accent underline hover:no-underline">
+                {t.about.website}
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Services at Salon -->
+        <div class="max-w-4xl mx-auto mb-16">
+          <h3 class="text-4xl font-heading mb-8 text-center">{t.about.services_title}</h3>
+          <div class="space-y-4 font-body text-lg leading-relaxed">
+            <p class="font-bold">{t.about.services_style}</p>
+            <p>{t.about.services_details}</p>
+            <p>{t.about.care_rituals}</p>
+            <p class="font-accent italic">{t.about.invitation}</p>
+            <p class="font-bold">{t.about.booking}</p>
+            <p>{t.about.experience_description}</p>
+          </div>
+        </div>
+
+        <!-- Original Cards -->
         <div class="grid md:grid-cols-2 gap-16">
           <div class="minimal-card">
             <h3 class="text-3xl font-heading mb-6">{t.about.card1.title}</h3>
