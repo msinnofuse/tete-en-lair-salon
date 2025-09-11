@@ -1,0 +1,15 @@
+---
+export interface Props {
+  name: string;
+  size?: number;
+  color?: string;
+  class?: string;
+}
+
+const { name, size = 24, color = 'currentColor', class: className = '' } = Astro.props;
+---
+
+<!-- Phosphor Icons CSS -->
+<link rel="stylesheet" href="https://unpkg.com/phosphor-icons@1.4.2/src/css/icons.css" />
+
+<i class={`ph ph-${name} ${className}`} style={`font-size: ${size}px; color: ${color};`}></i>

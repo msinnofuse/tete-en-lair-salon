@@ -1,4 +1,6 @@
 ---
+import PhosphorIcon from './PhosphorIcon.astro';
+
 export interface Props {
   email: string;
   phone: string;
@@ -16,19 +18,25 @@ const encodedAddress = Buffer.from(address).toString('base64');
 <div class="space-y-6 font-body text-lg" style="color: var(--powder-blue);">
   <!-- Address with obfuscation -->
   <div class="flex items-center space-x-4">
-    <span class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-nav" style="background: var(--warm-coral); color: black;">▲</span>
+    <span class="w-8 h-8 rounded-full flex items-center justify-center" style="background: var(--warm-coral);">
+      <PhosphorIcon name="map-pin" size={16} color="var(--cream-white)" />
+    </span>
     <span data-contact="address" data-encoded={encodedAddress}></span>
   </div>
   
   <!-- Phone with obfuscation -->
   <div class="flex items-center space-x-4">
-    <span class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-nav" style="background: var(--warm-coral); color: black;">●</span>
+    <span class="w-8 h-8 rounded-full flex items-center justify-center" style="background: var(--warm-coral);">
+      <PhosphorIcon name="phone" size={16} color="var(--cream-white)" />
+    </span>
     <a href="#" data-contact="phone" data-encoded={encodedPhone} class="hover:text-white transition-colors"></a>
   </div>
   
   <!-- Email with obfuscation -->
   <div class="flex items-center space-x-4">
-    <span class="w-8 h-8 rounded-full flex items-center justify-center text-sm font-nav" style="background: var(--warm-coral); color: black;">■</span>
+    <span class="w-8 h-8 rounded-full flex items-center justify-center" style="background: var(--warm-coral);">
+      <PhosphorIcon name="envelope" size={16} color="var(--cream-white)" />
+    </span>
     <a href="#" data-contact="email" data-encoded={encodedEmail} class="hover:text-white transition-colors"></a>
   </div>
 </div>

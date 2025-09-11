@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import PhotoSlider from '../components/PhotoSlider.astro';
 import SecureContact from '../components/SecureContact.astro';
+import PhosphorIcon from '../components/PhosphorIcon.astro';
 import { getTranslations, type Language } from '../i18n/utils';
 import heroImage from '../assets/images/hero-image.jpg';
 import img1 from '../assets/images/gallery/1000002336.jpg';
@@ -205,7 +206,7 @@ const salonImages = [
     </section>
 
     <!-- About Section -->
-    <section class="py-32 relative" style="background: var(--warm-white);">
+    <section id="about" class="py-32 relative" style="background: var(--warm-white);">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-20">
           <h2 class="text-6xl font-heading mb-8">
@@ -214,20 +215,65 @@ const salonImages = [
           <div class="accent-line"></div>
         </div>
         
-        <!-- Celine's Biography -->
+        <!-- Celine's Journey Timeline -->
         <div class="max-w-4xl mx-auto mb-20">
-          <div class="space-y-6 font-body text-lg leading-relaxed">
-            <p>{t.about.intro}</p>
-            <p>{t.about.experience}</p>
-            <p>{t.about.languages}</p>
-            <p>{t.about.expertise}</p>
-            <p>{t.about.basel_story}</p>
-            <p>{t.about.salon_description}</p>
-            <p class="text-center">
-              <a href={`https://${t.about.website}`} target="_blank" rel="noopener noreferrer" class="font-accent underline hover:no-underline">
-                {t.about.website}
-              </a>
-            </p>
+          <div class="relative">
+            <!-- Timeline Line -->
+            <div class="absolute left-8 md:left-12 top-0 bottom-0 w-0.5" style="background: var(--powder-blue);"></div>
+            
+            <!-- Timeline Items -->
+            <div class="space-y-12">
+              <!-- Training Phase -->
+              <div class="relative flex items-start">
+                <div class="flex-shrink-0 w-16 h-16 md:w-24 md:h-24 rounded-full flex items-center justify-center" style="background: var(--light-powder);">
+                  <PhosphorIcon name="mask-happy" size={32} color="var(--navy-blue)" />
+                </div>
+                <div class="ml-6 md:ml-8">
+                  <h3 class="text-xl md:text-2xl font-heading mb-3" style="color: var(--navy-blue);">Training in France</h3>
+                  <p class="font-body leading-relaxed mb-2">{t.about.intro}</p>
+                  <p class="font-body leading-relaxed">{t.about.languages}</p>
+                </div>
+              </div>
+              
+              <!-- Experience Building Phase -->
+              <div class="relative flex items-start">
+                <div class="flex-shrink-0 w-16 h-16 md:w-24 md:h-24 rounded-full flex items-center justify-center" style="background: var(--light-powder);">
+                  <PhosphorIcon name="scissors" size={32} color="var(--navy-blue)" />
+                </div>
+                <div class="ml-6 md:ml-8">
+                  <h3 class="text-xl md:text-2xl font-heading mb-3" style="color: var(--navy-blue);">Building Experience</h3>
+                  <p class="font-body leading-relaxed mb-2">{t.about.experience}</p>
+                  <p class="font-body leading-relaxed">{t.about.expertise}</p>
+                </div>
+              </div>
+              
+              <!-- Basel Journey Phase -->
+              <div class="relative flex items-start">
+                <div class="flex-shrink-0 w-16 h-16 md:w-24 md:h-24 rounded-full flex items-center justify-center" style="background: var(--light-powder);">
+                  <PhosphorIcon name="map-pin" size={32} color="var(--navy-blue)" />
+                </div>
+                <div class="ml-6 md:ml-8">
+                  <h3 class="text-xl md:text-2xl font-heading mb-3" style="color: var(--navy-blue);">Basel - My New Home</h3>
+                  <p class="font-body leading-relaxed">{t.about.basel_story}</p>
+                </div>
+              </div>
+              
+              <!-- Own Salon Phase -->
+              <div class="relative flex items-start">
+                <div class="flex-shrink-0 w-16 h-16 md:w-24 md:h-24 rounded-full flex items-center justify-center" style="background: var(--warm-coral);">
+                  <PhosphorIcon name="bus" size={32} color="var(--cream-white)" />
+                </div>
+                <div class="ml-6 md:ml-8">
+                  <h3 class="text-xl md:text-2xl font-heading mb-3" style="color: var(--navy-blue);">Tête-en-L'air - My Dream Comes True</h3>
+                  <p class="font-body leading-relaxed mb-4">{t.about.salon_description}</p>
+                  <p class="text-center md:text-left">
+                    <a href={`https://${t.about.website}`} target="_blank" rel="noopener noreferrer" class="font-accent underline hover:no-underline">
+                      {t.about.website}
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -277,24 +323,36 @@ const salonImages = [
         
         <div class="grid md:grid-cols-2 gap-6">
           <div class="glass-card p-8 text-center group">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--light-powder);">
+              <PhosphorIcon name="scissors" size={24} color="var(--navy-blue)" />
+            </div>
             <h3 class="text-xl font-heading mb-6">{t.services.wash_cut_dry.title}</h3>
             <div class="font-body text-sm leading-relaxed whitespace-pre-line">
               {t.services.wash_cut_dry.description}
             </div>
           </div>
           <div class="glass-card p-8 text-center group">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--light-powder);">
+              <PhosphorIcon name="wind" size={24} color="var(--navy-blue)" />
+            </div>
             <h3 class="text-xl font-heading mb-6">{t.services.wash_style.title}</h3>
             <div class="font-body text-sm leading-relaxed whitespace-pre-line">
               {t.services.wash_style.description}
             </div>
           </div>
           <div class="glass-card p-8 text-center group">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--light-powder);">
+              <PhosphorIcon name="palette" size={24} color="var(--navy-blue)" />
+            </div>
             <h3 class="text-xl font-heading mb-6">{t.services.color_toning.title}</h3>
             <div class="font-body text-sm leading-relaxed whitespace-pre-line">
               {t.services.color_toning.description}
             </div>
           </div>
           <div class="glass-card p-8 text-center group">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--warm-coral);">
+              <PhosphorIcon name="sparkle" size={24} color="var(--cream-white)" />
+            </div>
             <h3 class="text-xl font-heading mb-6">{t.services.highlights_balayage.title}</h3>
             <div class="font-body text-sm leading-relaxed whitespace-pre-line">
               {t.services.highlights_balayage.description}
@@ -307,15 +365,21 @@ const salonImages = [
           <div class="bg-opacity-30 p-8 rounded-lg" style="background: var(--warm-white);">
             <div class="space-y-4 text-left">
               <div class="flex items-start space-x-3">
-                <span class="text-xl">💳</span>
+                <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--powder-blue);">
+                  <PhosphorIcon name="credit-card" size={16} color="var(--cream-white)" />
+                </div>
                 <p class="font-body text-sm leading-relaxed">{t.services.policies.payment}</p>
               </div>
               <div class="flex items-start space-x-3">
-                <span class="text-xl">🎓</span>
+                <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--powder-blue);">
+                  <PhosphorIcon name="graduation-cap" size={16} color="var(--cream-white)" />
+                </div>
                 <p class="font-body text-sm leading-relaxed">{t.services.policies.youth_discount}</p>
               </div>
               <div class="flex items-start space-x-3">
-                <span class="text-xl">📚</span>
+                <div class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0" style="background: var(--powder-blue);">
+                  <PhosphorIcon name="student" size={16} color="var(--cream-white)" />
+                </div>
                 <p class="font-body text-sm leading-relaxed">{t.services.policies.student_discount}</p>
               </div>
             </div>
@@ -345,7 +409,12 @@ const salonImages = [
           </div>
           
           <div>
-            <h3 class="text-2xl font-heading mb-8" style="color: var(--light-powder);">{t.contact.hours_title}</h3>
+            <div class="flex items-center mb-8">
+              <div class="w-8 h-8 rounded-full flex items-center justify-center mr-4" style="background: var(--powder-blue);">
+                <PhosphorIcon name="clock" size={16} color="var(--cream-white)" />
+              </div>
+              <h3 class="text-2xl font-heading" style="color: var(--light-powder);">{t.contact.hours_title}</h3>
+            </div>
             <div class="space-y-4 font-body text-lg">
               <div class="flex justify-between pb-2" style="border-bottom: 1px solid var(--powder-blue);">
                 <span style="color: var(--powder-blue);">{t.contact.hours.weekdays}</span>
