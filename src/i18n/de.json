@@ -19,14 +19,14 @@
   "about": {
     "title": "CELINE Winterberger - das bin ich:",
     "intro": "Ich trage meinen Beruf seit beinahe 20 Jahren im Herzen. Die Ausbildung zur Haarstylistin und Maskenbildnerin habe ich in meinem Heimatland Frankreich, konkret an der Oper von Toulouse absolviert.",
-    "experience": "Ich bringe eine sehr differenzierte und diverse Berufserfahrung mit. Neben den Lehrjahren an der Oper habe ich in klassischen Salons, progressiven Hairstyling-Kollektiven aber auch als Stör-Friseurin für besondere Events war ich viele Male im Einsatz.",
+    "experience": "Ich bringe eine sehr differenzierte und diverse Berufserfahrung mit. Neben den Lehrjahren an der Oper habe ich in klassischen Salons, progressiven Hairstyling-Kollektiven aber auch als Stör-Friseurin für besondere Events bin ich viele Male im Einsatz gewesen.",
     "languages": "Ich spreche gerne und gut französisch, deutsch, englisch und spanisch.",
-    "expertise": "Ausserdem heisse ich alle Haartypen willkommen und bin Expertin für Balayage,Progressive aber auch für praktische, pflegeleichte, also schlicht und einfach Ready-to-wear-Frisuren. Einige nennen mich auch die Spezialistin für Highlights, das Grautöne Kaschieren oder Kreativ-Kolorationen.",
+    "expertise": "Ausserdem heisse ich alle Haartypen willkommen und bin Expertin für Balayage, Progressive aber auch für praktische, pflegeleichte, also schlicht und einfach Ready-to-wear-Frisuren. Einige nennen mich auch die Spezialistin für Highlights, das Grautöne Kaschieren oder Kreativ-Kolorationen.",
     "basel_story": "Seit gut 13 Jahren nun schon arbeite ich in Basel, 5 Jahre davon in meinem eigenen, wunderschönen und aussergewöhnlichen Salon. Er heisst «Tête-en-L'air», Kopf in der Luft oder auf gut deutsch: Luftibus, so wie ich es auch manchmal selbst sein kann.",
     "salon_description": "Aussergewöhnlich deshalb, weil ich einen ehemaligen Flughafenbus des Euro Airports in eine hübsche Wohlfühloase umgebaut habe. Der Bus steht, umwachsen von mir liebevoll gepflegten Pflanzen, in der Nähe des Basler Hafens, direkt am Rhein. In einem Art Kunstviertel, einer kreativen Zwischennutzung mit vielen inspirierenden Projekten. Das Areal heisst Holzpark Klybeck. Eine kreative Brutstätte für Feines und wirklich Aussergewöhnliches.",
     "website": "www.holzpark-klybeck.ch",
-    "services_title": "CELINE im «Tête-enl'Air» - Was ich dir in meinem Lieblingssalon biete:",
-    "services_style": "Extravagant, gewagt, unkonventionell oder klassich? Ich mag es so, wie du es magst!",
+    "services_title": "CELINE im «Tête-en l'Air» - Was ich dir in meinem Lieblingssalon biete:",
+    "services_style": "Extravagant, gewagt, unkonventionell oder klassisch? Ich mag es so, wie du es magst!",
     "services_details": "Kurze Fransen, lebendige Farben, fliessende aber auch überraschende Abstufungen oder doch lieber unerwartet gewagte Mêches-Akzente?",
     "care_rituals": "Bei mir sind Deine Haircare-Rituale safe und Du dem entsprechend entspannt!",
     "invitation": "Komm an Board und lass dich in entfernt gelegene Galaxien entführen -",
@@ -43,20 +43,27 @@
   },
   "services": {
     "title": "Services",
-    "cut": {
-      "title": "Schnitt",
-      "description": "Präzise Schnitte mit modernem Ansatz",
-      "price": "XY.- CHF"
+    "description": "Alle Preise beinhalten ein ausführliches Beratungsgespräch und freie Getränke. Die endgültigen Preise für Farbe und Schnitt errechnen sich anhand des Aufwands. Genaue Preisauskünfte gerne vor Ort.",
+    "wash_cut_dry": {
+      "title": "WASCHEN-SCHNEIDEN-FÖHNEN",
+      "description": "DAMEN CHF 77-88\nHERREN CHF 57\nKINDER CHF 30-50"
     },
-    "color": {
-      "title": "Color",
-      "description": "Natürliche Töne und mutige Akzente",
-      "price": "XY.- CHF"
+    "wash_style": {
+      "title": "WASCHEN-FÖHNEN-STYLING",
+      "description": "KURZ bis LANG CHF 45-60\nHOCHSTRECKFRISUR ab CHF 100"
     },
-    "style": {
-      "title": "Style",
-      "description": "Perfekte Vollendung für jeden Anlass",
-      "price": "XY.- CHF"
+    "color_toning": {
+      "title": "HAARFARBEN-TÖNNUNGEN",
+      "description": "ANZATZ ab CHF 80\nMIT SCHNITT ab CHF 160\n(Preise sind abhängig von der Menge an verwendeter Farbe)\nBLONDIERUNG-INKL.TÖNER-SCHNITT CHF 200"
+    },
+    "highlights_balayage": {
+      "title": "STRÄHNEN-BALAYAGE-HIGHLIGHTS MIT SCHNITT",
+      "description": "HALBER KOPF ab CHF 160\nGANZEN KOPF ab CHF 180\nTÖNER NACH STRÄHNEN +/- CHF 25"
+    },
+    "policies": {
+      "payment": "Zahlungen erfolgen ausschliesslich in bar. Kartenzahlungen sind leider nicht möglich.",
+      "youth_discount": "Für Jugendliche unter 18 Jahren gewähren wir 10% Rabatt auf alle Behandlungen.",
+      "student_discount": "Schüler und Studenten erhalten gegen Vorlage eines gültigen Ausweises 10% Rabatt auf alle Behandlungen über CHF 80."
     }
   },
   "contact": {

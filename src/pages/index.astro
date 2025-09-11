@@ -274,29 +274,55 @@ const salonImages = [
             {t.services.title}
           </h2>
           <div class="accent-line"></div>
+          <p class="font-body text-lg mt-12 max-w-3xl mx-auto leading-relaxed opacity-80">
+            {t.services.description}
+          </p>
         </div>
         
-        <div class="grid md:grid-cols-3 gap-0">
-          <div class="glass-card p-12 text-center group">
-            <h3 class="text-2xl font-heading mb-6">{t.services.cut.title}</h3>
-            <p class="font-body mb-8 opacity-70">
-              {t.services.cut.description}
-            </p>
-            <div class="font-price">{t.services.cut.price}</div>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="glass-card p-8 text-center group">
+            <h3 class="text-xl font-heading mb-6">{t.services.wash_cut_dry.title}</h3>
+            <div class="font-body text-sm leading-relaxed whitespace-pre-line">
+              {t.services.wash_cut_dry.description}
+            </div>
           </div>
-          <div class="glass-card p-12 text-center group">
-            <h3 class="text-2xl font-heading mb-6">{t.services.color.title}</h3>
-            <p class="font-body mb-8 opacity-70">
-              {t.services.color.description}
-            </p>
-            <div class="font-price">{t.services.color.price}</div>
+          <div class="glass-card p-8 text-center group">
+            <h3 class="text-xl font-heading mb-6">{t.services.wash_style.title}</h3>
+            <div class="font-body text-sm leading-relaxed whitespace-pre-line">
+              {t.services.wash_style.description}
+            </div>
           </div>
-          <div class="glass-card p-12 text-center group">
-            <h3 class="text-2xl font-heading mb-6">{t.services.style.title}</h3>
-            <p class="font-body mb-8 opacity-70">
-              {t.services.style.description}
-            </p>
-            <div class="font-price">{t.services.style.price}</div>
+          <div class="glass-card p-8 text-center group">
+            <h3 class="text-xl font-heading mb-6">{t.services.color_toning.title}</h3>
+            <div class="font-body text-sm leading-relaxed whitespace-pre-line">
+              {t.services.color_toning.description}
+            </div>
+          </div>
+          <div class="glass-card p-8 text-center group">
+            <h3 class="text-xl font-heading mb-6">{t.services.highlights_balayage.title}</h3>
+            <div class="font-body text-sm leading-relaxed whitespace-pre-line">
+              {t.services.highlights_balayage.description}
+            </div>
+          </div>
+        </div>
+        
+        <!-- Policies Section -->
+        <div class="mt-16 max-w-4xl mx-auto">
+          <div class="bg-opacity-30 p-8 rounded-lg" style="background: var(--warm-white);">
+            <div class="space-y-4 text-left">
+              <div class="flex items-start space-x-3">
+                <span class="text-xl">💳</span>
+                <p class="font-body text-sm leading-relaxed">{t.services.policies.payment}</p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <span class="text-xl">🎓</span>
+                <p class="font-body text-sm leading-relaxed">{t.services.policies.youth_discount}</p>
+              </div>
+              <div class="flex items-start space-x-3">
+                <span class="text-xl">📚</span>
+                <p class="font-body text-sm leading-relaxed">{t.services.policies.student_discount}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

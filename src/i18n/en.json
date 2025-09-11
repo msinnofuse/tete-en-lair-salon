@@ -25,7 +25,7 @@
     "basel_story": "I have been working in Basel for about 13 years now, 5 years of which in my own beautiful and extraordinary salon. It's called «Tête-en-L'air», head in the clouds or in good German: Luftibus, just as I can sometimes be myself.",
     "salon_description": "Extraordinary because I have converted a former airport shuttle bus of Euro Airport into a lovely wellness oasis. The bus stands, overgrown with plants I lovingly care for, near the Basel harbor, directly on the Rhine. In an art district, a creative interim use with many inspiring projects. The area is called Holzpark Klybeck. A creative breeding ground for fine and truly extraordinary things.",
     "website": "www.holzpark-klybeck.ch",
-    "services_title": "CELINE in «Tête-enl'Air» - What I offer you in my favorite salon:",
+    "services_title": "CELINE in «Tête-en l'Air» - What I offer you in my favorite salon:",
     "services_style": "Extravagant, bold, unconventional, or classic? I like it the way you like it!",
     "services_details": "Short bangs, vibrant colors, flowing but also surprising gradations, or would you rather unexpectedly bold highlight accents?",
     "care_rituals": "With me, your haircare rituals are safe and you are accordingly relaxed!",
@@ -43,20 +43,27 @@
   },
   "services": {
     "title": "Services",
-    "cut": {
-      "title": "Cut",
-      "description": "Precise cuts with a modern approach",
-      "price": "XY.- CHF"
+    "description": "All prices include a comprehensive consultation and complimentary beverages. Final prices for color and cut are calculated based on the scope of work. Exact pricing information gladly provided on-site.",
+    "wash_cut_dry": {
+      "title": "WASH-CUT-BLOW DRY",
+      "description": "LADIES CHF 77-88\nGENTLEMEN CHF 57\nCHILDREN CHF 30-50"
     },
-    "color": {
-      "title": "Color",
-      "description": "Natural tones and bold accents",
-      "price": "XY.- CHF"
+    "wash_style": {
+      "title": "WASH-BLOW DRY-STYLING",
+      "description": "SHORT to LONG CHF 45-60\nUPDO from CHF 100"
     },
-    "style": {
-      "title": "Style",
-      "description": "Perfect finishing for every occasion",
-      "price": "XY.- CHF"
+    "color_toning": {
+      "title": "HAIR COLOR-TONING",
+      "description": "ROOTS from CHF 80\nWITH CUT from CHF 160\n(Prices depend on the amount of color used)\nBLEACHING-INCL.TONER-CUT CHF 200"
+    },
+    "highlights_balayage": {
+      "title": "HIGHLIGHTS-BALAYAGE-HIGHLIGHTS WITH CUT",
+      "description": "HALF HEAD from CHF 160\nFULL HEAD from CHF 180\nTONER AFTER HIGHLIGHTS +/- CHF 25"
+    },
+    "policies": {
+      "payment": "Payment is accepted in cash only. Unfortunately, credit card payments are not available.",
+      "youth_discount": "We offer a 10% discount on all treatments for youth under 18 years of age.",
+      "student_discount": "Students receive a 10% discount on all treatments over CHF 80 upon presentation of valid student ID."
     }
   },
   "contact": {
