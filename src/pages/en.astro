@@ -277,16 +277,68 @@ const salonImages = [
           </div>
         </div>
 
-        <!-- Services at Salon -->
-        <div class="max-w-4xl mx-auto mb-16">
-          <h3 class="text-4xl font-heading mb-8 text-center">{t.about.services_title}</h3>
-          <div class="space-y-4 font-body text-lg leading-relaxed">
-            <p class="font-bold">{t.about.services_style}</p>
-            <p>{t.about.services_details}</p>
-            <p>{t.about.care_rituals}</p>
-            <p class="font-accent italic">{t.about.invitation}</p>
-            <p class="font-bold">{t.about.booking}</p>
-            <p>{t.about.experience_description}</p>
+        <!-- Customer Journey Experience -->
+        <div class="max-w-5xl mx-auto mb-16">
+          <h3 class="text-4xl font-heading mb-12 text-center">{t.about.services_title}</h3>
+          
+          <!-- Journey Steps -->
+          <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+            <!-- Step 1: Style Consultation -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--warm-coral);">
+                  <PhosphorIcon name="palette" size={20} color="var(--cream-white)" />
+                </div>
+                <div class="w-px h-16 mx-auto mt-4" style="background: var(--powder-blue);"></div>
+              </div>
+              <div>
+                <h4 class="text-xl font-heading mb-3" style="color: var(--navy-blue);">1. Style Consultation</h4>
+                <p class="font-body leading-relaxed mb-2">{t.about.services_style}</p>
+                <p class="font-body text-sm opacity-75">{t.about.services_details}</p>
+              </div>
+            </div>
+            
+            <!-- Step 2: Safe Experience -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--warm-coral);">
+                  <PhosphorIcon name="shield-check" size={20} color="var(--cream-white)" />
+                </div>
+                <div class="w-px h-16 mx-auto mt-4" style="background: var(--powder-blue);"></div>
+              </div>
+              <div>
+                <h4 class="text-xl font-heading mb-3" style="color: var(--navy-blue);">2. Safe Care</h4>
+                <p class="font-body leading-relaxed">{t.about.care_rituals}</p>
+              </div>
+            </div>
+            
+            <!-- Step 3: Creative Journey -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--warm-coral);">
+                  <PhosphorIcon name="rocket" size={20} color="var(--cream-white)" />
+                </div>
+                <div class="w-px h-16 mx-auto mt-4" style="background: var(--powder-blue);"></div>
+              </div>
+              <div>
+                <h4 class="text-xl font-heading mb-3" style="color: var(--navy-blue);">3. Creative Journey</h4>
+                <p class="font-body leading-relaxed font-accent italic">{t.about.invitation}</p>
+              </div>
+            </div>
+            
+            <!-- Step 4: Your Adventure -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--navy-blue);">
+                  <PhosphorIcon name="star" size={20} color="var(--cream-white)" />
+                </div>
+              </div>
+              <div>
+                <h4 class="text-xl font-heading mb-3" style="color: var(--navy-blue);">4. Your Adventure</h4>
+                <p class="font-body leading-relaxed font-bold mb-2">{t.about.booking}</p>
+                <p class="font-body text-sm opacity-75">{t.about.experience_description}</p>
+              </div>
+            </div>
           </div>
         </div>
 
