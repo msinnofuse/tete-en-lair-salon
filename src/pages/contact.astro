@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PhosphorIcon from '../components/PhosphorIcon.astro';
+import { getTranslations, type Language } from '../i18n/utils';
+
+const currentLang: Language = 'de';
+const t = getTranslations(currentLang);
+---
+
+<Layout title="Kontakt - tête en l'air" description="Kontaktieren Sie uns für Ihren Termin" lang={currentLang}>
+  <main class="min-h-screen pt-16">
+    <!-- Contact Section -->
+    <section class="py-32 relative" style="background: var(--warm-white);">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h1 class="text-6xl font-heading mb-8">
+            {t.contact.title}
+          </h1>
+          <div class="accent-line"></div>
+        </div>
+        
+        <div class="grid lg:grid-cols-2 gap-12">
+          <!-- Contact Information -->
+          <div class="space-y-8">
+            <div class="minimal-card">
+              <h2 class="text-3xl font-heading mb-6">{t.contact.reach_us}</h2>
+              
+              <div class="space-y-4">
+                <div class="flex items-center">
+                  <PhosphorIcon name="map-pin" size={24} color="var(--warm-coral)" />
+                  <p class="font-body ml-3">{t.contact.address}</p>
+                </div>
+                <div class="flex items-center">
+                  <PhosphorIcon name="phone" size={24} color="var(--warm-coral)" />
+                  <a href={`tel:${t.contact.phone.replace(/\s/g, '')}`} class="font-body ml-3 hover:underline">
+                    {t.contact.phone}
+                  </a>
+                </div>
+                <div class="flex items-center">
+                  <PhosphorIcon name="envelope" size={24} color="var(--warm-coral)" />
+                  <a href={`mailto:${t.contact.email}`} class="font-body ml-3 hover:underline">
+                    {t.contact.email}
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="minimal-card">
+              <h3 class="text-2xl font-heading mb-6">{t.contact.hours_title}</h3>
+              <div class="space-y-2">
+                <div class="flex justify-between">
+                  <span class="font-body font-bold">{t.contact.hours.weekdays}</span>
+                  <span class="font-body">{t.contact.hours.weekdays_time}</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-body font-bold">{t.contact.hours.saturday}</span>
+                  <span class="font-body">{t.contact.hours.saturday_time}</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="text-center">
+              <a href={`tel:${t.contact.phone.replace(/\s/g, '')}`} class="btn-primary font-nav magnetic inline-block">
+                <span style="position: relative; z-index: 10;">{t.contact.cta}</span>
+              </a>
+            </div>
+          </div>
+          
+          <!-- Contact Form / Map Placeholder -->
+          <div class="glass-card p-8">
+            <div class="text-center">
+              <h3 class="text-2xl font-heading mb-4">Besuchen Sie uns</h3>
+              <p class="font-body mb-4">
+                Unser einzigartiger Salon befindet sich in einem umgebauten Bus im kreativen Holzpark Klybeck.
+              </p>
+              <div class="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center">
+                <span class="text-gray-500">Karte wird hier angezeigt</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Map or Additional Info -->
+        <div class="mt-16">
+          <div class="minimal-card text-center">
+            <h3 class="text-2xl font-heading mb-4">Holzpark Klybeck</h3>
+            <p class="font-body mb-4">
+              Ein kreatives Kunstviertel direkt am Rhein. Eine Brutstätte für Feines und wirklich Aussergewöhnliches.
+            </p>
+            <a href="https://www.holzpark-klybeck.ch" target="_blank" rel="noopener noreferrer" class="font-accent underline hover:no-underline">
+              www.holzpark-klybeck.ch
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

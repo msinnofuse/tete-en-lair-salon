@@ -1,0 +1,163 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PhosphorIcon from '../../components/PhosphorIcon.astro';
+import { getTranslations, type Language } from '../../i18n/utils';
+
+const currentLang: Language = 'en';
+const t = getTranslations(currentLang);
+---
+
+<Layout title="About - tête en l'air" description="Celine Winterberger - Your hairstylist in Basel" lang={currentLang}>
+  <main class="min-h-screen pt-16">
+    <!-- About Section -->
+    <section class="py-32 relative" style="background: var(--warm-white);">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-20">
+          <h1 class="text-6xl font-heading mb-8">
+            {t.about.title}
+          </h1>
+          <div class="accent-line"></div>
+        </div>
+        
+        <!-- Celine's Journey Timeline -->
+        <div class="max-w-4xl mx-auto mb-20">
+          <div class="relative">
+            <!-- Timeline Line -->
+            <div class="absolute left-8 md:left-12 top-0 bottom-0 w-0.5" style="background: var(--powder-blue);"></div>
+            
+            <!-- Timeline Items -->
+            <div class="space-y-12">
+              <!-- Training Phase -->
+              <div class="relative flex items-start">
+                <div class="flex-shrink-0 w-16 h-16 md:w-24 md:h-24 rounded-full flex items-center justify-center" style="background: var(--light-powder);">
+                  <PhosphorIcon name="mask-happy" size={32} color="var(--navy-blue)" />
+                </div>
+                <div class="ml-6 md:ml-8">
+                  <h3 class="text-xl md:text-2xl font-heading mb-3" style="color: var(--navy-blue);">Training in France</h3>
+                  <p class="font-body leading-relaxed mb-2">{t.about.intro}</p>
+                  <p class="font-body leading-relaxed">{t.about.languages}</p>
+                </div>
+              </div>
+              
+              <!-- Experience Building Phase -->
+              <div class="relative flex items-start">
+                <div class="flex-shrink-0 w-16 h-16 md:w-24 md:h-24 rounded-full flex items-center justify-center" style="background: var(--light-powder);">
+                  <PhosphorIcon name="scissors" size={32} color="var(--navy-blue)" />
+                </div>
+                <div class="ml-6 md:ml-8">
+                  <h3 class="text-xl md:text-2xl font-heading mb-3" style="color: var(--navy-blue);">Building Experience</h3>
+                  <p class="font-body leading-relaxed mb-2">{t.about.experience}</p>
+                  <p class="font-body leading-relaxed">{t.about.expertise}</p>
+                </div>
+              </div>
+              
+              <!-- Basel Journey Phase -->
+              <div class="relative flex items-start">
+                <div class="flex-shrink-0 w-16 h-16 md:w-24 md:h-24 rounded-full flex items-center justify-center" style="background: var(--light-powder);">
+                  <PhosphorIcon name="map-pin" size={32} color="var(--navy-blue)" />
+                </div>
+                <div class="ml-6 md:ml-8">
+                  <h3 class="text-xl md:text-2xl font-heading mb-3" style="color: var(--navy-blue);">Basel - My New Home</h3>
+                  <p class="font-body leading-relaxed">{t.about.basel_story}</p>
+                </div>
+              </div>
+              
+              <!-- Own Salon Phase -->
+              <div class="relative flex items-start">
+                <div class="flex-shrink-0 w-16 h-16 md:w-24 md:h-24 rounded-full flex items-center justify-center" style="background: var(--warm-coral);">
+                  <PhosphorIcon name="bus" size={32} color="var(--cream-white)" />
+                </div>
+                <div class="ml-6 md:ml-8">
+                  <h3 class="text-xl md:text-2xl font-heading mb-3" style="color: var(--navy-blue);">Tête-en-L'air - My Dream Come True</h3>
+                  <p class="font-body leading-relaxed mb-4">{t.about.salon_description}</p>
+                  <p class="text-center md:text-left">
+                    <a href={`https://${t.about.website}`} target="_blank" rel="noopener noreferrer" class="font-accent underline hover:no-underline">
+                      {t.about.website}
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Customer Journey Experience -->
+        <div class="max-w-5xl mx-auto mb-16">
+          <h3 class="text-4xl font-heading mb-12 text-center">{t.about.services_title}</h3>
+          
+          <!-- Journey Steps -->
+          <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+            <!-- Step 1: Style Consultation -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--warm-coral);">
+                  <PhosphorIcon name="palette" size={20} color="var(--cream-white)" />
+                </div>
+                <div class="w-px h-16 mx-auto mt-4" style="background: var(--powder-blue);"></div>
+              </div>
+              <div>
+                <h4 class="text-xl font-heading mb-3" style="color: var(--navy-blue);">1. Style Consultation</h4>
+                <p class="font-body leading-relaxed mb-2">{t.about.services_style}</p>
+                <p class="font-body text-sm opacity-75">{t.about.services_details}</p>
+              </div>
+            </div>
+            
+            <!-- Step 2: Safe Experience -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--warm-coral);">
+                  <PhosphorIcon name="shield-check" size={20} color="var(--cream-white)" />
+                </div>
+                <div class="w-px h-16 mx-auto mt-4" style="background: var(--powder-blue);"></div>
+              </div>
+              <div>
+                <h4 class="text-xl font-heading mb-3" style="color: var(--navy-blue);">2. Safe Care</h4>
+                <p class="font-body leading-relaxed">{t.about.care_rituals}</p>
+              </div>
+            </div>
+            
+            <!-- Step 3: Creative Journey -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--warm-coral);">
+                  <PhosphorIcon name="rocket" size={20} color="var(--cream-white)" />
+                </div>
+                <div class="w-px h-16 mx-auto mt-4" style="background: var(--powder-blue);"></div>
+              </div>
+              <div>
+                <h4 class="text-xl font-heading mb-3" style="color: var(--navy-blue);">3. Creative Journey</h4>
+                <p class="font-body leading-relaxed font-accent italic">{t.about.invitation}</p>
+              </div>
+            </div>
+            
+            <!-- Step 4: Your Adventure -->
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <div class="w-12 h-12 rounded-full flex items-center justify-center" style="background: var(--navy-blue);">
+                  <PhosphorIcon name="star" size={20} color="var(--cream-white)" />
+                </div>
+              </div>
+              <div>
+                <h4 class="text-xl font-heading mb-3" style="color: var(--navy-blue);">4. Your Adventure</h4>
+                <p class="font-body leading-relaxed font-bold mb-2">{t.about.booking}</p>
+                <p class="font-body text-sm opacity-75">{t.about.experience_description}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature Cards -->
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="minimal-card">
+            <h3 class="text-2xl font-heading mb-4">{t.about.card1.title}</h3>
+            <p class="font-body leading-relaxed">{t.about.card1.description}</p>
+          </div>
+          <div class="minimal-card">
+            <h3 class="text-2xl font-heading mb-4">{t.about.card2.title}</h3>
+            <p class="font-body leading-relaxed">{t.about.card2.description}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

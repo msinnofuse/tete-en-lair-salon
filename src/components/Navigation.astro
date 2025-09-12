@@ -22,19 +22,19 @@ const t = getTranslations(currentLang);
       <!-- Desktop Navigation -->
       <div class="hidden md:block">
         <div class="ml-10 flex items-baseline space-x-8">
-          <a href="#home" class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="home">
+          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/'} class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="home">
             {t.nav.home}
           </a>
-          <a href="#salon" class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="salon">
+          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon'} class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="salon">
             {t.nav.salon}
           </a>
-          <a href="#about" class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="about">
+          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about'} class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="about">
             {t.nav.about}
           </a>
-          <a href="#pricing" class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="pricing">
+          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing'} class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="pricing">
             {t.nav.pricing}
           </a>
-          <a href="#contact" class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="contact">
+          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact'} class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="contact">
             {t.nav.contact}
           </a>
         </div>
@@ -89,19 +89,19 @@ const t = getTranslations(currentLang);
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="md:hidden hidden">
     <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t" style="background: var(--cream-white); border-color: var(--powder-blue);">
-      <a href="#home" class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="home">
+      <a href={currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/'} class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="home">
         {t.nav.home}
       </a>
-      <a href="#salon" class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="salon">
+      <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon'} class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="salon">
         {t.nav.salon}
       </a>
-      <a href="#about" class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="about">
+      <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about'} class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="about">
         {t.nav.about}
       </a>
-      <a href="#pricing" class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="pricing">
+      <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing'} class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="pricing">
         {t.nav.pricing}
       </a>
-      <a href="#contact" class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="contact">
+      <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact'} class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="contact">
         {t.nav.contact}
       </a>
     </div>
@@ -145,12 +145,20 @@ const t = getTranslations(currentLang);
   langButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const selectedLang = btn.getAttribute('data-lang');
+      const currentPath = window.location.pathname;
+      
+      // Extract the page name from the current path
+      let pageName = '';
+      if (currentPath.includes('/salon')) pageName = '/salon';
+      else if (currentPath.includes('/about')) pageName = '/about';
+      else if (currentPath.includes('/pricing')) pageName = '/pricing';
+      else if (currentPath.includes('/contact')) pageName = '/contact';
       
       // Navigate to the appropriate page
       if (selectedLang === 'en') {
-        window.location.href = '/tete-en-lair-salon/en';
+        window.location.href = '/tete-en-lair-salon/en' + pageName;
       } else {
-        window.location.href = '/tete-en-lair-salon/';
+        window.location.href = '/tete-en-lair-salon' + pageName;
       }
     });
   });

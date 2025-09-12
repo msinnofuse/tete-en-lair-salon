@@ -1,9 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { getTranslations, type Language } from '../i18n/utils';
-import heroImage from '../assets/images/hero-image.jpg';
+import Layout from '../../layouts/Layout.astro';
+import { getTranslations, type Language } from '../../i18n/utils';
+import heroImage from '../../assets/images/hero-image.jpg';
 
-const currentLang: Language = 'de';
+const currentLang: Language = 'en';
 const t = getTranslations(currentLang);
 ---
 
@@ -32,10 +32,10 @@ const t = getTranslations(currentLang);
           {t.hero.subtitle}
         </p>
         <div class="flex flex-col sm:flex-row gap-6 justify-center">
-          <a href="/tete-en-lair-salon/contact" class="btn-primary font-nav magnetic">
+          <a href="/tete-en-lair-salon/en/contact" class="btn-primary font-nav magnetic">
             <span style="position: relative; z-index: 10;">{t.hero.cta_primary}</span>
           </a>
-          <a href="/tete-en-lair-salon/salon" class="font-nav px-8 py-3 rounded transition-all border-2 hover:transform hover:translateY(-2px)" style="color: var(--cream-white); border-color: var(--cream-white); hover:background: var(--cream-white); hover:color: var(--navy-blue); text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
+          <a href="/tete-en-lair-salon/en/salon" class="font-nav px-8 py-3 rounded transition-all border-2 hover:transform hover:translateY(-2px)" style="color: var(--cream-white); border-color: var(--cream-white); hover:background: var(--cream-white); hover:color: var(--navy-blue); text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">
             {t.hero.cta_secondary}
           </a>
         </div>

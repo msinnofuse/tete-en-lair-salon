@@ -1,0 +1,79 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PhotoSlider from '../../components/PhotoSlider.astro';
+import { getTranslations, type Language } from '../../i18n/utils';
+
+// Import all available gallery images
+import bus1 from '../../assets/images/gallery/bus-1.jpg';
+import bus2 from '../../assets/images/gallery/bus-2.jpg';
+import bus3 from '../../assets/images/gallery/bus-3.jpg';
+import celine1 from '../../assets/images/gallery/celine-1.jpg';
+import celine2 from '../../assets/images/gallery/celine-2.jpg';
+import chair1 from '../../assets/images/gallery/chair-1.jpg';
+import chair2 from '../../assets/images/gallery/chair-2.jpg';
+import dreamer from '../../assets/images/gallery/dreamer.jpg';
+import outdoor1 from '../../assets/images/gallery/outdoor-1.jpg';
+import outdoor2 from '../../assets/images/gallery/outdoor-2.jpg';
+import outdoor3 from '../../assets/images/gallery/outdoor-3.jpg';
+import outdoor4 from '../../assets/images/gallery/outdoor-4.jpg';
+import price from '../../assets/images/gallery/price.jpg';
+import products from '../../assets/images/gallery/products.jpg';
+import salon1 from '../../assets/images/gallery/salon-1.jpg';
+import salon2 from '../../assets/images/gallery/salon-2.jpg';
+import smurf from '../../assets/images/gallery/smurf.jpg';
+import talism1 from '../../assets/images/gallery/talism-1.jpg';
+import talism2 from '../../assets/images/gallery/talism-2.jpg';
+
+const currentLang: Language = 'en';
+const t = getTranslations(currentLang);
+
+const salonImages = [
+  { src: salon1, alt: 'tête en l\'air Salon', caption: 'Professional hair styling' },
+  { src: salon2, alt: 'tête en l\'air Salon', caption: 'Creative hair artistry' },
+  { src: celine1, alt: 'Celine at work', caption: 'Balayage expert' },
+  { src: celine2, alt: 'Celine Winterberger', caption: 'Your hairstylist' },
+  { src: bus1, alt: 'Salon bus exterior', caption: 'Our unique salon' },
+  { src: bus2, alt: 'Salon bus', caption: 'Converted airport shuttle' },
+  { src: bus3, alt: 'Bus salon Klybeck', caption: 'By the Rhine river' },
+  { src: chair1, alt: 'Salon interior', caption: 'Cozy atmosphere' },
+  { src: chair2, alt: 'Salon chair', caption: 'Comfort oasis' },
+  { src: outdoor1, alt: 'Holzpark Klybeck', caption: 'Creative arts district' },
+  { src: outdoor2, alt: 'Outdoor area', caption: 'Surrounded by plants' },
+  { src: outdoor3, alt: 'Salon surroundings', caption: 'Idyllic location' },
+  { src: outdoor4, alt: 'Outdoor styling', caption: 'Open-air styling' },
+  { src: dreamer, alt: 'Creative hairstyle', caption: 'Dream styles' },
+  { src: smurf, alt: 'Colorful hair', caption: 'Creative coloring' },
+  { src: talism1, alt: 'Hair accessories', caption: 'Special details' },
+  { src: talism2, alt: 'Styling details', caption: 'Perfect accents' },
+  { src: products, alt: 'Professional products', caption: 'Premium hair care' },
+  { src: price, alt: 'Price list', caption: 'Fair pricing' }
+];
+---
+
+<Layout title="Salon - tête en l'air" description="Our unique salon in a converted bus" lang={currentLang}>
+  <main class="min-h-screen pt-16">
+    <!-- Salon Gallery Section -->
+    <section class="py-32 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+          <div class="fade-up">
+            <h1 class="text-6xl font-heading mb-8">
+              {t.salon.title}
+              <span class="font-accent block">{t.salon.title_accent}</span>
+            </h1>
+            <div class="accent-line" style="margin: 2rem 0;"></div>
+            <p class="font-body text-xl mb-8 leading-relaxed">
+              {t.salon.subtitle}
+            </p>
+            <p class="font-body mb-8 leading-relaxed">
+              {t.salon.description}
+            </p>
+          </div>
+          <div class="glass-card p-0 overflow-hidden">
+            <PhotoSlider images={salonImages} />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,7 +1,7 @@
 ---
 export interface Props {
   images: Array<{
-    src: string;
+    src: string | {src: string, width: number, height: number, format: string};
     alt: string;
     caption?: string;
   }>;
@@ -17,7 +17,7 @@ const { images } = Astro.props;
         <div class="swiper-slide">
           <div class="relative w-full h-96 md:h-[500px] lg:h-[600px]">
             <img 
-              src={image.src} 
+              src={typeof image.src === 'string' ? image.src : image.src.src} 
               alt={image.alt}
               class="w-full h-full object-cover rounded-lg"
               loading={index === 0 ? "eager" : "lazy"}
