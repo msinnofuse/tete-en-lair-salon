@@ -8,6 +8,12 @@ export default defineConfig({
   site: 'https://msinnofuse.github.io',
   base: 'tete-en-lair-salon',
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss()],
+    server: {
+      watch: {
+        usePolling: true,
+        interval: 100
+      }
+    }
   }
 });

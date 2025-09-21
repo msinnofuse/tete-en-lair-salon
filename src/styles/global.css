@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* Custom Font Face */
+@font-face {
+  font-family: 'Tomarik Poster';
+  src: url('../assets/Tomarik-Poster.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Urban Minimal Theme - Modern Monochromatic Design */
 
 /* Custom CSS Variables for Color Palette - Inspired by Bus Salon */
@@ -36,8 +45,8 @@
 
 /* Typography Styles - Bus Salon Inspired */
 .font-brand {
-  font-family: 'Inter', sans-serif;
-  font-weight: 200;
+  font-family: 'Tomarik Poster', 'Inter', sans-serif;
+  font-weight: normal;
   letter-spacing: -0.02em;
   color: var(--navy-blue);
 }
@@ -251,10 +260,10 @@
 
 /* Bus Salon Navigation */
 .nav-modern {
-  background: rgba(245, 241, 232, 0.95);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-light);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: none;
 }
 
 /* Vintage Divider */
