@@ -7,103 +7,136 @@ export interface Props {
 
 const { currentLang = 'de' } = Astro.props;
 const t = getTranslations(currentLang);
+
+// Get current page for active menu item
+const currentPath = Astro.url.pathname;
+const getActiveClass = (path: string, isMobile: boolean = false) => {
+  // Normalize paths for comparison (remove trailing slashes)
+  const normalizedCurrentPath = currentPath.replace(/\/$/, '') || '/';
+  const normalizedPath = path.replace(/\/$/, '') || '/';
+
+  const isActive = normalizedCurrentPath === normalizedPath;
+  if (!isActive) return '';
+  return isMobile ? 'border-b-2 border-black' : 'border-b-2 border-white';
+};
 ---
 
 <nav class="fixed top-0 left-0 right-0 z-50 nav-modern">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-16">
-      <!-- Logo/Brand -->
-      <div class="flex-shrink-0">
-        <h1 class="text-2xl font-brand line-accent">
-          TÊTE EN L'AIR
-        </h1>
-      </div>
-
-      <!-- Desktop Navigation -->
-      <div class="hidden md:block">
-        <div class="ml-10 flex items-baseline space-x-8">
-          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/'} class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="home">
+  <div class="w-full relative">
+    <div class="flex items-center h-24 pt-8">
+      <!-- Desktop Navigation - Left Side -->
+      <div class="hidden md:block absolute left-16 top-8 h-16 flex items-center">
+        <div class="flex items-baseline space-x-4">
+          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/')}`} style="color: white; hover:color: var(--cream-white);" data-key="home">
             {t.nav.home}
           </a>
-          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon'} class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="salon">
+          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon')}`} style="color: white; hover:color: var(--cream-white);" data-key="salon">
             {t.nav.salon}
           </a>
-          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about'} class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="about">
+          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about')}`} style="color: white; hover:color: var(--cream-white);" data-key="about">
             {t.nav.about}
           </a>
-          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing'} class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="pricing">
+          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing')}`} style="color: white; hover:color: var(--cream-white);" data-key="pricing">
             {t.nav.pricing}
           </a>
-          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact'} class="nav-link font-nav px-3 py-2 transition-all" style="color: var(--text-muted); hover:color: var(--navy-blue);" data-key="contact">
+          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact')}`} style="color: white; hover:color: var(--cream-white);" data-key="contact">
             {t.nav.contact}
           </a>
         </div>
       </div>
 
-      <!-- Language Switcher & Mobile Menu Button -->
-      <div class="flex items-center space-x-4">
-        <!-- Language Switcher -->
-        <div class="language-switcher flex items-center space-x-2">
-          <button 
+      <!-- Logo/Brand - Absolutely Centered -->
+      <div class="w-full flex justify-center">
+        <h1 class="text-4xl font-brand line-accent" style="color: white;">
+          TÊTE EN L'AIR
+        </h1>
+      </div>
+
+      <!-- Desktop Language Switcher & Mobile Menu Button - Right Side -->
+      <div class="absolute right-16 top-8 h-16 flex items-center space-x-4">
+        <!-- Desktop Language Switcher -->
+        <div class="hidden md:flex language-switcher items-center space-x-2">
+          <button
             class={`lang-btn px-3 py-1 text-xs font-nav transition-all rounded cursor-pointer ${currentLang === 'de' ? '' : 'hover:text-navy-blue'}`}
-            style={currentLang === 'de' ? 'background: var(--navy-blue); color: var(--cream-white);' : 'color: var(--text-muted); background: transparent;'}
+            style={currentLang === 'de' ? 'background: var(--navy-blue); color: var(--cream-white);' : 'color: white; background: transparent;'}
             data-lang="de"
           >
             DE
           </button>
           <span style="color: var(--powder-blue);">|</span>
-          <button 
+          <button
             class={`lang-btn px-3 py-1 text-xs font-nav transition-all rounded cursor-pointer ${currentLang === 'en' ? '' : 'hover:text-navy-blue'}`}
-            style={currentLang === 'en' ? 'background: var(--navy-blue); color: var(--cream-white);' : 'color: var(--text-muted); background: transparent;'}
+            style={currentLang === 'en' ? 'background: var(--navy-blue); color: var(--cream-white);' : 'color: white; background: transparent;'}
             data-lang="en"
           >
             EN
           </button>
         </div>
+      </div>
 
-        <!-- Mobile Menu Button -->
-        <div class="md:hidden">
-          <button 
-            id="mobile-menu-btn" 
-            type="button" 
-            class="inline-flex items-center justify-center p-2 transition-all focus:outline-none"
-            style="color: var(--text-primary); hover:color: var(--navy-blue);"
-            aria-controls="mobile-menu" 
-            aria-expanded="false"
-          >
-            <span class="sr-only">Open main menu</span>
-            <!-- Hamburger Icon -->
-            <svg class="hamburger-icon block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-            <!-- Close Icon -->
-            <svg class="close-icon hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
+      <!-- Mobile Menu Button - Separate positioning -->
+      <div class="md:hidden absolute right-8 top-8">
+        <button
+          id="mobile-menu-btn"
+          type="button"
+          class="inline-flex items-center justify-center p-3 transition-all focus:outline-none"
+          style="color: white; hover:color: var(--cream-white);"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <!-- Hamburger Icon -->
+          <svg class="hamburger-icon block h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          <!-- Close Icon -->
+          <svg class="close-icon hidden h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
       </div>
     </div>
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="md:hidden hidden">
-    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t" style="background: var(--cream-white); border-color: var(--powder-blue);">
-      <a href={currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/'} class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="home">
-        {t.nav.home}
-      </a>
-      <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon'} class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="salon">
-        {t.nav.salon}
-      </a>
-      <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about'} class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="about">
-        {t.nav.about}
-      </a>
-      <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing'} class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="pricing">
-        {t.nav.pricing}
-      </a>
-      <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact'} class="mobile-nav-link nav-link font-nav block px-3 py-3 transition-all rounded" style="color: var(--text-primary); hover:background: var(--light-powder);" data-key="contact">
-        {t.nav.contact}
-      </a>
+  <div id="mobile-menu" class="md:hidden hidden fixed inset-0 z-40 bg-white">
+    <div class="flex flex-col items-center justify-center min-h-screen px-6 text-center space-y-8">
+      <!-- Mobile Language Switcher -->
+      <div class="mobile-language-switcher flex items-center justify-center space-x-4">
+        <button
+          class={`lang-btn px-6 py-3 text-lg font-nav transition-all rounded cursor-pointer ${currentLang === 'de' ? '' : 'hover:text-navy-blue'}`}
+          style={currentLang === 'de' ? 'background: var(--navy-blue); color: var(--cream-white);' : 'color: var(--text-primary); background: transparent; border: 2px solid var(--text-primary);'}
+          data-lang="de"
+        >
+          DE
+        </button>
+        <button
+          class={`lang-btn px-6 py-3 text-lg font-nav transition-all rounded cursor-pointer ${currentLang === 'en' ? '' : 'hover:text-navy-blue'}`}
+          style={currentLang === 'en' ? 'background: var(--navy-blue); color: var(--cream-white);' : 'color: var(--text-primary); background: transparent; border: 2px solid var(--text-primary);'}
+          data-lang="en"
+        >
+          EN
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="space-y-3">
+        <a href={currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/'} class={`mobile-nav-link nav-link font-nav block text-2xl py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="home">
+          {t.nav.home}
+        </a>
+        <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon'} class={`mobile-nav-link nav-link font-nav block text-2xl py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="salon">
+          {t.nav.salon}
+        </a>
+        <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about'} class={`mobile-nav-link nav-link font-nav block text-2xl py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="about">
+          {t.nav.about}
+        </a>
+        <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing'} class={`mobile-nav-link nav-link font-nav block text-2xl py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="pricing">
+          {t.nav.pricing}
+        </a>
+        <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact'} class={`mobile-nav-link nav-link font-nav block text-2xl py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="contact">
+          {t.nav.contact}
+        </a>
+      </nav>
     </div>
   </div>
 </nav>
