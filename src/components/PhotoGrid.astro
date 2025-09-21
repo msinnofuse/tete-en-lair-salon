@@ -1,0 +1,123 @@
+---
+export interface Props {
+  images: Array<{
+    src: string | {src: string, width: number, height: number, format: string};
+    alt: string;
+    caption?: string;
+  }>;
+}
+
+const { images } = Astro.props;
+---
+
+<div class="photo-grid-container">
+  <div class="photo-grid">
+    {images.map((image, index) => (
+      <div class="photo-grid-item">
+        <!-- Loading skeleton -->
+        <div class="image-skeleton"></div>
+        <!-- Actual image -->
+        <img
+          src={typeof image.src === 'string' ? image.src : image.src.src}
+          alt={image.alt}
+          class="photo-grid-image"
+          loading="eager"
+          onload="this.style.opacity='1'; this.previousElementSibling.style.display='none';"
+        />
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .photo-grid-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  /* Desktop: 2 columns */
+  @media (min-width: 768px) {
+    .photo-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  .photo-grid-item {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: var(--cream-white);
+    box-shadow: 0 4px 12px var(--shadow-subtle);
+    transition: all 0.3s ease;
+  }
+
+  .photo-grid-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px var(--shadow-medium);
+  }
+
+  .image-skeleton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      var(--light-powder) 0%,
+      var(--cream-white) 50%,
+      var(--light-powder) 100%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s ease-in-out infinite;
+    z-index: 2;
+  }
+
+  @keyframes skeleton-loading {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .photo-grid-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Ensure consistent square dimensions on mobile */
+  @media (max-width: 767px) {
+    .photo-grid-item {
+      height: 350px;
+    }
+  }
+
+  /* Smaller screens - adjust image size */
+  @media (max-width: 480px) {
+    .photo-grid-item {
+      height: 300px;
+    }
+
+    .photo-grid {
+      gap: 1rem;
+    }
+  }
+</style>

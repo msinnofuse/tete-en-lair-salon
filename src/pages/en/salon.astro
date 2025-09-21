@@ -1,6 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import PhotoSlider from '../../components/PhotoSlider.astro';
+import PhotoGrid from '../../components/PhotoGrid.astro';
 import { getTranslations, type Language } from '../../i18n/utils';
 
 // Import all available gallery images
@@ -51,27 +51,32 @@ const salonImages = [
 ---
 
 <Layout title="Salon - tête en l'air" description="Our unique salon in a converted bus" lang={currentLang}>
+  <style>
+    body {
+      background: white !important;
+    }
+  </style>
   <main class="min-h-screen pt-16">
     <!-- Salon Gallery Section -->
     <section class="py-32 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-20 items-center">
-          <div class="fade-up">
-            <h1 class="text-6xl font-heading mb-8">
-              {t.salon.title}
-              <span class="font-accent block">{t.salon.title_accent}</span>
-            </h1>
-            <div class="accent-line" style="margin: 2rem 0;"></div>
-            <p class="font-body text-xl mb-8 leading-relaxed">
-              {t.salon.subtitle}
-            </p>
-            <p class="font-body mb-8 leading-relaxed">
-              {t.salon.description}
-            </p>
-          </div>
-          <div class="glass-card p-0 overflow-hidden">
-            <PhotoSlider images={salonImages} />
-          </div>
+        <div class="fade-up text-center mb-16">
+          <h1 class="text-6xl font-heading mb-8">
+            {t.salon.title}
+            <span class="font-accent block">{t.salon.title_accent}</span>
+          </h1>
+          <div class="accent-line" style="margin: 2rem auto;"></div>
+          <p class="font-body text-xl mb-8 leading-relaxed max-w-3xl mx-auto">
+            {t.salon.subtitle}
+          </p>
+          <p class="font-body mb-12 leading-relaxed max-w-4xl mx-auto">
+            {t.salon.description}
+          </p>
+        </div>
+
+        <!-- Photo Gallery Grid -->
+        <div class="fade-up">
+          <PhotoGrid images={salonImages} />
         </div>
       </div>
     </section>

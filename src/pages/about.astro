@@ -2,15 +2,42 @@
 import Layout from '../layouts/Layout.astro';
 import PhosphorIcon from '../components/PhosphorIcon.astro';
 import { getTranslations, type Language } from '../i18n/utils';
+import heroImage from '../assets/images/gallery/celine-1.jpg';
 
 const currentLang: Language = 'de';
 const t = getTranslations(currentLang);
 ---
 
 <Layout title="Über mich - tête en l'air" description="Celine Winterberger - Ihre Hairstylistin in Basel" lang={currentLang}>
-  <main class="min-h-screen pt-16">
+  <style>
+    body {
+      background: white !important;
+    }
+  </style>
+  <main class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="min-h-screen relative overflow-hidden flex items-center justify-center" style="clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));">
+      <!-- Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img
+          src={heroImage.src}
+          alt="Celine Winterberger - tête en l'air"
+          class="w-full h-full object-cover"
+        />
+        <!-- Overlay for text readability -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-up">
+        <h1 class="text-8xl md:text-9xl font-brand mb-8 text-reveal" style="color: var(--cream-white); text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">
+          {t.about.title}
+        </h1>
+        <div class="accent-line"></div>
+      </div>
+    </section>
     <!-- About Section -->
-    <section class="py-32 relative" style="background: var(--warm-white);">
+    <section class="py-32 relative" style="background: white;">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-20">
           <h1 class="text-6xl font-heading mb-8">

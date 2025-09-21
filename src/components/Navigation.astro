@@ -10,6 +10,8 @@ const t = getTranslations(currentLang);
 
 // Get current page for active menu item
 const currentPath = Astro.url.pathname;
+const isSalonPage = currentPath.includes('/salon');
+
 const getActiveClass = (path: string, isMobile: boolean = false) => {
   // Normalize paths for comparison (remove trailing slashes)
   const normalizedCurrentPath = currentPath.replace(/\/$/, '') || '/';
@@ -17,29 +19,34 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
 
   const isActive = normalizedCurrentPath === normalizedPath;
   if (!isActive) return '';
+
+  // Use black border for salon pages, white for others
+  if (isSalonPage) {
+    return 'border-b-2 border-black';
+  }
   return isMobile ? 'border-b-2 border-black' : 'border-b-2 border-white';
 };
 ---
 
-<nav class="fixed top-0 left-0 right-0 z-50 nav-modern">
+<nav class="fixed top-0 left-0 right-0 z-50 nav-modern nav-scrollable" id="main-nav">
   <div class="w-full relative">
     <div class="flex items-center h-24 pt-8">
       <!-- Desktop Navigation - Left Side -->
       <div class="hidden md:block absolute left-16 top-8 h-16 flex items-center">
         <div class="flex items-baseline space-x-4">
-          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/')}`} style="color: white; hover:color: var(--cream-white);" data-key="home">
+          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/')}`} style={isSalonPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="home">
             {t.nav.home}
           </a>
-          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon')}`} style="color: white; hover:color: var(--cream-white);" data-key="salon">
+          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon')}`} style={isSalonPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="salon">
             {t.nav.salon}
           </a>
-          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about')}`} style="color: white; hover:color: var(--cream-white);" data-key="about">
+          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about')}`} style={isSalonPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="about">
             {t.nav.about}
           </a>
-          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing')}`} style="color: white; hover:color: var(--cream-white);" data-key="pricing">
+          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing')}`} style={isSalonPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="pricing">
             {t.nav.pricing}
           </a>
-          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact')}`} style="color: white; hover:color: var(--cream-white);" data-key="contact">
+          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact')}`} style={isSalonPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="contact">
             {t.nav.contact}
           </a>
         </div>
@@ -47,7 +54,7 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
 
       <!-- Logo/Brand - Absolutely Centered -->
       <div class="w-full flex justify-center">
-        <h1 class="text-4xl font-brand line-accent" style="color: white;">
+        <h1 class="text-4xl font-brand line-accent nav-title" style={isSalonPage ? "color: black;" : "color: white;"}>
           TÊTE EN L'AIR
         </h1>
       </div>
@@ -55,18 +62,18 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
       <!-- Desktop Language Switcher & Mobile Menu Button - Right Side -->
       <div class="absolute right-16 top-8 h-16 flex items-center space-x-4">
         <!-- Desktop Language Switcher -->
-        <div class="hidden md:flex language-switcher items-center space-x-2">
+        <div class="hidden md:flex language-switcher items-center space-x-3">
           <button
-            class={`lang-btn px-3 py-1 text-xs font-nav transition-all rounded cursor-pointer ${currentLang === 'de' ? '' : 'hover:text-navy-blue'}`}
-            style={currentLang === 'de' ? 'background: var(--navy-blue); color: var(--cream-white);' : 'color: white; background: transparent;'}
+            class={`lang-btn font-nav transition-all cursor-pointer ${currentLang === 'de' ? (isSalonPage ? 'border-b border-black font-medium' : 'border-b border-white font-medium') : 'opacity-70 hover:opacity-100'}`}
+            style={isSalonPage ? "color: black; background: none; border: none; padding: 0; font-size: 16px;" : "color: white; background: none; border: none; padding: 0; font-size: 16px;"}
             data-lang="de"
           >
             DE
           </button>
-          <span style="color: var(--powder-blue);">|</span>
+          <span style={isSalonPage ? "color: black; opacity: 0.5; font-size: 12px;" : "color: white; opacity: 0.5; font-size: 12px;"}>|</span>
           <button
-            class={`lang-btn px-3 py-1 text-xs font-nav transition-all rounded cursor-pointer ${currentLang === 'en' ? '' : 'hover:text-navy-blue'}`}
-            style={currentLang === 'en' ? 'background: var(--navy-blue); color: var(--cream-white);' : 'color: white; background: transparent;'}
+            class={`lang-btn font-nav transition-all cursor-pointer ${currentLang === 'en' ? (isSalonPage ? 'border-b border-black font-medium' : 'border-b border-white font-medium') : 'opacity-70 hover:opacity-100'}`}
+            style={isSalonPage ? "color: black; background: none; border: none; padding: 0; font-size: 16px;" : "color: white; background: none; border: none; padding: 0; font-size: 16px;"}
             data-lang="en"
           >
             EN
@@ -80,7 +87,7 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
           id="mobile-menu-btn"
           type="button"
           class="inline-flex items-center justify-center p-3 transition-all focus:outline-none"
-          style="color: white; hover:color: var(--cream-white);"
+          style={isSalonPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"}
           aria-controls="mobile-menu"
           aria-expanded="false"
         >
@@ -104,15 +111,16 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
       <!-- Mobile Language Switcher -->
       <div class="mobile-language-switcher flex items-center justify-center space-x-4">
         <button
-          class={`lang-btn px-6 py-3 text-lg font-nav transition-all rounded cursor-pointer ${currentLang === 'de' ? '' : 'hover:text-navy-blue'}`}
-          style={currentLang === 'de' ? 'background: var(--navy-blue); color: var(--cream-white);' : 'color: var(--text-primary); background: transparent; border: 2px solid var(--text-primary);'}
+          class={`lang-btn font-nav transition-all cursor-pointer ${currentLang === 'de' ? 'border-b border-black font-medium' : 'opacity-70 hover:opacity-100'}`}
+          style="color: var(--text-primary); background: none; border: none; padding: 0; font-size: 20px;"
           data-lang="de"
         >
           DE
         </button>
+        <span style="color: var(--text-primary); opacity: 0.5; font-size: 16px;">|</span>
         <button
-          class={`lang-btn px-6 py-3 text-lg font-nav transition-all rounded cursor-pointer ${currentLang === 'en' ? '' : 'hover:text-navy-blue'}`}
-          style={currentLang === 'en' ? 'background: var(--navy-blue); color: var(--cream-white);' : 'color: var(--text-primary); background: transparent; border: 2px solid var(--text-primary);'}
+          class={`lang-btn font-nav transition-all cursor-pointer ${currentLang === 'en' ? 'border-b border-black font-medium' : 'opacity-70 hover:opacity-100'}`}
+          style="color: var(--text-primary); background: none; border: none; padding: 0; font-size: 20px;"
           data-lang="en"
         >
           EN
@@ -174,19 +182,19 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
 
   // Language switching functionality
   const langButtons = document.querySelectorAll('.lang-btn');
-  
+
   langButtons.forEach(btn => {
     btn.addEventListener('click', () => {
       const selectedLang = btn.getAttribute('data-lang');
       const currentPath = window.location.pathname;
-      
+
       // Extract the page name from the current path
       let pageName = '';
       if (currentPath.includes('/salon')) pageName = '/salon';
       else if (currentPath.includes('/about')) pageName = '/about';
       else if (currentPath.includes('/pricing')) pageName = '/pricing';
       else if (currentPath.includes('/contact')) pageName = '/contact';
-      
+
       // Navigate to the appropriate page
       if (selectedLang === 'en') {
         window.location.href = '/tete-en-lair-salon/en' + pageName;
@@ -195,4 +203,47 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
       }
     });
   });
+
+  // Scroll-based navigation hiding
+  const mainNav = document.getElementById('main-nav');
+  let lastScrollTop = 0;
+  let scrollThreshold = 100; // Minimum scroll distance before hiding
+
+  function handleScroll() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Don't hide navigation at the very top of the page
+    if (scrollTop <= scrollThreshold) {
+      mainNav?.classList.remove('nav-hidden');
+      return;
+    }
+
+    // Hide when scrolling down, show when scrolling up
+    if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+      // Scrolling down - hide navigation
+      mainNav?.classList.add('nav-hidden');
+    } else if (scrollTop < lastScrollTop) {
+      // Scrolling up - show navigation
+      mainNav?.classList.remove('nav-hidden');
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+  }
+
+  // Throttle scroll events for better performance
+  let ticking = false;
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(handleScroll);
+      ticking = true;
+    }
+  }
+
+  function onScroll() {
+    ticking = false;
+    requestTick();
+  }
+
+  // Add scroll listener
+  window.addEventListener('scroll', onScroll);
 </script>
