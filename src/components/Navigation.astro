@@ -11,6 +11,12 @@ const t = getTranslations(currentLang);
 // Get current page for active menu item
 const currentPath = Astro.url.pathname;
 const isSalonPage = currentPath.includes('/salon');
+const isAboutPage = currentPath.includes('/about');
+const isPricingPage = currentPath.includes('/pricing');
+const isContactPage = currentPath.includes('/contact');
+const isBlackNavPage = isSalonPage || isAboutPage || isPricingPage || isContactPage;
+const isAboutOnlyPage = isAboutPage && !isSalonPage;
+const isPricingOnlyPage = isPricingPage && !isSalonPage && !isAboutPage;
 
 const getActiveClass = (path: string, isMobile: boolean = false) => {
   // Normalize paths for comparison (remove trailing slashes)
@@ -20,8 +26,8 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
   const isActive = normalizedCurrentPath === normalizedPath;
   if (!isActive) return '';
 
-  // Use black border for salon pages, white for others
-  if (isSalonPage) {
+  // Use black border for salon/about pages, white for others
+  if (isBlackNavPage) {
     return 'border-b-2 border-black';
   }
   return isMobile ? 'border-b-2 border-black' : 'border-b-2 border-white';
@@ -34,19 +40,19 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
       <!-- Desktop Navigation - Left Side -->
       <div class="hidden md:block absolute left-16 top-8 h-16 flex items-center">
         <div class="flex items-baseline space-x-4">
-          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/')}`} style={isSalonPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="home">
+          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/')}`} style={isBlackNavPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="home">
             {t.nav.home}
           </a>
-          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon')}`} style={isSalonPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="salon">
+          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon')}`} style={isBlackNavPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="salon">
             {t.nav.salon}
           </a>
-          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about')}`} style={isSalonPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="about">
+          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about')}`} style={isBlackNavPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="about">
             {t.nav.about}
           </a>
-          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing')}`} style={isSalonPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="pricing">
+          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing')}`} style={isBlackNavPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="pricing">
             {t.nav.pricing}
           </a>
-          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact')}`} style={isSalonPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="contact">
+          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact')}`} style={isBlackNavPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="contact">
             {t.nav.contact}
           </a>
         </div>
@@ -54,7 +60,7 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
 
       <!-- Logo/Brand - Absolutely Centered -->
       <div class="w-full flex justify-center">
-        <h1 class="text-4xl font-brand line-accent nav-title" style={isSalonPage ? "color: black;" : "color: white;"}>
+        <h1 class="text-4xl font-brand line-accent nav-title" style={isBlackNavPage ? "color: black;" : "color: white;"}>
           TÊTE EN L'AIR
         </h1>
       </div>
@@ -64,16 +70,16 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
         <!-- Desktop Language Switcher -->
         <div class="hidden md:flex language-switcher items-center space-x-3">
           <button
-            class={`lang-btn font-nav transition-all cursor-pointer ${currentLang === 'de' ? (isSalonPage ? 'border-b border-black font-medium' : 'border-b border-white font-medium') : 'opacity-70 hover:opacity-100'}`}
-            style={isSalonPage ? "color: black; background: none; border: none; padding: 0; font-size: 16px;" : "color: white; background: none; border: none; padding: 0; font-size: 16px;"}
+            class={`lang-btn font-nav transition-all cursor-pointer ${currentLang === 'de' ? (isBlackNavPage ? 'border-b border-black font-medium' : 'border-b border-white font-medium') : 'opacity-70 hover:opacity-100'}`}
+            style={isBlackNavPage ? "color: black; background: none; border: none; padding: 0; font-size: 16px;" : "color: white; background: none; border: none; padding: 0; font-size: 16px;"}
             data-lang="de"
           >
             DE
           </button>
-          <span style={isSalonPage ? "color: black; opacity: 0.5; font-size: 12px;" : "color: white; opacity: 0.5; font-size: 12px;"}>|</span>
+          <span style={isBlackNavPage ? "color: black; opacity: 0.5; font-size: 12px;" : "color: white; opacity: 0.5; font-size: 12px;"}>|</span>
           <button
-            class={`lang-btn font-nav transition-all cursor-pointer ${currentLang === 'en' ? (isSalonPage ? 'border-b border-black font-medium' : 'border-b border-white font-medium') : 'opacity-70 hover:opacity-100'}`}
-            style={isSalonPage ? "color: black; background: none; border: none; padding: 0; font-size: 16px;" : "color: white; background: none; border: none; padding: 0; font-size: 16px;"}
+            class={`lang-btn font-nav transition-all cursor-pointer ${currentLang === 'en' ? (isBlackNavPage ? 'border-b border-black font-medium' : 'border-b border-white font-medium') : 'opacity-70 hover:opacity-100'}`}
+            style={isBlackNavPage ? "color: black; background: none; border: none; padding: 0; font-size: 16px;" : "color: white; background: none; border: none; padding: 0; font-size: 16px;"}
             data-lang="en"
           >
             EN
@@ -87,7 +93,7 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
           id="mobile-menu-btn"
           type="button"
           class="inline-flex items-center justify-center p-3 transition-all focus:outline-none"
-          style={isSalonPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"}
+          style={isBlackNavPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"}
           aria-controls="mobile-menu"
           aria-expanded="false"
         >
@@ -106,8 +112,8 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="md:hidden hidden fixed inset-0 z-40 bg-white">
-    <div class="flex flex-col items-center justify-center min-h-screen px-6 text-center space-y-8">
+  <div id="mobile-menu" class="md:hidden hidden fixed inset-0 z-40" style="background: white !important; background-color: white !important; background-image: none !important;">
+    <div class="flex flex-col items-center justify-center min-h-screen px-6 text-center space-y-8" style="background: white !important;">
       <!-- Mobile Language Switcher -->
       <div class="mobile-language-switcher flex items-center justify-center space-x-4">
         <button

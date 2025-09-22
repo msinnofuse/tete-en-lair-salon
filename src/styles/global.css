@@ -164,24 +164,22 @@ html {
 
 /* Bus-Inspired Cards */
 .glass-card {
-  background: rgba(245, 241, 232, 0.8);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: white;
   border: 1px solid var(--border-light);
-  border-radius: 0;
+  border-radius: 8px;
   position: relative;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .glass-card:hover {
-  background: rgba(245, 241, 232, 0.95);
+  background: white;
   transform: translateY(-5px);
   box-shadow: 0 20px 40px var(--shadow-medium);
 }
 
 /* Vintage-Style Cards */
 .minimal-card {
-  background: var(--cream-white);
+  background: white;
   border: 1px solid var(--powder-blue);
   padding: 3rem;
   position: relative;
@@ -192,7 +190,7 @@ html {
 .minimal-card:hover {
   border-color: var(--warm-coral);
   box-shadow: 0 15px 35px var(--shadow-subtle);
-  background: var(--warm-white);
+  background: white;
 }
 
 /* Vintage Bus Background */
@@ -387,6 +385,20 @@ html {
   justify-content: center !important;
   align-items: center !important;
   width: 100% !important;
+}
+
+#mobile-menu {
+  background: white !important;
+  background-image: none !important;
+  background-color: white !important;
+  opacity: 1 !important;
+}
+
+#mobile-menu:not(.hidden) {
+  display: block !important;
+  background: white !important;
+  background-color: white !important;
+  background-image: none !important;
 }
 
 #mobile-menu nav {

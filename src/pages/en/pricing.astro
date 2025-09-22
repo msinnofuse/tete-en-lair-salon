@@ -2,29 +2,42 @@
 import Layout from '../../layouts/Layout.astro';
 import PhosphorIcon from '../../components/PhosphorIcon.astro';
 import { getTranslations, type Language } from '../../i18n/utils';
+import heroImage from '../../assets/images/gallery/smurf.jpg';
 
 const currentLang: Language = 'en';
 const t = getTranslations(currentLang);
 ---
 
 <Layout title="Pricing - tête en l'air" description="Our prices and services" lang={currentLang}>
-  <main class="min-h-screen pt-16">
+  <style>
+    body {
+      background: white !important;
+    }
+  </style>
+  <main class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="min-h-screen relative overflow-hidden flex items-center justify-center" style="clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));">
+      <!-- Background Image -->
+      <div class="absolute inset-0 z-0">
+        <img
+          src={heroImage.src}
+          alt="Creative hair coloring"
+          class="w-full h-full object-cover"
+          style="object-position: center bottom; filter: brightness(1.3) contrast(0.9);"
+        />
+        <!-- White overlay for better readability -->
+        <div class="absolute inset-0 bg-white opacity-15"></div>
+      </div>
+
+    </section>
+
     <!-- Services/Pricing Section -->
     <section class="py-32 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-20">
-          <h1 class="text-6xl font-heading mb-8">
-            {t.services.title}
-          </h1>
-          <div class="accent-line"></div>
-          <p class="font-body text-lg mt-12 max-w-3xl mx-auto leading-relaxed opacity-80">
-            {t.services.description}
-          </p>
-        </div>
         
         <div class="grid md:grid-cols-2 gap-6">
-          <div class="glass-card p-8 text-center group">
-            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--light-powder);">
+          <div class="bg-white border border-gray-200 p-8 text-center group">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: white; border: 1px solid #ddd;">
               <PhosphorIcon name="scissors" size={24} color="var(--navy-blue)" />
             </div>
             <h3 class="text-xl font-heading mb-6">{t.services.wash_cut_dry.title}</h3>
@@ -32,8 +45,8 @@ const t = getTranslations(currentLang);
               {t.services.wash_cut_dry.description}
             </div>
           </div>
-          <div class="glass-card p-8 text-center group">
-            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--light-powder);">
+          <div class="bg-white border border-gray-200 p-8 text-center group">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: white; border: 1px solid #ddd;">
               <PhosphorIcon name="wind" size={24} color="var(--navy-blue)" />
             </div>
             <h3 class="text-xl font-heading mb-6">{t.services.wash_style.title}</h3>
@@ -41,8 +54,8 @@ const t = getTranslations(currentLang);
               {t.services.wash_style.description}
             </div>
           </div>
-          <div class="glass-card p-8 text-center group">
-            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--light-powder);">
+          <div class="bg-white border border-gray-200 p-8 text-center group">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: white; border: 1px solid #ddd;">
               <PhosphorIcon name="palette" size={24} color="var(--navy-blue)" />
             </div>
             <h3 class="text-xl font-heading mb-6">{t.services.color_toning.title}</h3>
@@ -50,8 +63,8 @@ const t = getTranslations(currentLang);
               {t.services.color_toning.description}
             </div>
           </div>
-          <div class="glass-card p-8 text-center group">
-            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: var(--warm-coral);">
+          <div class="bg-white border border-gray-200 p-8 text-center group">
+            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: white; border: 1px solid #ddd;">
               <PhosphorIcon name="sparkle" size={24} color="var(--cream-white)" />
             </div>
             <h3 class="text-xl font-heading mb-6">{t.services.highlights_balayage.title}</h3>
@@ -64,7 +77,7 @@ const t = getTranslations(currentLang);
         <!-- Policies -->
         <div class="mt-16 max-w-4xl mx-auto">
           <div class="divider-thin"></div>
-          <div class="minimal-card">
+          <div class="bg-white border border-gray-200 p-8">
             <h3 class="text-2xl font-heading mb-6 text-center">Important Information</h3>
             <div class="space-y-4">
               <div class="flex items-start">
