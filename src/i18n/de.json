@@ -16,7 +16,7 @@
     "description": "Kurze Fransen, lebendige Farben, fliessende aber auch überraschende Abstufungen oder doch lieber unerwartet gewagte Mêches-Akzente? Bei mir sind Deine Haircare-Rituale safe und Du dem entsprechend entspannt! Komm an Board und lass dich in entfernt gelegene Galaxien entführen - Dich erwartet ein Kreatives Haareschneide-Erlebnis im idyllischen wilden Holzpark Klybeck. In Basel, direkt am Rhein und dies alles in einem ehemaligen Shuttlebus des Euro Airports."
   },
   "about": {
-    "title": "CELINE Winterberger - das bin ich:",
+    "title": "Céline Wintenberger - das bin ich:",
     "intro": "Seit beinahe 20 Jahren trage ich meinen Beruf im Herzen. Meine Ausbildung zur Haarstylistin absolvierte ich in meinem Heimatland Frankreich, ergänzt durch eine Ausbildung als Maskenbildnerin an der Oper von Toulouse.",
     "experience": "Meine Berufserfahrung ist äusserst differenziert und vielseitig. Neben meinen Lehrjahren an der Oper war ich in verschiedenen Kontexten tätig: von klassischen Salons über progressive Hairstyling-Kollektive bis hin zu besonderen Events als Stylistin.",
     "expertise": "Ich heisse alle Haartypen willkommen und spezialisiere mich auf: Balayage-Techniken, progressive Frisuren, praktische pflegeleichte Ready-to-wear-Looks, Highlights, Grautöne-Kaschierung und kreative Kolorationen.",
@@ -44,20 +44,20 @@
     "title": "Services",
     "description": "Alle Preise beinhalten ein ausführliches Beratungsgespräch und freie Getränke. Die endgültigen Preise für Farbe und Schnitt errechnen sich anhand des Aufwands. Genaue Preisauskünfte gerne vor Ort.",
     "wash_cut_dry": {
-      "title": "WASCHEN-SCHNEIDEN-FÖHNEN",
-      "description": "DAMEN CHF 77-88\nHERREN CHF 57\nKINDER CHF 30-50"
+      "title": "Waschen-Schneiden-Föhnen",
+      "description": "**Damen** CHF 77-88\n**Herren** CHF 57\n**Kinder** CHF 30-50"
     },
     "wash_style": {
-      "title": "WASCHEN-FÖHNEN-STYLING",
-      "description": "KURZ bis LANG CHF 45-60\nHOCHSTRECKFRISUR ab CHF 100"
+      "title": "Waschen-Föhnen-Styling",
+      "description": "**Kurz bis Lang** CHF 45-60\n**Hochsteckfrisur** ab CHF 100"
     },
     "color_toning": {
-      "title": "HAARFARBEN-TÖNNUNGEN",
-      "description": "ANZATZ ab CHF 80\nMIT SCHNITT ab CHF 160\n(Preise sind abhängig von der Menge an verwendeter Farbe)\nBLONDIERUNG-INKL.TÖNER-SCHNITT CHF 200"
+      "title": "Haarfarben-Tönungen",
+      "description": "**Ansatz** ab CHF 80\n**Mit Schnitt** ab CHF 160\n(Preise sind abhängig von der Menge an verwendeter Farbe)\n**Blondierung inkl. Töner + Schnitt** CHF 200"
     },
     "highlights_balayage": {
-      "title": "STRÄHNEN-BALAYAGE-HIGHLIGHTS MIT SCHNITT",
-      "description": "HALBER KOPF ab CHF 160\nGANZEN KOPF ab CHF 180\nTÖNER NACH STRÄHNEN +/- CHF 25"
+      "title": "Strähnen-Balayage-Highlights mit Schnitt",
+      "description": "**Halber Kopf** ab CHF 160\n**Ganzen Kopf** ab CHF 180\n**Töner nach Strähnen** +/- CHF 25"
     },
     "policies": {
       "payment": "Zahlungen erfolgen ausschliesslich in bar. Kartenzahlungen sind leider nicht möglich.",
@@ -70,10 +70,8 @@
     "reach_us": "Erreichen Sie uns",
     "hours_title": "Öffnungszeiten",
     "hours": {
-      "weekdays": "Do – Sa",
-      "weekdays_time": "09:00 – 19:00",
-      "saturday": "So – Mi",
-      "saturday_time": "Geschlossen"
+      "weekdays": "Donnerstag – Samstag",
+      "weekdays_time": "09:00 – 19:00"
     },
     "cta": "TERMIN VEREINBAREN",
     "address": "Uferstrasse 40, Basel, Schweiz",

@@ -60,18 +60,31 @@ const salonImages = [
     <!-- Salon Gallery Section -->
     <section class="py-32 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="fade-up text-center mb-16">
+        <div class="text-center mb-16">
           <h1 class="text-6xl font-heading mb-8">
             {t.salon.title}
             <span class="font-accent block">{t.salon.title_accent}</span>
           </h1>
           <div class="accent-line" style="margin: 2rem auto;"></div>
-          <p class="font-body text-xl mb-8 leading-relaxed max-w-3xl mx-auto">
-            {t.salon.subtitle}
-          </p>
-          <p class="font-body mb-12 leading-relaxed max-w-4xl mx-auto">
-            {t.salon.description}
-          </p>
+        </div>
+
+        <!-- Salon Content Text Blocks -->
+        <div class="max-w-3xl mx-auto mb-16">
+          <div class="space-y-16">
+            <!-- Concept Block -->
+            <div class="text-center">
+              <p class="font-body text-lg leading-relaxed">
+                {t.salon.subtitle}
+              </p>
+            </div>
+
+            <!-- Description Block -->
+            <div class="text-center">
+              <p class="font-body text-lg leading-relaxed">
+                {t.salon.description}
+              </p>
+            </div>
+          </div>
         </div>
 
         <!-- Photo Gallery Grid -->

@@ -376,8 +376,8 @@ html {
 .mobile-nav-link.text-2xl {
   font-size: 1.75rem !important;
   text-align: center !important;
-  display: block !important;
-  width: 100% !important;
+  display: inline-block !important;
+  width: auto !important;
 }
 
 .mobile-language-switcher {
@@ -414,6 +414,11 @@ html {
   flex-direction: column !important;
   align-items: center !important;
   width: 100% !important;
+}
+
+#mobile-menu .space-y-3 > a {
+  display: inline-block !important;
+  width: auto !important;
 }
 
 /* Responsive font size improvements */

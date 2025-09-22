@@ -33,66 +33,45 @@ const t = getTranslations(currentLang);
 
     <!-- Services/Pricing Section -->
     <section class="py-32 relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-white border border-gray-200 p-8 text-center group">
-            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: white; border: 1px solid #ddd;">
-              <PhosphorIcon name="scissors" size={24} color="var(--navy-blue)" />
-            </div>
-            <h3 class="text-xl font-heading mb-6">{t.services.wash_cut_dry.title}</h3>
-            <div class="font-body text-sm leading-relaxed whitespace-pre-line">
-              {t.services.wash_cut_dry.description}
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Services - Centered Minimalist -->
+        <div class="text-center space-y-16">
+
+          <div>
+            <h3 class="text-2xl font-heading mb-6">{t.services.wash_cut_dry.title}</h3>
+            <div class="font-body leading-relaxed whitespace-pre-line" set:html={t.services.wash_cut_dry.description.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}>
             </div>
           </div>
-          <div class="bg-white border border-gray-200 p-8 text-center group">
-            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: white; border: 1px solid #ddd;">
-              <PhosphorIcon name="wind" size={24} color="var(--navy-blue)" />
-            </div>
-            <h3 class="text-xl font-heading mb-6">{t.services.wash_style.title}</h3>
-            <div class="font-body text-sm leading-relaxed whitespace-pre-line">
-              {t.services.wash_style.description}
+
+          <div>
+            <h3 class="text-2xl font-heading mb-6">{t.services.wash_style.title}</h3>
+            <div class="font-body leading-relaxed whitespace-pre-line" set:html={t.services.wash_style.description.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}>
             </div>
           </div>
-          <div class="bg-white border border-gray-200 p-8 text-center group">
-            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: white; border: 1px solid #ddd;">
-              <PhosphorIcon name="palette" size={24} color="var(--navy-blue)" />
-            </div>
-            <h3 class="text-xl font-heading mb-6">{t.services.color_toning.title}</h3>
-            <div class="font-body text-sm leading-relaxed whitespace-pre-line">
-              {t.services.color_toning.description}
+
+          <div>
+            <h3 class="text-2xl font-heading mb-6">{t.services.color_toning.title}</h3>
+            <div class="font-body leading-relaxed whitespace-pre-line" set:html={t.services.color_toning.description.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}>
             </div>
           </div>
-          <div class="bg-white border border-gray-200 p-8 text-center group">
-            <div class="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center" style="background: white; border: 1px solid #ddd;">
-              <PhosphorIcon name="sparkle" size={24} color="var(--cream-white)" />
-            </div>
-            <h3 class="text-xl font-heading mb-6">{t.services.highlights_balayage.title}</h3>
-            <div class="font-body text-sm leading-relaxed whitespace-pre-line">
-              {t.services.highlights_balayage.description}
+
+          <div>
+            <h3 class="text-2xl font-heading mb-6">{t.services.highlights_balayage.title}</h3>
+            <div class="font-body leading-relaxed whitespace-pre-line" set:html={t.services.highlights_balayage.description.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}>
             </div>
           </div>
+
         </div>
-        
-        <!-- Policies -->
-        <div class="mt-16 max-w-4xl mx-auto">
+
+        <!-- Important Information - Less Prominent -->
+        <div class="mt-24 text-center">
           <div class="divider-thin"></div>
-          <div class="bg-white border border-gray-200 p-8">
-            <h3 class="text-2xl font-heading mb-6 text-center">Wichtige Informationen</h3>
-            <div class="space-y-4">
-              <div class="flex items-start">
-                <PhosphorIcon name="credit-card" size={20} color="var(--warm-coral)" />
-                <p class="font-body ml-3">{t.services.policies.payment}</p>
-              </div>
-              <div class="flex items-start">
-                <PhosphorIcon name="student" size={20} color="var(--warm-coral)" />
-                <p class="font-body ml-3">{t.services.policies.youth_discount}</p>
-              </div>
-              <div class="flex items-start">
-                <PhosphorIcon name="graduation-cap" size={20} color="var(--warm-coral)" />
-                <p class="font-body ml-3">{t.services.policies.student_discount}</p>
-              </div>
-            </div>
+          <h3 class="text-lg font-heading mb-8 opacity-80">Wichtige Informationen</h3>
+          <div class="space-y-6 max-w-2xl mx-auto">
+            <p class="font-body text-sm opacity-70">{t.services.policies.payment}</p>
+            <p class="font-body text-sm opacity-70">{t.services.policies.youth_discount}</p>
+            <p class="font-body text-sm opacity-70">{t.services.policies.student_discount}</p>
           </div>
         </div>
       </div>

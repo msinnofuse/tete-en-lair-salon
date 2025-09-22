@@ -16,7 +16,7 @@
     "description": "Short bangs, vibrant colors, flowing yet surprising gradations, or perhaps unexpectedly bold highlight accents? With me, your haircare rituals are safe and you are accordingly relaxed! Come aboard and let yourself be transported to distant galaxies - you can expect a creative hair-cutting experience in the idyllic wild Holzpark Klybeck. In Basel, directly on the Rhine, and all this in a former shuttle bus of Euro Airport."
   },
   "about": {
-    "title": "CELINE Winterberger - that's who I am:",
+    "title": "Céline Wintenberger - that's who I am:",
     "intro": "For almost 20 years, I have carried my profession in my heart. I completed my training as a hairstylist in my homeland France, complemented by training as a makeup artist at the Opera of Toulouse.",
     "experience": "My professional experience is extremely diverse and varied. In addition to my apprenticeship years at the opera, I have worked in various contexts: from traditional salons to progressive hairstyling collectives to special events as a stylist.",
     "expertise": "I welcome all hair types and specialize in: balayage techniques, progressive hairstyles, practical low-maintenance ready-to-wear looks, highlights, gray tone coverage, and creative colorations.",
@@ -44,20 +44,20 @@
     "title": "Services",
     "description": "All prices include a comprehensive consultation and complimentary beverages. Final prices for color and cut are calculated based on the scope of work. Exact pricing information gladly provided on-site.",
     "wash_cut_dry": {
-      "title": "WASH-CUT-BLOW DRY",
-      "description": "LADIES CHF 77-88\nGENTLEMEN CHF 57\nCHILDREN CHF 30-50"
+      "title": "Wash-Cut-Blow Dry",
+      "description": "**Ladies** CHF 77-88\n**Gentlemen** CHF 57\n**Children** CHF 30-50"
     },
     "wash_style": {
-      "title": "WASH-BLOW DRY-STYLING",
-      "description": "SHORT to LONG CHF 45-60\nUPDO from CHF 100"
+      "title": "Wash-Blow Dry-Styling",
+      "description": "**Short to Long** CHF 45-60\n**Updo** from CHF 100"
     },
     "color_toning": {
-      "title": "HAIR COLOR-TONING",
-      "description": "ROOTS from CHF 80\nWITH CUT from CHF 160\n(Prices depend on the amount of color used)\nBLEACHING-INCL.TONER-CUT CHF 200"
+      "title": "Hair Color-Toning",
+      "description": "**Roots** from CHF 80\n**With Cut** from CHF 160\n(Prices depend on the amount of color used)\n**Bleaching incl. Toner + Cut** CHF 200"
     },
     "highlights_balayage": {
-      "title": "HIGHLIGHTS-BALAYAGE-HIGHLIGHTS WITH CUT",
-      "description": "HALF HEAD from CHF 160\nFULL HEAD from CHF 180\nTONER AFTER HIGHLIGHTS +/- CHF 25"
+      "title": "Highlights-Balayage-Highlights with Cut",
+      "description": "**Half Head** from CHF 160\n**Full Head** from CHF 180\n**Toner after Highlights** +/- CHF 25"
     },
     "policies": {
       "payment": "Payment is accepted in cash only. Unfortunately, credit card payments are not available.",
@@ -70,10 +70,8 @@
     "reach_us": "Reach us",
     "hours_title": "Opening Hours",
     "hours": {
-      "weekdays": "Thu – Sat",
-      "weekdays_time": "09:00 – 19:00",
-      "saturday": "Sun – Wed",
-      "saturday_time": "Closed"
+      "weekdays": "Thursday – Saturday",
+      "weekdays_time": "09:00 – 19:00"
     },
     "cta": "BOOK APPOINTMENT",
     "address": "Uferstrasse 40, Basel, Switzerland",
