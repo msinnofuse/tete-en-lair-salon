@@ -36,9 +36,10 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
 
 <nav class="fixed top-0 left-0 right-0 z-50 nav-modern nav-scrollable" id="main-nav">
   <div class="w-full relative">
-    <div class="flex items-center h-24 pt-8">
+    <!-- Desktop Layout (1400px+) -->
+    <div class="hidden xl-1400:flex items-center h-24 pt-8">
       <!-- Desktop Navigation - Left Side -->
-      <div class="hidden md:block absolute left-16 top-8 h-16 flex items-center">
+      <div class="absolute left-16 top-8 h-16 flex items-center">
         <div class="flex items-baseline space-x-4">
           <a href={currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/')}`} style={isBlackNavPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="home">
             {t.nav.home}
@@ -65,10 +66,9 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
         </h1>
       </div>
 
-      <!-- Desktop Language Switcher & Mobile Menu Button - Right Side -->
+      <!-- Desktop Language Switcher - Right Side -->
       <div class="absolute right-16 top-8 h-16 flex items-center space-x-4">
-        <!-- Desktop Language Switcher -->
-        <div class="hidden md:flex language-switcher items-center space-x-3">
+        <div class="language-switcher flex items-center space-x-3">
           <button
             class={`lang-btn font-nav transition-all cursor-pointer ${currentLang === 'de' ? (isBlackNavPage ? 'border-b border-black font-medium' : 'border-b border-white font-medium') : 'opacity-70 hover:opacity-100'}`}
             style={isBlackNavPage ? "color: black; background: none; border: none; padding: 0; font-size: 16px;" : "color: white; background: none; border: none; padding: 0; font-size: 16px;"}
@@ -86,47 +86,51 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
           </button>
         </div>
       </div>
+    </div>
 
-      <!-- Mobile Menu Button - Separate positioning -->
-      <div class="md:hidden absolute right-8 top-8">
-        <button
-          id="mobile-menu-btn"
-          type="button"
-          class="inline-flex items-center justify-center p-3 transition-all focus:outline-none"
-          style={isBlackNavPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"}
-          aria-controls="mobile-menu"
-          aria-expanded="false"
-        >
-          <span class="sr-only">Open main menu</span>
-          <!-- Hamburger Icon -->
-          <svg class="hamburger-icon block h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-          <!-- Close Icon -->
-          <svg class="close-icon hidden h-8 w-8" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
+    <!-- Hamburger Menu Layout (below 1400px) -->
+    <div class="xl-1400:hidden flex justify-between items-center h-20 px-8 pt-6">
+      <div class="w-8"></div> <!-- Spacer -->
+      <h1 class="text-2xl font-brand line-accent nav-title" style={isBlackNavPage ? "color: black;" : "color: white;"}>
+        TÊTE EN L'AIR
+      </h1>
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        class="inline-flex items-center justify-center p-2 transition-all focus:outline-none"
+        style={isBlackNavPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"}
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Open main menu</span>
+        <!-- Hamburger Icon -->
+        <svg class="hamburger-icon block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+        <!-- Close Icon -->
+        <svg class="close-icon hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
     </div>
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="md:hidden hidden fixed inset-0 z-40" style="background: white !important; background-color: white !important; background-image: none !important;">
-    <div class="flex flex-col items-center justify-center min-h-screen px-6 text-center space-y-8" style="background: white !important;">
+  <div id="mobile-menu" class="md:hidden hidden fixed inset-0 z-40 overflow-hidden" style="background: white !important; background-color: white !important; background-image: none !important; height: 100%; top: 0;">
+    <div class="flex flex-col items-center justify-center h-full px-4 text-center" style="background: white !important;">
       <!-- Mobile Language Switcher -->
-      <div class="mobile-language-switcher flex items-center justify-center space-x-4">
+      <div class="mobile-language-switcher flex items-center justify-center space-x-3 mb-4">
         <button
           class={`lang-btn font-nav transition-all cursor-pointer ${currentLang === 'de' ? 'border-b border-black font-medium' : 'opacity-70 hover:opacity-100'}`}
-          style="color: var(--text-primary); background: none; border: none; padding: 0; font-size: 20px;"
+          style="color: var(--text-primary); background: none; border: none; padding: 0; font-size: 18px;"
           data-lang="de"
         >
           DE
         </button>
-        <span style="color: var(--text-primary); opacity: 0.5; font-size: 16px;">|</span>
+        <span style="color: var(--text-primary); opacity: 0.5; font-size: 14px;">|</span>
         <button
           class={`lang-btn font-nav transition-all cursor-pointer ${currentLang === 'en' ? 'border-b border-black font-medium' : 'opacity-70 hover:opacity-100'}`}
-          style="color: var(--text-primary); background: none; border: none; padding: 0; font-size: 20px;"
+          style="color: var(--text-primary); background: none; border: none; padding: 0; font-size: 18px;"
           data-lang="en"
         >
           EN
@@ -134,20 +138,20 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
       </div>
 
       <!-- Navigation Links -->
-      <nav class="space-y-3">
-        <a href={currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/'} class={`mobile-nav-link nav-link font-nav block text-2xl py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="home">
+      <nav class="flex flex-col space-y-2">
+        <a href={currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/'} class={`mobile-nav-link nav-link font-nav block text-xl py-1.5 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="home">
           {t.nav.home}
         </a>
-        <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon'} class={`mobile-nav-link nav-link font-nav block text-2xl py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="salon">
+        <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon'} class={`mobile-nav-link nav-link font-nav block text-xl py-1.5 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="salon">
           {t.nav.salon}
         </a>
-        <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about'} class={`mobile-nav-link nav-link font-nav block text-2xl py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="about">
+        <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about'} class={`mobile-nav-link nav-link font-nav block text-xl py-1.5 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="about">
           {t.nav.about}
         </a>
-        <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing'} class={`mobile-nav-link nav-link font-nav block text-2xl py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="pricing">
+        <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing'} class={`mobile-nav-link nav-link font-nav block text-xl py-1.5 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="pricing">
           {t.nav.pricing}
         </a>
-        <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact'} class={`mobile-nav-link nav-link font-nav block text-2xl py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="contact">
+        <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact'} class={`mobile-nav-link nav-link font-nav block text-xl py-1.5 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="contact">
           {t.nav.contact}
         </a>
       </nav>
@@ -171,6 +175,17 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
     hamburgerIcon?.classList.toggle('block');
     closeIcon?.classList.toggle('hidden');
     closeIcon?.classList.toggle('block');
+    
+    // Prevent body scrolling when menu is open
+    if (!isExpanded) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
+    }
   });
 
   // Close mobile menu when clicking on nav links
@@ -183,6 +198,11 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
       hamburgerIcon?.classList.remove('hidden');
       closeIcon?.classList.add('hidden');
       closeIcon?.classList.remove('block');
+      
+      // Re-enable body scrolling
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.width = '';
     });
   });
 

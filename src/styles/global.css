@@ -279,6 +279,19 @@ html {
   animation: reveal 1s ease-out;
 }
 
+/* Custom 1400px breakpoint for navigation */
+@media (min-width: 1400px) {
+  .xl-1400\:flex {
+    display: flex !important;
+  }
+  .hidden.xl-1400\:flex {
+    display: flex !important;
+  }
+  .xl-1400\:hidden {
+    display: none !important;
+  }
+}
+
 /* Bus Salon Navigation */
 .nav-modern {
   background: transparent;
@@ -373,8 +386,8 @@ html {
 }
 
 /* Mobile menu specific styling */
-.mobile-nav-link.text-2xl {
-  font-size: 1.75rem !important;
+.mobile-nav-link.text-xl {
+  font-size: 1.5rem !important;
   text-align: center !important;
   display: inline-block !important;
   width: auto !important;
@@ -392,6 +405,14 @@ html {
   background-image: none !important;
   background-color: white !important;
   opacity: 1 !important;
+  height: 100vh !important;
+  height: 100dvh !important; /* Dynamic viewport height for mobile browsers */
+  overflow: hidden !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
 }
 
 #mobile-menu:not(.hidden) {
