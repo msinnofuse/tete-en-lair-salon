@@ -15,9 +15,9 @@ const t = getTranslations(currentLang);
   </style>
   <main class="min-h-screen pt-16">
     <!-- Contact Section -->
-    <section class="py-32 relative" style="background: white;">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
+    <section class="py-20 relative" style="background: white;">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
           <h1 class="text-6xl font-heading mb-8">
             {t.contact.title}
           </h1>
@@ -25,41 +25,39 @@ const t = getTranslations(currentLang);
         </div>
         
         <!-- Contact Information - Centered Layout -->
-        <div class="max-w-2xl mx-auto">
-          <div class="space-y-12">
-            <!-- Contact Details -->
+        <div class="max-w-xl mx-auto">
+          <div class="space-y-16">
+            <!-- Primary Contact Details -->
             <div class="text-center space-y-6">
-              <div class="space-y-3">
-                <a href="https://maps.app.goo.gl/zNzCqSuc5unB5og17" target="_blank" rel="noopener noreferrer" class="font-body text-xl hover:underline block">
+              <div class="space-y-5">
+                <a href="https://maps.app.goo.gl/zNzCqSuc5unB5og17" target="_blank" rel="noopener noreferrer" class="font-body text-2xl leading-relaxed hover:opacity-70 transition-opacity block">
                   {t.contact.address}
                 </a>
-                <a href={`tel:${t.contact.phone.replace(/\s/g, '')}`} class="font-body text-xl hover:underline block">
+                <a href={`tel:${t.contact.phone.replace(/\s/g, '')}`} class="font-body text-xl leading-relaxed hover:opacity-70 transition-opacity block">
                   {t.contact.phone}
                 </a>
-                <a href={`mailto:${t.contact.email}`} class="font-body text-xl hover:underline block">
+                <a href={`mailto:${t.contact.email}`} class="font-body text-lg leading-relaxed hover:opacity-70 transition-opacity block opacity-80">
                   {t.contact.email}
                 </a>
               </div>
             </div>
 
             <!-- Opening Hours -->
-            <div class="text-center space-y-4">
-              <h3 class="text-2xl font-heading">{t.contact.hours_title}</h3>
-              <div class="space-y-2">
-                <div class="font-body text-lg">
-                  <span class="font-bold">{t.contact.hours.weekdays}</span>
-                  <span class="ml-4">{t.contact.hours.weekdays_time}</span>
-                </div>
+            <div class="text-center space-y-5">
+              <h3 class="text-lg font-heading opacity-80">{t.contact.hours_title}</h3>
+              <div class="font-body text-base opacity-70">
+                <span class="font-medium">{t.contact.hours.weekdays}</span>
+                <span class="ml-3">{t.contact.hours.weekdays_time}</span>
               </div>
             </div>
 
             <!-- Holzpark Klybeck -->
-            <div class="text-center space-y-3">
-              <h3 class="text-2xl font-heading">Holzpark Klybeck</h3>
-              <p class="font-body">
+            <div class="text-center space-y-4">
+              <h3 class="text-lg font-heading opacity-80">Holzpark Klybeck</h3>
+              <p class="font-body text-sm opacity-60 leading-relaxed max-w-md mx-auto">
                 A creative arts district directly on the Rhine. A breeding ground for fine and truly extraordinary things.
               </p>
-              <a href="https://www.holzpark-klybeck.ch" target="_blank" rel="noopener noreferrer" class="font-accent underline hover:no-underline block">
+              <a href="https://www.holzpark-klybeck.ch" target="_blank" rel="noopener noreferrer" class="font-body text-sm opacity-50 hover:opacity-70 transition-opacity block">
                 www.holzpark-klybeck.ch
               </a>
             </div>
