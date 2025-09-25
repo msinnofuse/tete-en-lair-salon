@@ -61,7 +61,7 @@
     },
     "policies": {
       "payment": "Zahlungen erfolgen ausschliesslich in bar. Kartenzahlungen sind leider nicht möglich.",
-      "youth_discount": "Für Jugendliche unter 18 Jahren gewähren wir 10% Rabatt auf alle Behandlungen.",
+      "youth_discount": "Für Jugendliche unter 18 Jahren gewähren wir 10% Rabatt auf alle Dienstleistungen.",
       "student_discount": "Schüler und Studenten erhalten gegen Vorlage eines gültigen Ausweises 10% Rabatt auf alle Behandlungen über CHF 80."
     }
   },
