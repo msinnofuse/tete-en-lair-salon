@@ -6,8 +6,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://msinnofuse.github.io',
-  base: 'tete-en-lair-salon',
+  site: 'https://tete-en-lair.ch',
+  base: '',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],

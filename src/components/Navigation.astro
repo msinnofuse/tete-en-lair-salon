@@ -41,19 +41,19 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
       <!-- Desktop Navigation - Left Side -->
       <div class="absolute left-16 top-8 h-16 flex items-center">
         <div class="flex items-baseline space-x-4">
-          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/')}`} style={isBlackNavPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="home">
+          <a href={currentLang === 'en' ? '/en' : '/'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/en' : '/')}`} style={isBlackNavPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="home">
             {t.nav.home}
           </a>
-          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon')}`} style={isBlackNavPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="salon">
+          <a href={currentLang === 'en' ? '/en/salon' : '/salon'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/en/salon' : '/salon')}`} style={isBlackNavPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="salon">
             {t.nav.salon}
           </a>
-          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about')}`} style={isBlackNavPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="about">
+          <a href={currentLang === 'en' ? '/en/about' : '/about'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/en/about' : '/about')}`} style={isBlackNavPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="about">
             {t.nav.about}
           </a>
-          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing')}`} style={isBlackNavPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="pricing">
+          <a href={currentLang === 'en' ? '/en/pricing' : '/pricing'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/en/pricing' : '/pricing')}`} style={isBlackNavPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="pricing">
             {t.nav.pricing}
           </a>
-          <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact')}`} style={isBlackNavPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="contact">
+          <a href={currentLang === 'en' ? '/en/contact' : '/contact'} class={`nav-link font-nav px-3 py-2 transition-all ${getActiveClass(currentLang === 'en' ? '/en/contact' : '/contact')}`} style={isBlackNavPage ? "color: black; hover:color: var(--navy-blue);" : "color: white; hover:color: var(--cream-white);"} data-key="contact">
             {t.nav.contact}
           </a>
         </div>
@@ -139,19 +139,19 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
 
       <!-- Navigation Links -->
       <nav class="flex flex-col space-y-2">
-        <a href={currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/'} class={`mobile-nav-link nav-link font-nav block text-xl py-1.5 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en' : '/tete-en-lair-salon/', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="home">
+        <a href={currentLang === 'en' ? '/en' : '/'} class={`mobile-nav-link nav-link font-nav block text-xl py-1.5 transition-all ${getActiveClass(currentLang === 'en' ? '/en' : '/', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="home">
           {t.nav.home}
         </a>
-        <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon'} class={`mobile-nav-link nav-link font-nav block text-xl py-1.5 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/salon' : '/tete-en-lair-salon/salon', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="salon">
+        <a href={currentLang === 'en' ? '/en/salon' : '/salon'} class={`mobile-nav-link nav-link font-nav block text-xl py-1.5 transition-all ${getActiveClass(currentLang === 'en' ? '/en/salon' : '/salon', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="salon">
           {t.nav.salon}
         </a>
-        <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about'} class={`mobile-nav-link nav-link font-nav block text-xl py-1.5 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/about' : '/tete-en-lair-salon/about', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="about">
+        <a href={currentLang === 'en' ? '/en/about' : '/about'} class={`mobile-nav-link nav-link font-nav block text-xl py-1.5 transition-all ${getActiveClass(currentLang === 'en' ? '/en/about' : '/about', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="about">
           {t.nav.about}
         </a>
-        <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing'} class={`mobile-nav-link nav-link font-nav block text-xl py-1.5 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/pricing' : '/tete-en-lair-salon/pricing', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="pricing">
+        <a href={currentLang === 'en' ? '/en/pricing' : '/pricing'} class={`mobile-nav-link nav-link font-nav block text-xl py-1.5 transition-all ${getActiveClass(currentLang === 'en' ? '/en/pricing' : '/pricing', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="pricing">
           {t.nav.pricing}
         </a>
-        <a href={currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact'} class={`mobile-nav-link nav-link font-nav block text-xl py-1.5 transition-all ${getActiveClass(currentLang === 'en' ? '/tete-en-lair-salon/en/contact' : '/tete-en-lair-salon/contact', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="contact">
+        <a href={currentLang === 'en' ? '/en/contact' : '/contact'} class={`mobile-nav-link nav-link font-nav block text-xl py-1.5 transition-all ${getActiveClass(currentLang === 'en' ? '/en/contact' : '/contact', true)}`} style="color: var(--text-primary); hover:color: var(--navy-blue);" data-key="contact">
           {t.nav.contact}
         </a>
       </nav>
@@ -223,9 +223,9 @@ const getActiveClass = (path: string, isMobile: boolean = false) => {
 
       // Navigate to the appropriate page
       if (selectedLang === 'en') {
-        window.location.href = '/tete-en-lair-salon/en' + pageName;
+        window.location.href = '/en' + pageName;
       } else {
-        window.location.href = '/tete-en-lair-salon' + pageName;
+        window.location.href = pageName || '/';
       }
     });
   });

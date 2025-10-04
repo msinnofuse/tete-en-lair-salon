@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://msinnofuse.github.io/tete-en-lair-salon/sitemap-index.xml
+Sitemap: https://tete-en-lair.ch/sitemap-index.xml
