@@ -74,8 +74,8 @@ html {
 }
 
 .font-heading {
-  font-family: 'EB Garamond', serif;
-  font-weight: 400;
+  font-family: 'Cormorant', serif;
+  font-weight: 300;
   letter-spacing: -0.01em;
   color: var(--text-primary);
 }
@@ -90,23 +90,23 @@ html {
 }
 
 .font-body {
-  font-family: 'EB Garamond', serif;
-  font-weight: 400;
+  font-family: 'Cormorant', serif;
+  font-weight: 300;
   font-size: 1.25rem;
   line-height: 1.7;
   color: var(--text-primary);
 }
 
 .font-accent {
-  font-family: 'EB Garamond', serif;
-  font-weight: 500;
+  font-family: 'Cormorant', serif;
+  font-weight: 300;
   font-style: italic;
   color: var(--warm-coral);
 }
 
 .font-price {
-  font-family: 'EB Garamond', serif;
-  font-weight: 600;
+  font-family: 'Cormorant', serif;
+  font-weight: 300;
   font-size: 3rem;
   color: var(--navy-blue);
 }
