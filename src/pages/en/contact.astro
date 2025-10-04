@@ -1,8 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import PhosphorIcon from '../../components/PhosphorIcon.astro';
 import { getTranslations, type Language } from '../../i18n/utils';
-import heroImage from '../../assets/images/gallery/chair-2.jpg';
+import heroImage from '../../assets/images/hero-images/chair-1.jpg';
 
 const currentLang: Language = 'en';
 const t = getTranslations(currentLang);
@@ -34,13 +33,6 @@ const t = getTranslations(currentLang);
     <!-- Contact Section -->
     <section class="py-32 relative" style="background: white;">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h1 class="text-6xl font-heading mb-8">
-            {t.contact.title}
-          </h1>
-          <div class="accent-line"></div>
-        </div>
-        
         <!-- Contact Information - Centered Layout -->
         <div class="max-w-xl mx-auto">
           <div class="space-y-16">
@@ -52,9 +44,6 @@ const t = getTranslations(currentLang);
                 </a>
                 <a href={`tel:${t.contact.phone.replace(/\s/g, '')}`} class="font-body text-xl leading-relaxed hover:opacity-70 transition-opacity block">
                   {t.contact.phone}
-                </a>
-                <a href={`mailto:${t.contact.email}`} class="font-body text-lg leading-relaxed hover:opacity-70 transition-opacity block opacity-80">
-                  {t.contact.email}
                 </a>
               </div>
             </div>

@@ -1,14 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import PhosphorIcon from '../components/PhosphorIcon.astro';
 import { getTranslations, type Language } from '../i18n/utils';
-import heroImage from '../assets/images/gallery/celine-2.jpg';
+import heroImage from '../assets/images/hero-images/celine-2.jpg';
 
 const currentLang: Language = 'de';
 const t = getTranslations(currentLang);
 ---
 
-<Layout title="Über mich - tête en l'air" description="Celine Winterberger - Ihre Hairstylistin in Basel" lang={currentLang}>
+<Layout title="Über mich - tête en l'air" description="Celine Wintenberger - Ihre Hairstylistin in Basel" lang={currentLang}>
   <style>
     body {
       background: white !important;
@@ -21,7 +20,7 @@ const t = getTranslations(currentLang);
       <div class="absolute inset-0 z-0">
         <img
           src={heroImage.src}
-          alt="Celine Winterberger - tête en l'air"
+          alt="Celine Wintenberger - tête en l'air"
           class="w-full h-full object-cover"
           style="filter: brightness(1.3) contrast(0.9);"
         />

@@ -10,39 +10,17 @@
     "subtitle": "Hair artistry between sky and Rhine"
   },
   "salon": {
-    "title": "My",
-    "title_accent": "Concept",
     "subtitle": "Extravagant, bold, unconventional, or classic? I like it the way you like it!",
     "description": "Short bangs, vibrant colors, flowing yet surprising gradations, or perhaps unexpectedly bold highlight accents? With me, your haircare rituals are safe and you are accordingly relaxed! Come aboard and let yourself be transported to distant galaxies - you can expect a creative hair-cutting experience in the idyllic wild Holzpark Klybeck. In Basel, directly on the Rhine, and all this in a former shuttle bus of Euro Airport."
   },
   "about": {
-    "title": "Céline Wintenberger - that's who I am:",
-    "intro": "For almost 20 years, I have carried my profession in my heart. I completed my training as a hairstylist in my homeland France, complemented by training as a makeup artist at the Opera of Toulouse.",
-    "experience": "My professional experience is extremely diverse and varied. In addition to my apprenticeship years at the opera, I have worked in various contexts: from traditional salons to progressive hairstyling collectives to special events as a stylist.",
-    "expertise": "I welcome all hair types and specialize in: balayage techniques, progressive hairstyles, practical low-maintenance ready-to-wear looks, highlights, gray tone coverage, and creative colorations.",
-    "basel_story": "I have been working in Basel for 13 years, 5 of which in my own, extraordinary salon «Tête-en-L'air» – in English: Scatterbrain, just like I sometimes am myself.",
-    "salon_description": "My salon is a converted airport bus from Euro Airport that has been transformed into a cozy wellness oasis. It stands, surrounded by lovingly maintained plants, near Basel's harbor directly on the Rhine. The location is in Holzpark Klybeck, a creative art district with inspiring projects.",
-    "languages": "I communicate fluently in French, German, English, and Spanish.",
-    "website": "www.holzpark-klybeck.ch",
-    "services_title": "CELINE in «Tête-en l'Air» - What I offer you in my favorite salon:",
-    "services_style": "Extravagant, bold, unconventional, or classic? I like it the way you like it!",
-    "services_details": "Short bangs, vibrant colors, flowing but also surprising gradations, or would you rather unexpectedly bold highlight accents?",
-    "care_rituals": "With me, your haircare rituals are safe and you are accordingly relaxed!",
-    "invitation": "Come aboard and let yourself be transported to distant galaxies -",
-    "booking": "Reserve your appointment and become part of my beloved adventure as a stylist!",
-    "experience_description": "You can expect a creative hair-cutting experience in the idyllic wild Holzpark Klybeck. In Basel, directly on the Rhine, and all this in a former shuttle bus of Euro Airport.",
-    "card1": {
-      "title": "Unique",
-      "description": "A converted Euro Airport shuttle bus transformed into a wellness oasis. Surrounded by lovingly tended plants, directly on the Rhine in the creative Holzpark Klybeck - a truly extraordinary breeding ground for fine artistry."
-    },
-    "card2": {
-      "title": "Personal",
-      "description": "Almost 20 years of experience from Toulouse Opera House, classic salons, and progressive hairstyling collectives. I speak French, German, English, and Spanish - for truly individual and relaxed consultation."
-    }
+    "intro": "For almost two decades, I have carried my passion for hairstyling in my heart. My roots run deep in the French hair artistry scene, where I not only completed my training as a hairstylist, but also honed my artistic skills as a makeup artist at the renowned Opera of Toulouse.",
+    "experience": "My professional experience is extremely diverse and varied. In addition to my apprenticeship years at the opera, I have worked in various contexts: from classic to extravagant salons and special events as a stylist.",
+    "expertise": "Whether wild, playful, or elegant - I welcome all hair types and specialize in short and long hairstyles, balayage techniques, practical low-maintenance ready-to-wear looks, highlights, gray tone coverage, and creative colorations.",
+    "salon_description": "My salon «Tête-en-L'air» is anything but ordinary. Transformed from a former airport shuttle bus, it stands picturesquely on the Rhine in Basel's Holzpark Klybeck - a vibrant arts district full of inspiration. Surrounded by lovingly tended plants, it is a mobile wellness oasis that perfectly embodies my preference for the unexpected.",
+    "languages": "I communicate fluently in French, German, English, and Spanish."
   },
   "services": {
-    "title": "Services",
-    "description": "All prices include a comprehensive consultation and complimentary beverages. Final prices for color and cut are calculated based on the scope of work. Exact pricing information gladly provided on-site.",
     "wash_cut_dry": {
       "title": "Wash-Cut-Blow Dry",
       "description": "**Ladies** CHF 77-88\n**Gentlemen** CHF 57\n**Children** CHF 30-50"
@@ -66,31 +44,15 @@
     }
   },
   "contact": {
-    "title": "Contact",
-    "reach_us": "Reach us",
     "hours_title": "Opening Hours",
     "hours": {
       "weekdays": "Thursday – Saturday",
-      "weekdays_time": "09:00 – 19:00"
+      "weekdays_time": "11:00 – 20:00"
     },
-    "cta": "BOOK APPOINTMENT",
     "address": "Uferstrasse 40, Basel, Switzerland",
-    "phone": "+41 76 474 79 39",
-    "email": "celinewintenberger@hotmail.de"
+    "phone": "+41 76 474 79 39"
   },
   "footer": {
     "copyright": "© 2025 — tête en l'air"
-  },
-  "common": {
-    "accent_words": {
-      "exceptional": "extraordinary",
-      "modern": "modern",
-      "bold": "bold",
-      "perfect": "Perfect",
-      "essential": "essentials",
-      "unique": "unique",
-      "concepts": "Concept",
-      "hairstyles": "hairstyles"
-    }
   }
 }

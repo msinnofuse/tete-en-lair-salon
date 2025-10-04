@@ -2,27 +2,19 @@
 import Layout from '../layouts/Layout.astro';
 import PhotoGrid from '../components/PhotoGrid.astro';
 import { getTranslations, type Language } from '../i18n/utils';
-import heroImage from '../assets/images/gallery/salon-1.jpg';
+import heroImage from '../assets/images/hero-images/bus-2.jpg';
 
 // Import all available gallery images
-import bus1 from '../assets/images/gallery/bus-1.jpg';
-import bus2 from '../assets/images/gallery/bus-2.jpg';
 import bus3 from '../assets/images/gallery/bus-3.jpg';
 import celine1 from '../assets/images/gallery/celine-1.jpg';
-import celine2 from '../assets/images/gallery/celine-2.jpg';
-import chair1 from '../assets/images/gallery/chair-1.jpg';
 import chair2 from '../assets/images/gallery/chair-2.jpg';
 import dreamer from '../assets/images/gallery/dreamer.jpg';
-import outdoor1 from '../assets/images/gallery/outdoor-1.jpg';
 import outdoor2 from '../assets/images/gallery/outdoor-2.jpg';
 import outdoor3 from '../assets/images/gallery/outdoor-3.jpg';
 import outdoor4 from '../assets/images/gallery/outdoor-4.jpg';
 import price from '../assets/images/gallery/price.jpg';
 import products from '../assets/images/gallery/products.jpg';
 import salon1 from '../assets/images/gallery/salon-1.jpg';
-import salon2 from '../assets/images/gallery/salon-2.jpg';
-import smurf from '../assets/images/gallery/smurf.jpg';
-import talism1 from '../assets/images/gallery/talism-1.jpg';
 import talism2 from '../assets/images/gallery/talism-2.jpg';
 
 const currentLang: Language = 'de';
@@ -30,21 +22,13 @@ const t = getTranslations(currentLang);
 
 const salonImages = [
   { src: salon1, alt: 'tête en l\'air Salon', caption: 'Professionelles Haarstyling' },
-  { src: salon2, alt: 'tête en l\'air Salon', caption: 'Kreative Haarkunst' },
   { src: celine1, alt: 'Celine bei der Arbeit', caption: 'Expertin für Balayage' },
-  { src: celine2, alt: 'Celine Winterberger', caption: 'Ihre Hairstylistin' },
-  { src: bus1, alt: 'Salon Bus Außenansicht', caption: 'Unser einzigartiger Salon' },
-  { src: bus2, alt: 'Salon Bus', caption: 'Umgebauter Flughafenbus' },
   { src: bus3, alt: 'Bus Salon Klybeck', caption: 'Direkt am Rhein' },
-  { src: chair1, alt: 'Salon Innenraum', caption: 'Gemütliche Atmosphäre' },
   { src: chair2, alt: 'Friseurstuhl', caption: 'Wohlfühloase' },
-  { src: outdoor1, alt: 'Holzpark Klybeck', caption: 'Kreatives Kunstviertel' },
   { src: outdoor2, alt: 'Außenbereich', caption: 'Umgeben von Pflanzen' },
   { src: outdoor3, alt: 'Salon Umgebung', caption: 'Idyllische Lage' },
   { src: outdoor4, alt: 'Outdoor Styling', caption: 'Styling im Freien' },
   { src: dreamer, alt: 'Kreative Frisur', caption: 'Traumhafte Styles' },
-  { src: smurf, alt: 'Bunte Haarfarben', caption: 'Kreativ-Kolorationen' },
-  { src: talism1, alt: 'Haarschmuck', caption: 'Besondere Details' },
   { src: talism2, alt: 'Styling Details', caption: 'Perfekte Akzente' },
   { src: products, alt: 'Professionelle Produkte', caption: 'Hochwertige Pflege' },
   { src: price, alt: 'Preisliste', caption: 'Faire Preise' }
@@ -77,14 +61,6 @@ const salonImages = [
     <!-- Salon Gallery Section -->
     <section class="py-32 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h1 class="text-6xl font-heading mb-8">
-            {t.salon.title}
-            <span class="font-accent block">{t.salon.title_accent}</span>
-          </h1>
-          <div class="accent-line" style="margin: 2rem auto;"></div>
-        </div>
-
         <!-- Salon Content Text Blocks -->
         <div class="max-w-3xl mx-auto mb-16">
           <div class="space-y-16">

@@ -10,39 +10,17 @@
     "subtitle": "Haarkunst zwischen Himmel und Rhein"
   },
   "salon": {
-    "title": "Mein",
-    "title_accent": "Konzept",
     "subtitle": "Extravagant, gewagt, unkonventionell oder klassisch? Ich mag es so, wie du es magst!",
     "description": "Kurze Fransen, lebendige Farben, fliessende aber auch überraschende Abstufungen oder doch lieber unerwartet gewagte Mêches-Akzente? Bei mir sind Deine Haircare-Rituale safe und Du dem entsprechend entspannt! Komm an Board und lass dich in entfernt gelegene Galaxien entführen - Dich erwartet ein Kreatives Haareschneide-Erlebnis im idyllischen wilden Holzpark Klybeck. In Basel, direkt am Rhein und dies alles in einem ehemaligen Shuttlebus des Euro Airports."
   },
   "about": {
-    "title": "Céline Wintenberger - das bin ich:",
-    "intro": "Seit beinahe 20 Jahren trage ich meinen Beruf im Herzen. Meine Ausbildung zur Haarstylistin absolvierte ich in meinem Heimatland Frankreich, ergänzt durch eine Ausbildung als Maskenbildnerin an der Oper von Toulouse.",
-    "experience": "Meine Berufserfahrung ist äusserst differenziert und vielseitig. Neben meinen Lehrjahren an der Oper war ich in verschiedenen Kontexten tätig: von klassischen Salons über progressive Hairstyling-Kollektive bis hin zu besonderen Events als Stylistin.",
-    "expertise": "Ich heisse alle Haartypen willkommen und spezialisiere mich auf: Balayage-Techniken, progressive Frisuren, praktische pflegeleichte Ready-to-wear-Looks, Highlights, Grautöne-Kaschierung und kreative Kolorationen.",
-    "basel_story": "Seit 13 Jahren arbeite ich in Basel, davon 5 Jahre in meinem eigenen, aussergewöhnlichen Salon «Tête-en-L'air» – auf Deutsch: Luftikus, genau wie ich manchmal selbst bin.",
-    "salon_description": "Mein Salon ist ein umgebauter Flughafenbus des Euro Airports, der zu einer gemütlichen Wohlfühloase gestaltet wurde. Er steht, umgeben von liebevoll gepflegten Pflanzen, in der Nähe des Basler Hafens direkt am Rhein. Der Standort befindet sich im Holzpark Klybeck, einem kreativen Kunstviertel mit inspirierenden Projekten.",
-    "languages": "Ich kommuniziere fliessend in Französisch, Deutsch, Englisch und Spanisch.",
-    "website": "www.holzpark-klybeck.ch",
-    "services_title": "CELINE im «Tête-en l'Air» - Was ich dir in meinem Lieblingssalon biete:",
-    "services_style": "Extravagant, gewagt, unkonventionell oder klassisch? Ich mag es so, wie du es magst!",
-    "services_details": "Kurze Fransen, lebendige Farben, fliessende aber auch überraschende Abstufungen oder doch lieber unerwartet gewagte Mêches-Akzente?",
-    "care_rituals": "Bei mir sind Deine Haircare-Rituale safe und Du dem entsprechend entspannt!",
-    "invitation": "Komm an Board und lass dich in entfernt gelegene Galaxien entführen -",
-    "booking": "Reserviere Dir Deinen Termin und werde Teil meines geliebten Abenteuers als Stylistin!",
-    "experience_description": "Dich erwartet ein Kreatives Haareschneide-Erlebnis im idyllischen wilden Holzpark Klybeck. In Basel, direkt am Rhein und dies alles in einem ehemaligen Shuttlebus des Euro Airports.",
-    "card1": {
-      "title": "Einzigartig",
-      "description": "Ein umgebauter Flughafenbus des Euro Airports als Wohlfühloase. Umwachsen von liebevoll gepflegten Pflanzen, direkt am Rhein im kreativen Holzpark Klybeck - eine wahrhaft aussergewöhnliche Brutstätte für Feines."
-    },
-    "card2": {
-      "title": "Persönlich",
-      "description": "Beinahe 20 Jahre Erfahrung aus der Oper von Toulouse, klassischen Salons und progressiven Hairstyling-Kollektiven. Ich spreche französisch, deutsch, englisch und spanisch - für eine wirklich individuelle und entspannte Beratung."
-    }
+    "intro": "Seit fast zwei Jahrzehnten trage ich die Leidenschaft für Haarstyling in meinem Herz. Meine Wurzeln reichen tief in die französische Haarkünstler-Szene, wo ich nicht nur meine Ausbildung als Haarstylistin absolvierte, sondern auch als Maskenbildnerin an der renommierten Oper von Toulouse meine künstlerischen Fähigkeiten schliff.",
+    "experience": "Meine Berufserfahrung ist äusserst differenziert und vielseitig. Neben meinen Lehrjahren an der Oper war ich in verschiedenen Kontexten tätig: von klassischen über extravagante Salons bis hin zu besonderen Events als Stylistin.",
+    "expertise": "Egal ob wild, verspielt oder elegant - ich heisse alle Haartypen willkommen und bin spezialisiert auf Kurz- und Langhaarfrisuren, Balayage-Techniken, praktische pflegeleichte Ready-to-wear-Looks, Highlights, Grautöne-Kaschierung und kreative Kolorationen.",
+    "salon_description": "Mein Salon «Tête-en-L'air» ist alles andere als gewöhnlich. Verwandelt aus einem ehemaligen Flughafenbus, steht er malerisch am Rhein im Basler Holzpark Klybeck - einem pulsierenden Kunstviertel voller Inspiration. Umgeben von liebevoll gepflegten Pflanzen ist er eine mobile Wohlfühloase, die meine Vorliebe für das Unerwartete perfekt verkörpert.",
+    "languages": "Ich kommuniziere fliessend in Französisch, Deutsch, Englisch und Spanisch."
   },
   "services": {
-    "title": "Services",
-    "description": "Alle Preise beinhalten ein ausführliches Beratungsgespräch und freie Getränke. Die endgültigen Preise für Farbe und Schnitt errechnen sich anhand des Aufwands. Genaue Preisauskünfte gerne vor Ort.",
     "wash_cut_dry": {
       "title": "Waschen-Schneiden-Föhnen",
       "description": "**Damen** CHF 77-88\n**Herren** CHF 57\n**Kinder** CHF 30-50"
@@ -66,31 +44,15 @@
     }
   },
   "contact": {
-    "title": "Kontakt",
-    "reach_us": "Erreichen Sie uns",
     "hours_title": "Öffnungszeiten",
     "hours": {
       "weekdays": "Donnerstag – Samstag",
-      "weekdays_time": "09:00 – 19:00"
+      "weekdays_time": "11:00 – 20:00"
     },
-    "cta": "TERMIN VEREINBAREN",
     "address": "Uferstrasse 40, Basel, Schweiz",
-    "phone": "+41 76 474 79 39",
-    "email": "celinewintenberger@hotmail.de"
+    "phone": "+41 76 474 79 39"
   },
   "footer": {
     "copyright": "© 2025 — tête en l'air"
-  },
-  "common": {
-    "accent_words": {
-      "exceptional": "aussergewöhnliche",
-      "modern": "modernem",
-      "bold": "mutige",
-      "perfect": "Perfekte",
-      "essential": "Wesentliche",
-      "unique": "einzigartig",
-      "concepts": "Konzept",
-      "hairstyles": "Frisuren"
-    }
   }
 }
