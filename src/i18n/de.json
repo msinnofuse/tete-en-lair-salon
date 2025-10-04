@@ -54,5 +54,28 @@
   },
   "footer": {
     "copyright": "© 2025 — tête en l'air"
+  },
+  "seo": {
+    "home": {
+      "title": "tête en l'air - Coiffeur Basel Kleinbasel | Französische Haarstylistin",
+      "description": "Einzigartiger Friseursalon im umgebauten Shuttlebus. Französische Haarstylistin in Basel Kleinbasel, Klybeck am Rhein. Spezialisiert auf Balayage, Haarfarben und kreative Kolorationen."
+    },
+    "salon": {
+      "title": "Salon im Bus - tête en l'air Holzpark Klybeck Basel",
+      "description": "Außergewöhnlicher Salon im ehemaligen Flughafenbus. Haare schneiden am Hafen Basel, direkt am Rhein im Holzpark Kleinbasel. Eine mobile Wohlfühloase."
+    },
+    "about": {
+      "title": "Céline Wintenberger - Französische Haarstylistin Basel Klybeck",
+      "description": "Französische Coiffeuse in Basel Kleinbasel. 20 Jahre Erfahrung, spezialisiert auf Balayage, Haare schneiden, Kurz- und Langhaarfrisuren, kreative Kolorationen."
+    },
+    "pricing": {
+      "title": "Preise - Coiffeur tête en l'air Basel Kleinbasel",
+      "description": "Faire Preise für Haarstyling in Basel. Haare schneiden, Balayage, Highlights, Haarfarben und Kolorationen. Französische Frisörin im Holzpark Klybeck am Rhein."
+    },
+    "contact": {
+      "title": "Kontakt - tête en l'air Holzpark Kleinbasel am Hafen",
+      "description": "Termin vereinbaren im Bus-Salon. Friseursalon Basel Kleinbasel, Klybeck Uferstrasse 40, direkt am Rhein beim Hafen. Donnerstag bis Samstag geöffnet."
+    },
+    "keywords": "Friseur Basel, Coiffeur Basel, Frisör Basel, Haarstylist Basel, Balayage Basel, Haarfarben Basel, Haare schneiden Basel, Französin Basel, Französische Haarstylistin, Friseursalon Klybeck, Kleinbasel, Holzpark Klybeck, Rhein, Hafen Basel, Bus Salon, Flughafenbus, Shuttlebus, Euro Airport, tête en l'air, Highlights Basel, Strähnen Basel, Blondierung Basel, Tönung Basel, Hochsteckfrisur Basel, Föhnen Basel, Grautöne-Kaschierung, Grauabdeckung, Mêches, Kurzhaarfrisuren, Langhaarfrisuren, Damenfriseur Basel, Herrenfriseur Basel, Kinderfriseur Basel, Haarkunst Basel, Kunstviertel Basel, Toulouse, Oper Toulouse, Maskenbildnerin, Uferstrasse Basel, Mobile Salon, Mobiler Friseursalon, Kreative Frisuren Basel"
   }
 }

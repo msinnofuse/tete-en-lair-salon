@@ -54,5 +54,28 @@
   },
   "footer": {
     "copyright": "© 2025 — tête en l'air"
+  },
+  "seo": {
+    "home": {
+      "title": "tête en l'air - French Hairstylist Basel Kleinbasel | Hair Salon in Bus",
+      "description": "Unique hair salon in converted shuttle bus. French hairstylist in Basel Kleinbasel, Klybeck by Rhine. Specialized in balayage, hair coloring and creative colorations."
+    },
+    "salon": {
+      "title": "Bus Salon - tête en l'air Holzpark Klybeck Basel",
+      "description": "Extraordinary salon in former airport bus. Haircuts at Basel harbor, directly on the Rhine in Holzpark Kleinbasel. A mobile wellness oasis."
+    },
+    "about": {
+      "title": "Céline Wintenberger - French Hairstylist Basel Klybeck",
+      "description": "French hairdresser in Basel Kleinbasel. 20 years experience, specialized in balayage, haircuts, short and long hairstyles, creative colorations."
+    },
+    "pricing": {
+      "title": "Pricing - Hair Salon tête en l'air Basel Kleinbasel",
+      "description": "Fair prices for hairstyling in Basel. Haircuts, balayage, highlights, hair coloring and colorations. French hairstylist in Holzpark Klybeck by the Rhine."
+    },
+    "contact": {
+      "title": "Contact - tête en l'air Holzpark Kleinbasel at Harbor",
+      "description": "Book appointment at bus salon. Hair salon Basel Kleinbasel, Klybeck Uferstrasse 40, directly on Rhine at harbor. Open Thursday to Saturday."
+    },
+    "keywords": "Hair salon Basel, Hairdresser Basel, Hairstylist Basel, Balayage Basel, Hair coloring Basel, Haircut Basel, French hairstylist, French hairdresser, Salon Klybeck, Kleinbasel, Holzpark Klybeck, Rhine, Harbor Basel, Bus salon, Airport bus, Shuttle bus, Euro Airport, tête en l'air, Highlights Basel, Hair streaks, Bleaching Basel, Hair lightening, Toning Basel, Updo Basel, Blow dry Basel, Gray coverage, Gray hair coverage, Short hairstyles, Long hairstyles, Ladies hairdresser Basel, Men's hairdresser Basel, Children's hairdresser Basel, Hair artistry Basel, Arts district Basel, Toulouse, Opera Toulouse, Makeup artist, Uferstrasse Basel, Mobile salon, Creative hairstyles Basel"
   }
 }

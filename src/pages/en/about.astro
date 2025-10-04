@@ -7,7 +7,7 @@ const currentLang: Language = 'en';
 const t = getTranslations(currentLang);
 ---
 
-<Layout title="About - tête en l'air" description="Celine Wintenberger - Your hairstylist in Basel" lang={currentLang}>
+<Layout title={t.seo.about.title} description={t.seo.about.description} lang={currentLang}>
   <style>
     body {
       background: white !important;
@@ -73,6 +73,55 @@ const t = getTranslations(currentLang);
           <p class="font-body text-lg leading-relaxed text-center">
             {t.about.languages}
           </p>
+        </div>
+
+        <!-- Press Section -->
+        <div class="mt-24 pt-16 border-t border-gray-200">
+          <h3 class="text-lg font-heading mb-12 text-center opacity-80">Press</h3>
+          <div class="space-y-8 max-w-2xl mx-auto">
+            <div class="text-center">
+              <a href="https://www.schwarzwaelder-bote.de/inhalt.kunst-und-gewerbe-am-rheinhafen-haareschneiden-im-flughafenbus.e1c254d4-8ef6-4ee9-94e6-eaa7f90c7278.html"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="inline-block group">
+                <div class="font-body text-base">
+                  <span class="font-medium">Schwarzwälder Bote</span>
+                  <span class="text-sm opacity-60 ml-2">2021</span>
+                </div>
+                <div class="text-sm opacity-70 mt-1 italic group-hover:opacity-100 transition-opacity">
+                  "Hair cutting in an airport bus"
+                </div>
+              </a>
+            </div>
+            <div class="text-center">
+              <a href="https://www.bazonline.ch/sie-machte-einen-euro-airport-bus-zum-eigenen-coiffeursalon-784581548774"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="inline-block group">
+                <div class="font-body text-base">
+                  <span class="font-medium">Basler Zeitung</span>
+                  <span class="text-sm opacity-60 ml-2">2020</span>
+                </div>
+                <div class="text-sm opacity-70 mt-1 italic group-hover:opacity-100 transition-opacity">
+                  "She turned a Euro Airport bus into her own hair salon"
+                </div>
+              </a>
+            </div>
+            <div class="text-center">
+              <a href="https://www.bzbasel.ch/basel/basel-stadt/haareschneiden-in-einem-flughafen-shuttlebus-im-basler-hafen-ist-das-neu-moglich-ld.1278977"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="inline-block group">
+                <div class="font-body text-base">
+                  <span class="font-medium">bz Basel</span>
+                  <span class="text-sm opacity-60 ml-2">2020</span>
+                </div>
+                <div class="text-sm opacity-70 mt-1 italic group-hover:opacity-100 transition-opacity">
+                  "Hair cutting in an airport shuttle bus"
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>

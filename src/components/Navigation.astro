@@ -14,7 +14,7 @@ const isSalonPage = currentPath.includes('/salon');
 const isAboutPage = currentPath.includes('/about');
 const isPricingPage = currentPath.includes('/pricing');
 const isContactPage = currentPath.includes('/contact');
-const isBlackNavPage = isSalonPage || isAboutPage || isPricingPage || isContactPage;
+const isBlackNavPage = isAboutPage || isPricingPage || isContactPage;
 const isAboutOnlyPage = isAboutPage && !isSalonPage;
 const isPricingOnlyPage = isPricingPage && !isSalonPage && !isAboutPage;
 

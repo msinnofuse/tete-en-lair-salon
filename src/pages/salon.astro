@@ -35,7 +35,7 @@ const salonImages = [
 ];
 ---
 
-<Layout title="Salon - tête en l'air" description="Unser einzigartiger Salon im umgebauten Bus" lang={currentLang}>
+<Layout title={t.seo.salon.title} description={t.seo.salon.description} lang={currentLang}>
   <style>
     body {
       background: white !important;
@@ -50,10 +50,10 @@ const salonImages = [
           src={heroImage.src}
           alt="tête en l'air Salon"
           class="w-full h-full object-cover"
-          style="object-position: center 75%; filter: brightness(1.3) contrast(0.9);"
+          style="object-position: center 75%; filter: brightness(0.6) contrast(1.1);"
         />
-        <!-- White overlay for better readability -->
-        <div class="absolute inset-0 bg-white opacity-15"></div>
+        <!-- Dark overlay for better readability -->
+        <div class="absolute inset-0 bg-black opacity-30"></div>
       </div>
 
     </section>

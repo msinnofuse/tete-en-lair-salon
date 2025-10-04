@@ -1,14 +1,53 @@
 ---
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
+import { getTranslations } from '../i18n/utils';
 
 export interface Props {
   title: string;
   description?: string;
   lang?: 'de' | 'en';
+  keywords?: string;
 }
 
-const { title, description = "A beautiful single-page website with photo slider", lang = 'de' } = Astro.props;
+const { title, description = "A beautiful single-page website with photo slider", lang = 'de', keywords } = Astro.props;
+const t = getTranslations(lang);
+
+// Structured Data for LocalBusiness/HairSalon
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "tête en l'air",
+  "alternateName": lang === 'de' ? "Coiffeur tête en l'air" : "French Hair Salon tête en l'air",
+  "description": lang === 'de'
+    ? "Einzigartiger Friseursalon im umgebauten Flughafenbus in Basel Kleinbasel, Klybeck am Rhein beim Hafen. Französische Haarstylistin spezialisiert auf Balayage, Haare schneiden, Haarfarben und kreative Kolorationen im Holzpark."
+    : "Unique hair salon in converted airport shuttle bus in Basel Kleinbasel, Klybeck by the Rhine at harbor. French hairstylist specialized in balayage, haircuts, hair coloring and creative colorations in Holzpark.",
+  "url": "https://msinnofuse.github.io/tete-en-lair-salon/",
+  "telephone": "+41764747939",
+  "priceRange": "CHF 30-200",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Uferstrasse 40, Holzpark Klybeck",
+    "addressLocality": "Basel Kleinbasel",
+    "postalCode": "4057",
+    "addressCountry": "CH"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "47.5686",
+    "longitude": "7.6055"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Thursday", "Friday", "Saturday"],
+      "opens": "11:00",
+      "closes": "20:00"
+    }
+  ],
+  "image": "https://msinnofuse.github.io/tete-en-lair-salon/favicon.svg",
+  "sameAs": []
+};
 ---
 
 <!doctype html>
@@ -16,9 +55,27 @@ const { title, description = "A beautiful single-page website with photo slider"
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
+    <meta name="keywords" content={keywords || t.seo.keywords} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+
     <link rel="icon" type="image/svg+xml" href="/tete-en-lair-salon/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@200..900;1,200..900&display=swap" rel="stylesheet">

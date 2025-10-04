@@ -7,7 +7,7 @@ const currentLang: Language = 'de';
 const t = getTranslations(currentLang);
 ---
 
-<Layout title="tête en l'air - Premium Hair Salon" description="Professional hair styling, cutting, and coloring services in a modern salon" lang={currentLang}>
+<Layout title={t.seo.home.title} description={t.seo.home.description} lang={currentLang}>
   <main class="min-h-screen">
     <!-- Hero Section -->
     <section id="home" class="min-h-screen relative overflow-hidden flex items-center justify-center">
