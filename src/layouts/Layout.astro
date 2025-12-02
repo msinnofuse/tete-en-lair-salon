@@ -51,10 +51,13 @@ const structuredData = {
   "url": "https://tete-en-lair.ch/",
   "telephone": "+41764747939",
   "priceRange": "CHF 30-200",
+  "currenciesAccepted": "CHF",
+  "paymentAccepted": "Cash",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Uferstrasse 40, Holzpark Klybeck",
-    "addressLocality": "Basel Kleinbasel",
+    "addressLocality": "Basel",
+    "addressRegion": "Basel-Stadt",
     "postalCode": "4057",
     "addressCountry": "CH"
   },
@@ -63,6 +66,11 @@ const structuredData = {
     "latitude": "47.5686",
     "longitude": "7.6055"
   },
+  "areaServed": [
+    { "@type": "City", "name": "Basel" },
+    { "@type": "City", "name": "Kleinbasel" },
+    { "@type": "AdministrativeArea", "name": "Basel-Stadt" }
+  ],
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
@@ -71,8 +79,79 @@ const structuredData = {
       "closes": "20:00"
     }
   ],
-  "image": "https://tete-en-lair.ch/favicon.svg",
-  "sameAs": []
+  "image": ogImage,
+  "logo": `${siteUrl}/favicon.svg`,
+  "founder": {
+    "@type": "Person",
+    "name": "Céline Wintenberger",
+    "jobTitle": lang === 'de' ? "Inhaberin & Haarstylistin" : "Owner & Hair Stylist",
+    "knowsLanguage": ["de", "en", "fr", "es"]
+  },
+  "employee": {
+    "@type": "Person",
+    "name": "Céline Wintenberger",
+    "jobTitle": lang === 'de' ? "Haarstylistin" : "Hair Stylist"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": lang === 'de' ? "Friseurdienstleistungen" : "Hair Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": lang === 'de' ? "Waschen-Schneiden-Föhnen (Damen)" : "Wash-Cut-Blow Dry (Ladies)",
+          "description": lang === 'de' ? "Kompletter Haarschnitt Service für Damen" : "Complete haircut service for ladies"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "77-88",
+          "priceCurrency": "CHF"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Balayage",
+          "description": lang === 'de' ? "Natürliche Farbverläufe und Highlights" : "Natural color gradients and highlights"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "120-200",
+          "priceCurrency": "CHF"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": lang === 'de' ? "Haarfarbe" : "Hair Color",
+          "description": lang === 'de' ? "Professionelle Haarfärbung" : "Professional hair coloring"
+        },
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "65-95",
+          "priceCurrency": "CHF"
+        }
+      }
+    ]
+  },
+  "potentialAction": {
+    "@type": "ReserveAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://salonkee.ch/salon/tete-en-lair",
+      "actionPlatform": [
+        "http://schema.org/DesktopWebPlatform",
+        "http://schema.org/MobileWebPlatform"
+      ]
+    },
+    "result": {
+      "@type": "Reservation",
+      "name": lang === 'de' ? "Termin buchen" : "Book Appointment"
+    }
+  }
 };
 ---
 
@@ -80,9 +159,14 @@ const structuredData = {
 <html lang={lang}>
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords || t.seo.keywords} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Céline Wintenberger" />
+    <meta name="theme-color" content="#1a1a2e" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalUrl} />
@@ -117,8 +201,11 @@ const structuredData = {
     <!-- Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
+    <!-- Performance hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://salonkee.ch">
+    <link rel="dns-prefetch" href="https://maps.app.goo.gl">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@300;400;500;600;700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <title>{title}</title>
   </head>

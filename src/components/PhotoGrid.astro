@@ -21,7 +21,10 @@ const { images } = Astro.props;
           src={typeof image.src === 'string' ? image.src : image.src.src}
           alt={image.alt}
           class="photo-grid-image"
-          loading="eager"
+          loading="lazy"
+          decoding="async"
+          width="500"
+          height="500"
           onload="this.style.opacity='1'; this.previousElementSibling.style.display='none';"
         />
       </div>
