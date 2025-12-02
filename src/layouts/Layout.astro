@@ -13,6 +13,32 @@ export interface Props {
 const { title, description = "A beautiful single-page website with photo slider", lang = 'de', keywords } = Astro.props;
 const t = getTranslations(lang);
 
+// SEO URL helpers
+const siteUrl = "https://tete-en-lair.ch";
+const currentPath = Astro.url.pathname;
+const canonicalUrl = new URL(currentPath, siteUrl).href;
+
+// Compute alternate language URLs for hreflang
+const getAlternateUrl = (targetLang: 'de' | 'en') => {
+  let path = currentPath;
+  if (targetLang === 'en') {
+    // German to English: add /en prefix
+    if (!path.startsWith('/en')) {
+      path = path === '/' ? '/en/' : `/en${path}`;
+    }
+  } else {
+    // English to German: remove /en prefix
+    if (path.startsWith('/en')) {
+      path = path.replace(/^\/en/, '') || '/';
+    }
+  }
+  return new URL(path, siteUrl).href;
+};
+
+const deUrl = getAlternateUrl('de');
+const enUrl = getAlternateUrl('en');
+const ogImage = `${siteUrl}/og-image.jpg`;
+
 // Structured Data for LocalBusiness/HairSalon
 const structuredData = {
   "@context": "https://schema.org",
@@ -58,17 +84,32 @@ const structuredData = {
     <meta name="keywords" content={keywords || t.seo.keywords} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Alternate Language Links (hreflang) -->
+    <link rel="alternate" hreflang="de" href={deUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={deUrl} />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content={lang === 'de' ? 'de_CH' : 'en_US'} />
+    <meta property="og:locale:alternate" content={lang === 'de' ? 'en_US' : 'de_CH'} />
+    <meta property="og:site_name" content="tête en l'air" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={Astro.url} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
