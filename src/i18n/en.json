@@ -50,7 +50,9 @@
       "weekdays_time": "11:00 – 20:00"
     },
     "address": "Uferstrasse 40, Basel, Switzerland",
-    "phone": "+41 76 474 79 39"
+    "phone": "+41 76 474 79 39",
+    "book_online": "Book online",
+    "or_call": "or call"
   },
   "footer": {
     "copyright": "© 2025 — tête en l'air"

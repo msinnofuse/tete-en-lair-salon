@@ -42,9 +42,17 @@ const t = getTranslations(currentLang);
                 <a href="https://maps.app.goo.gl/zNzCqSuc5unB5og17" target="_blank" rel="noopener noreferrer" class="font-body text-2xl leading-relaxed hover:opacity-70 transition-opacity block">
                   {t.contact.address}
                 </a>
-                <a href={`tel:${t.contact.phone.replace(/\s/g, '')}`} class="font-body text-xl leading-relaxed hover:opacity-70 transition-opacity block">
-                  {t.contact.phone}
-                </a>
+
+                <!-- Booking Options -->
+                <div class="pt-2 flex items-center justify-center gap-4">
+                  <a href="https://salonkee.ch/salon/tete-en-lair" target="_blank" rel="noopener noreferrer" class="font-body text-xl leading-relaxed hover:opacity-70 transition-opacity border-b border-gray-300">
+                    {t.contact.book_online}
+                  </a>
+                  <span class="font-body text-xl opacity-30">·</span>
+                  <a href={`tel:${t.contact.phone.replace(/\s/g, '')}`} class="font-body text-xl leading-relaxed hover:opacity-70 transition-opacity">
+                    {t.contact.phone}
+                  </a>
+                </div>
               </div>
             </div>
 
