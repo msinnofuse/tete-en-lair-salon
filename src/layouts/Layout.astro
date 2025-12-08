@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
+import FloatingBookButton from '../components/FloatingBookButton.astro';
 import { getTranslations } from '../i18n/utils';
 
 export interface Props {
@@ -212,5 +213,6 @@ const structuredData = {
   <body class="font-body gradient-bg">
     <Navigation currentLang={lang} />
     <slot />
+    <FloatingBookButton currentLang={lang} />
   </body>
 </html>
