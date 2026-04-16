@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
 import { getTranslations, type Language } from '../../i18n/utils';
 import heroImage from '../../assets/images/hero-images/smurf.jpg';
 
@@ -7,7 +8,7 @@ const currentLang: Language = 'en';
 const t = getTranslations(currentLang);
 ---
 
-<Layout title={t.seo.pricing.title} description={t.seo.pricing.description} lang={currentLang}>
+<Layout title={t.seo.pricing.title} description={t.seo.pricing.description} lang={currentLang} heroImage={heroImage}>
   <style>
     body {
       background: white !important;
@@ -18,11 +19,16 @@ const t = getTranslations(currentLang);
     <section class="h-96 md:h-[500px] relative overflow-hidden flex items-center justify-center" style="clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));">
       <!-- Background Image -->
       <div class="absolute inset-0 z-0">
-        <img
-          src={heroImage.src}
+        <Image
+          src={heroImage}
           alt="Creative hair coloring"
           class="w-full h-full object-cover"
           style="object-position: center 75%; filter: brightness(1.3) contrast(0.9);"
+          widths={[640, 960, 1280, 1920]}
+          sizes="100vw"
+          loading="eager"
+          fetchpriority="high"
+          quality={80}
         />
         <!-- White overlay for better readability -->
         <div class="absolute inset-0 bg-white opacity-15"></div>

@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
 import { getTranslations, type Language } from '../../i18n/utils';
 import heroImage from '../../assets/images/hero-images/chair-1.jpg';
 
@@ -7,7 +8,7 @@ const currentLang: Language = 'en';
 const t = getTranslations(currentLang);
 ---
 
-<Layout title={t.seo.contact.title} description={t.seo.contact.description} lang={currentLang}>
+<Layout title={t.seo.contact.title} description={t.seo.contact.description} lang={currentLang} heroImage={heroImage}>
   <style>
     body {
       background: white !important;
@@ -18,11 +19,16 @@ const t = getTranslations(currentLang);
     <section class="h-96 md:h-[500px] relative overflow-hidden flex items-center justify-center" style="clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));">
       <!-- Background Image -->
       <div class="absolute inset-0 z-0">
-        <img
-          src={heroImage.src}
+        <Image
+          src={heroImage}
           alt="Salon interior"
           class="w-full h-full object-cover"
           style="object-position: center 75%; filter: brightness(1.3) contrast(0.9);"
+          widths={[640, 960, 1280, 1920]}
+          sizes="100vw"
+          loading="eager"
+          fetchpriority="high"
+          quality={80}
         />
         <!-- White overlay for better readability -->
         <div class="absolute inset-0 bg-white opacity-15"></div>
@@ -52,6 +58,13 @@ const t = getTranslations(currentLang);
                   <span class="font-body text-xl opacity-30">·</span>
                   <a href={`tel:${t.contact.phone.replace(/\s/g, '')}`} class="font-body text-xl leading-relaxed hover:opacity-70 transition-opacity">
                     {t.contact.phone}
+                  </a>
+                </div>
+
+                <!-- Instagram -->
+                <div class="pt-2 flex items-center justify-center">
+                  <a href="https://www.instagram.com/tete_en_l_air_basel" target="_blank" rel="noopener noreferrer" class="opacity-50 hover:opacity-80 transition-opacity" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                   </a>
                 </div>
               </div>

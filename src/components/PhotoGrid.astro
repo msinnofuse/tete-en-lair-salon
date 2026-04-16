@@ -1,7 +1,10 @@
 ---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 export interface Props {
   images: Array<{
-    src: string | {src: string, width: number, height: number, format: string};
+    src: ImageMetadata;
     alt: string;
     caption?: string;
   }>;
@@ -17,14 +20,15 @@ const { images } = Astro.props;
         <!-- Loading skeleton -->
         <div class="image-skeleton"></div>
         <!-- Actual image -->
-        <img
-          src={typeof image.src === 'string' ? image.src : image.src.src}
+        <Image
+          src={image.src}
           alt={image.alt}
           class="photo-grid-image"
+          widths={[400, 600, 800]}
+          sizes="(max-width: 768px) 100vw, 50vw"
           loading="lazy"
           decoding="async"
-          width="500"
-          height="500"
+          quality={75}
           onload="this.style.opacity='1'; this.previousElementSibling.style.display='none';"
         />
       </div>

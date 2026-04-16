@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
 import { getTranslations, type Language } from '../../i18n/utils';
 import heroImage from '../../assets/images/hero-images/bus-1.jpg';
 
@@ -7,16 +8,21 @@ const currentLang: Language = 'en';
 const t = getTranslations(currentLang);
 ---
 
-<Layout title={t.seo.home.title} description={t.seo.home.description} lang={currentLang}>
+<Layout title={t.seo.home.title} description={t.seo.home.description} lang={currentLang} heroImage={heroImage}>
   <main class="min-h-screen">
     <!-- Hero Section -->
     <section id="home" class="min-h-screen relative overflow-hidden flex items-center justify-center">
       <!-- Background Image -->
       <div class="absolute inset-0 z-0">
-        <img 
-          src={heroImage.src}
+        <Image
+          src={heroImage}
           alt="tête en l'air Bus Salon"
           class="w-full h-full object-cover"
+          widths={[640, 960, 1280, 1920]}
+          sizes="100vw"
+          loading="eager"
+          fetchpriority="high"
+          quality={80}
         />
         <!-- Overlay for text readability -->
         <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>

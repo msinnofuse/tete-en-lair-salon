@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
 import PhotoGrid from '../components/PhotoGrid.astro';
 import { getTranslations, type Language } from '../i18n/utils';
 import heroImage from '../assets/images/hero-images/bus-2.jpg';
@@ -35,7 +36,7 @@ const salonImages = [
 ];
 ---
 
-<Layout title={t.seo.salon.title} description={t.seo.salon.description} lang={currentLang}>
+<Layout title={t.seo.salon.title} description={t.seo.salon.description} lang={currentLang} heroImage={heroImage}>
   <style>
     body {
       background: white !important;
@@ -46,11 +47,16 @@ const salonImages = [
     <section class="h-96 md:h-[500px] relative overflow-hidden flex items-center justify-center" style="clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));">
       <!-- Background Image -->
       <div class="absolute inset-0 z-0">
-        <img
-          src={heroImage.src}
+        <Image
+          src={heroImage}
           alt="tête en l'air Salon"
           class="w-full h-full object-cover"
           style="object-position: center 75%; filter: brightness(0.9) contrast(1.1);"
+          widths={[640, 960, 1280, 1920]}
+          sizes="100vw"
+          loading="eager"
+          fetchpriority="high"
+          quality={80}
         />
         <!-- Gradient overlay for navigation readability -->
         <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 120px, transparent 250px);"></div>
