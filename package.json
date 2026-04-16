@@ -14,6 +14,6 @@
     "astro": "^5.13.10",
     "phosphor-icons": "^1.4.2",
     "swiper": "^11.2.10",
-    "tailwindcss": "^4.1.12"
+    "tailwindcss": "^4.2.2"
   }
 }
