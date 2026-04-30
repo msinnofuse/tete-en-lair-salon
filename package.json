@@ -13,7 +13,7 @@
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.1.7",
     "phosphor-icons": "^1.4.2",
-    "swiper": "^12.1.3",
+    "swiper": "^12.1.4",
     "tailwindcss": "^4.2.2"
   }
 }
